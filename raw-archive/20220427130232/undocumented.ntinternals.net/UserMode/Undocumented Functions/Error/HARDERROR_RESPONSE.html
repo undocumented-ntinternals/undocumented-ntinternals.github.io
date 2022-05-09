@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FError%2FHARDERROR_RESPONSE.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>HARDERROR_RESPONSE</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Error/HARDERROR_RESPONSE.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 4 February</p>
+<br>
+
+<div class="text">HARDERROR_RESPONSE</div>
+
+<div class="highlight">HARDERROR_RESPONSE</div>
+<br>
+
+<pre class="FnDefinition">typedef enum _HARDERROR_RESPONSE {
+<br>
+
+
+    <a href="#ResponseReturnToCaller">ResponseReturnToCaller</a>,
+    <a href="#ResponseNotHandled">ResponseNotHandled</a>,
+    <a href="#ResponseAbort">ResponseAbort</a>,
+    <a href="#ResponseCancel">ResponseCancel</a>,
+    <a href="#ResponseIgnore">ResponseIgnore</a>,
+    <a href="#ResponseNo">ResponseNo</a>,
+    <a href="#ResponseOk">ResponseOk</a>,
+    <a href="#ResponseRetry">ResponseRetry</a>,
+    <a href="#ResponseYes">ResponseYes</a>
+
+
+} HARDERROR_RESPONSE, *PHARDERROR_RESPONSE;
+</pre>
+<br>
+<br>
+<br>
+This enumeration type is used as a result of call <a href=
+"NtRaiseHardError.html">NtRaiseHardError</a> and specify user's
+response for error message.<br>
+
+<h6><a name="ResponseReturnToCaller" id=
+"ResponseReturnToCaller"></a>
+</h6>
+
+<ul>
+<li>ResponseReturnToCaller &nbsp;&nbsp;&nbsp;&nbsp;- ???</li>
+</ul>
+
+<h6><a name="ResponseNotHandled" id="ResponseNotHandled"></a>
+</h6>
+
+<ul>
+<li>ResponseNotHandled &nbsp;&nbsp;&nbsp;&nbsp;- ???</li>
+</ul>
+
+<h6><a name="ResponseAbort" id="ResponseAbort"></a>
+</h6>
+
+<ul>
+<li>ResponseAbort &nbsp;&nbsp;&nbsp;&nbsp;<u>ABORT</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseCancel" id="ResponseCancel"></a>
+</h6>
+
+<ul>
+<li>ResponseCancel &nbsp;&nbsp;&nbsp;&nbsp;<u>CANCEL</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseIgnore" id="ResponseIgnore"></a>
+</h6>
+
+<ul>
+<li>ResponseIgnore &nbsp;&nbsp;&nbsp;&nbsp;<u>IGNORE</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseNo" id="ResponseNo"></a>
+</h6>
+
+<ul>
+<li>ResponseNo &nbsp;&nbsp;&nbsp;&nbsp;<u>NO</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseOk" id="ResponseOk"></a>
+</h6>
+
+<ul>
+<li>ResponseOk &nbsp;&nbsp;&nbsp;&nbsp;<u>OK</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseRetry" id="ResponseRetry"></a>
+</h6>
+
+<ul>
+<li>ResponseRetry &nbsp;&nbsp;&nbsp;&nbsp;<u>RETRY</u> button was
+pressed.</li>
+</ul>
+
+<h6><a name="ResponseYes" id="ResponseYes"></a>
+</h6>
+
+<ul>
+<li>ResponseYes &nbsp;&nbsp;&nbsp;&nbsp;<u>YES</u> button was
+pressed.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/Error/HARDERROR_RESPONSE_OPTION.html">
+HARDERROR_RESPONSE_OPTION</a><br>
+</dd>
+
+<dd><a href="NtRaiseHardError.html">NtRaiseHardError</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

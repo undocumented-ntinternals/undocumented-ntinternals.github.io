@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtImpersonateClientOfPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtImpersonateClientOfPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtImpersonateClientOfPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 28 January</p>
+<br>
+
+<div class="text">NtImpersonateClientOfPort</div>
+
+<div class="highlight">NtImpersonateClientOfPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtImpersonateClientOfPort(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">PortHandle</font></i>,
+  IN PLPC_MESSAGE         <i><font color=
+"blue">Request</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtImpersonateClientOfPort</u></b> is called by LPC server
+process to get security context of client. That means: client's
+Token Object is assiciated with calling server thread (like
+<a href="../../../Undocumented%20Functions/NT%20Objects/Thread/NtSetInformationThread.html">
+NtSetInformationThread</a> with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/THREAD_INFORMATION_CLASS.html#ThreadImpersonationToken">
+ThreadImpersonationToken</a> information class).
+
+<ul>
+<li>PortHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to Port Object
+opened with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a> call.</li>
+</ul>
+
+<ul>
+<li>Request &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a> structure contains reason of impersonation.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenThreadToken.html">
+NtOpenThreadToken</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/NtQueryInformationThread.html">
+NtQueryInformationThread</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/NtSetInformationThread.html">
+NtSetInformationThread</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

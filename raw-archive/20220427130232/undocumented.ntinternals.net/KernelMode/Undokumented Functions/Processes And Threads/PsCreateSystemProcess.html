@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+	<TITLE>PsCreateSystemProcess</TITLE>
+	<LINK HREF="/tomek.css" REL="stylesheet" TYPE="text/css" TITLE="Style">
+</HEAD>
+
+<BODY>
+
+<H3 CLASS="Header">Undocumented functions of NTOSKRNL</H3>
+<P ALIGN="right" CLASS="CompileDate">2OO1, 31 January</P>
+<BR>
+<DIV CLASS="text" >PsCreateSystemProcess</DIV>
+<DIV CLASS="highlight" >PsCreateSystemProcess</DIV>
+<BR>
+
+<PRE CLASS="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<P CLASS="FnDefName">PsCreateSystemProcess(
+<P CLASS="FnDefParams">
+  OUT PHANDLE             <I><FONT COLOR="blue">ProcessHandle</FONT></I>,
+  IN ACCESS_MASK          <I><FONT COLOR="blue">DesiredAccess</FONT></I>,
+  IN POBJECT_ATTRIBUTES   <I><FONT COLOR="blue">ObjectAttributes</FONT></I> OPTIONAL );
+
+</PRE>
+
+<BR><BR><BR>
+
+
+
+Function creates process in system context.
+<H6><LI>ProcessHandle</H6>
+&nbsp;&nbsp;&nbsp;&nbsp;Result of call - <B>HANDLE </B>to newly created System process.<BR>
+
+<H6><LI>DesiredAccess</H6>
+&nbsp;&nbsp;&nbsp;&nbsp;Access rights for opened process'es handle.<BR>
+
+<H6><LI>ObjectAttributes</H6>
+&nbsp;&nbsp;&nbsp;&nbsp;- ???
+
+
+<BR><BR><BR>
+<DT CLASS="Require">Documented by:</DT>
+<DD><STRONG>Tomasz Nowak</STRONG></DD>
+
+
+<BR><BR><BR>
+<DIV CLASS="Require">Requirements:</DIV>
+<DD>Library: <STRONG CLASS="req">ntoskrnl.lib</STRONG>
+
+
+<BR><BR><BR>
+<DIV CLASS="Require">See also:</DIV>
+<DD><A HREF="/UserMode/Undocumented Functions/NT Objects/Process/NtCreateProcess.html">NtCreateProcess</A><BR>
+<DD><A HREF="/KernelMode/Undokumented Functions/Processes And Threads/PsCreateWin32Process.html">PsCreateWin32Process</A><BR>
+
+
+
+</BODY>
+</HTML>
+

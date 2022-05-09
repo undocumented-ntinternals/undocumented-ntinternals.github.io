@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FSemaphore%2FSEMAPHORE_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>SEMAPHORE_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Semaphore/SEMAPHORE_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br>
+
+<div class="text">SEMAPHORE_INFORMATION_CLASS</div>
+
+<div class="highlight">SEMAPHORE_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">typedef enum _SEMAPHORE_INFORMATION_CLASS {
+<br>
+
+
+    <a href=
+"#SemaphoreBasicInformation">SemaphoreBasicInformation</a>
+
+
+} SEMAPHORE_INFORMATION_CLASS, *PSEMAPHORE_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+<b><u>SEMAPHORE_INFORMATION_CLASS</u></b> is enumeration type used
+with function <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Semaphore/NtQuerySemaphore.html">
+NtQuerySemaphore</a>. Currently only one class is defined:<br>
+<br>
+
+<h6><a name="SemaphoreBasicInformation" id=
+"SemaphoreBasicInformation"></a>
+</h6>
+
+<ul>
+<li>SemaphoreBasicInformation &nbsp;&nbsp;&nbsp;&nbsp;Result of
+call to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Semaphore/NtQuerySemaphore.html">
+NtQuerySemaphore</a> is <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Semaphore/SEMAPHORE_BASIC_INFORMATION.html">
+SEMAPHORE_BASIC_INFORMATION</a> structure.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Semaphore/NtQuerySemaphore.html">
+NtQuerySemaphore</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Semaphore/SEMAPHORE_BASIC_INFORMATION.html">
+SEMAPHORE_BASIC_INFORMATION</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

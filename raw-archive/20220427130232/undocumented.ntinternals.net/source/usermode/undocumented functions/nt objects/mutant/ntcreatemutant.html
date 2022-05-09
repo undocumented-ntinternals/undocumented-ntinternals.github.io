@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateMutant</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/mutant/ntcreatemutant.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fmutant%2Fntcreatemutant.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fmutant%2Fntcreatemutant.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 24 November</p>
+<br>
+
+<div class="text">NtCreateMutant</div>
+
+<div class="highlight">NtCreateMutant</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateMutant(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">MutantHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color=
+"blue">InitialOwner</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>MutantHandle</h6>
+
+<pre>
+Result of function call - handle to newly created Mutant object.<br>
+</pre>
+
+<h6>DesiredAccess</h6>
+
+<pre>
+In most cases there's <b><u>MUTANT_ALL_ACCESS</u></b>. See <b><i>&lt;WinNT.h&gt;</i></b> or <b><i>&lt;WinBase.h&gt;</i></b> for other information about Mutant objects access rights.<br>
+</pre>
+
+<h6>ObjectAttributes</h6>
+
+<pre>
+May be used to creation named Mutant objects. Named Mutant can be used by more then one process.<br>
+</pre>
+
+<h6>InitialOwner</h6>
+
+<pre>
+If <i>TRUE</i>, Mutant is created with non-signaled state. Caller should call <a href="../../../../usermode/undocumented%20functions/nt%20objects/mutant/ntreleasemutant.html">NtReleaseMutant</a> after program initialization.
+<br>
+</pre>
+
+<hr width="40%">
+
+<pre>
+<br>
+Mutant object live in object namespace as long as at least one handle is still open. To destroy Mutant, just call <a href="../type%20independed/ntclose.html">NtClose</a> with <font class="ParamNameDesc">MutantHandle</font>.<br>
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/type%20independed/ntclose.html">
+NtClose</a><br>
+</dd>
+
+<dd><a href="ntopenmutant.html">NtOpenMutant</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1014 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FSystem%20Information%2FSYSTEM_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>SYSTEM_INFORMATION_CLASS</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/System Information/SYSTEM_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 5 March</p>
+<br>
+
+<div class="text">SYSTEM_INFORMATION_CLASS</div>
+
+<div class="highlight">SYSTEM_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _SYSTEM_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#SystemBasicInformation">SystemBasicInformation</a>,
+    <a href=
+"#SystemProcessorInformation">SystemProcessorInformation</a>,
+    <a href=
+"#SystemPerformanceInformation">SystemPerformanceInformation</a>,
+    <a href=
+"#SystemTimeOfDayInformation">SystemTimeOfDayInformation</a>,
+    <a href="#SystemPathInformation">SystemPathInformation</a>,
+    <a href=
+"#SystemProcessInformation">SystemProcessInformation</a>,
+    <a href=
+"#SystemCallCountInformation">SystemCallCountInformation</a>,
+    <a href="#SystemDeviceInformation">SystemDeviceInformation</a>,
+    <a href=
+"#SystemProcessorPerformanceInformation">SystemProcessorPerformanceInformation</a>,
+    <a href="#SystemFlagsInformation">SystemFlagsInformation</a>,
+    <a href=
+"#SystemCallTimeInformation">SystemCallTimeInformation</a>,
+    <a href="#SystemModuleInformation">SystemModuleInformation</a>,
+    <a href="#SystemLocksInformation">SystemLocksInformation</a>,
+    <a href=
+"#SystemStackTraceInformation">SystemStackTraceInformation</a>,
+    <a href=
+"#SystemPagedPoolInformation">SystemPagedPoolInformation</a>,
+    <a href=
+"#SystemNonPagedPoolInformation">SystemNonPagedPoolInformation</a>,
+    <a href="#SystemHandleInformation">SystemHandleInformation</a>,
+    <a href="#SystemObjectInformation">SystemObjectInformation</a>,
+    <a href=
+"#SystemPageFileInformation">SystemPageFileInformation</a>,
+    <a href=
+"#SystemVdmInstemulInformation">SystemVdmInstemulInformation</a>,
+    <a href="#SystemVdmBopInformation">SystemVdmBopInformation</a>,
+    <a href=
+"#SystemFileCacheInformation">SystemFileCacheInformation</a>,
+    <a href=
+"#SystemPoolTagInformation">SystemPoolTagInformation</a>,
+    <a href=
+"#SystemInterruptInformation">SystemInterruptInformation</a>,
+    <a href=
+"#SystemDpcBehaviorInformation">SystemDpcBehaviorInformation</a>,
+    <a href=
+"#SystemFullMemoryInformation">SystemFullMemoryInformation</a>,
+    <a href=
+"#SystemLoadGdiDriverInformation">SystemLoadGdiDriverInformation</a>,
+    <a href=
+"#SystemUnloadGdiDriverInformation">SystemUnloadGdiDriverInformation</a>,
+    <a href=
+"#SystemTimeAdjustmentInformation">SystemTimeAdjustmentInformation</a>,
+    <a href=
+"#SystemSummaryMemoryInformation">SystemSummaryMemoryInformation</a>,
+    <a href=
+"#SystemNextEventIdInformation">SystemNextEventIdInformation</a>,
+    <a href=
+"#SystemEventIdsInformation">SystemEventIdsInformation</a>,
+    <a href=
+"#SystemCrashDumpInformation">SystemCrashDumpInformation</a>,
+    <a href=
+"#SystemExceptionInformation">SystemExceptionInformation</a>,
+    <a href=
+"#SystemCrashDumpStateInformation">SystemCrashDumpStateInformation</a>,
+    <a href=
+"#SystemKernelDebuggerInformation">SystemKernelDebuggerInformation</a>,
+    <a href=
+"#SystemContextSwitchInformation">SystemContextSwitchInformation</a>,
+    <a href=
+"#SystemRegistryQuotaInformation">SystemRegistryQuotaInformation</a>,
+    <a href=
+"#SystemExtendServiceTableInformation">SystemExtendServiceTableInformation</a>,
+    <a href=
+"#SystemPrioritySeperation">SystemPrioritySeperation</a>,
+    <a href=
+"#SystemPlugPlayBusInformation">SystemPlugPlayBusInformation</a>,
+    <a href="#SystemDockInformation">SystemDockInformation</a>,
+    <a href="#SystemPowerInformation">SystemPowerInformation</a>,
+    <a href=
+"#SystemProcessorSpeedInformation">SystemProcessorSpeedInformation</a>,
+    <a href=
+"#SystemCurrentTimeZoneInformation">SystemCurrentTimeZoneInformation</a>,
+    <a href=
+"#SystemLookasideInformation">SystemLookasideInformation</a>
+
+
+} SYSTEM_INFORMATION_CLASS, *PSYSTEM_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+Enumeration type <b><u>SYSTEM_INFORMATION_CLASS</u></b> defines
+information classes for a lot of system settings. This type is used
+with function <a href=
+"../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a> and <a href=
+"../../Undocumented%20Functions/System%20Information/NtSetSystemInformation.html">
+NtSetSystemInformation</a>. For detailed informations see
+descriptions of structures associated with information classes
+below.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<h6><a name="SystemBasicInformation" id=
+"SystemBasicInformation"></a>
+</h6>
+
+<ul>
+<li>SystemBasicInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x02C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_BASIC_INFORMATION.html">SYSTEM_BASIC_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemProcessorInformation" id=
+"SystemProcessorInformation"></a>
+</h6>
+
+<ul>
+<li>SystemProcessorInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x00C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_PROCESSOR_INFORMATION.html">SYSTEM_PROCESSOR_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemPerformanceInformation" id=
+"SystemPerformanceInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPerformanceInformation 0x138 GET</li>
+</ul>
+
+<h6><a name="SystemTimeOfDayInformation" id=
+"SystemTimeOfDayInformation"></a>
+</h6>
+
+<ul>
+<li>SystemTimeOfDayInformation 0x020 GET</li>
+</ul>
+
+<h6><a name="SystemPathInformation" id="SystemPathInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPathInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <b>STATUS_NOT_IMPLEMENTED</b></td>
+</tr>
+</table>
+<br>
+
+<dl>
+<dd>System path is avaiable via structure <a href=
+"KUSER_SHARED_DATA.html">KUSER_SHARED_DATA</a></dd>
+</dl>
+
+<h6><a name="SystemProcessInformation" id=
+"SystemProcessInformation"></a>
+</h6>
+
+<ul>
+<li>SystemProcessInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x088+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_PROCESS_INFORMATION.html">SYSTEM_PROCESS_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemCallCountInformation" id=
+"SystemCallCountInformation"></a>
+</h6>
+
+<ul>
+<li>SystemCallCountInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x018+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_CALL_COUNT_INFORMATION.html">SYSTEM_CALL_COUNT_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemDeviceInformation" id=
+"SystemDeviceInformation"></a>
+</h6>
+
+<ul>
+<li>SystemDeviceInformation 0x018 GET
+SystemConfigurationInformation</li>
+</ul>
+
+<h6><a name="SystemProcessorPerformanceInformation" id=
+"SystemProcessorPerformanceInformation"></a>
+</h6>
+
+<ul>
+<li>SystemProcessorPerformanceInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x030</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION.html">SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemFlagsInformation" id=
+"SystemFlagsInformation"></a>
+</h6>
+
+<ul>
+<li>SystemFlagsInformation 0x004 GET SET</li>
+</ul>
+
+<h6><a name="SystemCallTimeInformation" id=
+"SystemCallTimeInformation"></a>
+</h6>
+
+<ul>
+<li>SystemCallTimeInformation NOT_IMPLEMENTED</li>
+</ul>
+
+<h6><a name="SystemModuleInformation" id=
+"SystemModuleInformation"></a>
+</h6>
+
+<ul>
+<li>SystemModuleInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x106+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_MODULE_INFORMATION.html">SYSTEM_MODULE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemLocksInformation" id=
+"SystemLocksInformation"></a>
+</h6>
+
+<ul>
+<li>SystemLocksInformation 0x028+ GET</li>
+</ul>
+
+<h6><a name="SystemStackTraceInformation" id=
+"SystemStackTraceInformation"></a>
+</h6>
+
+<ul>
+<li>SystemStackTraceInformation 0x05C GET</li>
+</ul>
+
+<h6><a name="SystemPagedPoolInformation" id=
+"SystemPagedPoolInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPagedPoolInformation 0x01C GET checked build only</li>
+</ul>
+
+<h6><a name="SystemNonPagedPoolInformation" id=
+"SystemNonPagedPoolInformation"></a>
+</h6>
+
+<ul>
+<li>SystemNonPagedPoolInformation 0x01C GET checked build only</li>
+</ul>
+
+<h6><a name="SystemHandleInformation" id=
+"SystemHandleInformation"></a>
+</h6>
+
+<ul>
+<li>SystemHandleInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x014+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_HANDLE_INFORMATION.html">SYSTEM_HANDLE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemObjectInformation" id=
+"SystemObjectInformation"></a>
+</h6>
+
+<ul>
+<li>SystemObjectInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x038+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_OBJECT_INFORMATION.html">SYSTEM_OBJECT_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemPageFileInformation" id=
+"SystemPageFileInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPageFileInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x018+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_PAGEFILE_INFORMATION.html">SYSTEM_PAGEFILE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemVdmInstemulInformation" id=
+"SystemVdmInstemulInformation"></a>
+</h6>
+
+<ul>
+<li>SystemVdmInstemulInformation 0x088 GET</li>
+</ul>
+
+<h6><a name="SystemVdmBopInformation" id=
+"SystemVdmBopInformation"></a>
+</h6>
+
+<ul>
+<li>SystemVdmBopInformation INVALID_INFO_CLASS</li>
+</ul>
+
+<h6><a name="SystemFileCacheInformation" id=
+"SystemFileCacheInformation"></a>
+</h6>
+
+<ul>
+<li>SystemFileCacheInformation 0x00C, 0x024 GET SET</li>
+</ul>
+
+<h6><a name="SystemPoolTagInformation" id=
+"SystemPoolTagInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPoolTagInformation 0x020+ GET</li>
+</ul>
+
+<h6><a name="SystemInterruptInformation" id=
+"SystemInterruptInformation"></a>
+</h6>
+
+<ul>
+<li>SystemInterruptInformation 0x018 GET</li>
+</ul>
+
+<h6><a name="SystemDpcBehaviorInformation" id=
+"SystemDpcBehaviorInformation"></a>
+</h6>
+
+<ul>
+<li>SystemDpcBehaviorInformation 0x014 GET SET</li>
+</ul>
+
+<h6><a name="SystemFullMemoryInformation" id=
+"SystemFullMemoryInformation"></a>
+</h6>
+
+<ul>
+<li>SystemFullMemoryInformation 0x014 GET checked build only</li>
+</ul>
+
+<h6><a name="SystemLoadGdiDriverInformation" id=
+"SystemLoadGdiDriverInformation"></a>
+</h6>
+
+<ul>
+<li>SystemLoadGdiDriverInformation 0x018 SET</li>
+</ul>
+
+<h6><a name="SystemUnloadGdiDriverInformation" id=
+"SystemUnloadGdiDriverInformation"></a>
+</h6>
+
+<ul>
+<li>SystemUnloadGdiDriverInformation 0x004 SET</li>
+</ul>
+
+<h6><a name="SystemTimeAdjustmentInformation" id=
+"SystemTimeAdjustmentInformation"></a>
+</h6>
+
+<ul>
+<li>SystemTimeAdjustmentInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x00C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_QUERY_TIME_ADJUST_INFORMATION.html">SYSTEM_QUERY_TIME_ADJUST_INFORMATION</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x008</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_SET_TIME_ADJUST_INFORMATION.html">SYSTEM_SET_TIME_ADJUST_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemSummaryMemoryInformation" id=
+"SystemSummaryMemoryInformation"></a>
+</h6>
+
+<ul>
+<li>SystemSummaryMemoryInformation 0x014 GET checked build
+only</li>
+</ul>
+
+<h6><a name="SystemNextEventIdInformation" id=
+"SystemNextEventIdInformation"></a>
+</h6>
+
+<ul>
+<li>SystemNextEventIdInformation ???? (C0000005) GET checked build
+only</li>
+</ul>
+
+<h6><a name="SystemEventIdsInformation" id=
+"SystemEventIdsInformation"></a>
+</h6>
+
+<ul>
+<li>SystemEventIdsInformation 0xB66 GET checked build only</li>
+</ul>
+
+<h6><a name="SystemCrashDumpInformation" id=
+"SystemCrashDumpInformation"></a>
+</h6>
+
+<ul>
+<li>SystemCrashDumpInformation 0x004 GET</li>
+</ul>
+
+<h6><a name="SystemExceptionInformation" id=
+"SystemExceptionInformation"></a>
+</h6>
+
+<ul>
+<li>SystemExceptionInformation 0x010 GET</li>
+</ul>
+
+<h6><a name="SystemCrashDumpStateInformation" id=
+"SystemCrashDumpStateInformation"></a>
+</h6>
+
+<ul>
+<li>SystemCrashDumpStateInformation 0x004 GET</li>
+</ul>
+
+<h6><a name="SystemKernelDebuggerInformation" id=
+"SystemKernelDebuggerInformation"></a>
+</h6>
+
+<ul>
+<li>SystemKernelDebuggerInformation 0x002 GET</li>
+</ul>
+
+<h6><a name="SystemContextSwitchInformation" id=
+"SystemContextSwitchInformation"></a>
+</h6>
+
+<ul>
+<li>SystemContextSwitchInformation 0x030 GET</li>
+</ul>
+
+<h6><a name="SystemRegistryQuotaInformation" id=
+"SystemRegistryQuotaInformation"></a>
+</h6>
+
+<ul>
+<li>SystemRegistryQuotaInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x00C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_REGISTRY_QUOTA_INFORMATION.html">SYSTEM_REGISTRY_QUOTA_INFORMATION</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x00C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_REGISTRY_QUOTA_INFORMATION.html">SYSTEM_REGISTRY_QUOTA_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemExtendServiceTableInformation" id=
+"SystemExtendServiceTableInformation"></a>
+</h6>
+
+<ul>
+<li>SystemExtendServiceTableInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x008</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"SYSTEM_LOAD_IMAGE_INFORMATION.html">SYSTEM_LOAD_IMAGE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="SystemPrioritySeperation" id=
+"SystemPrioritySeperation"></a>
+</h6>
+
+<ul>
+<li>SystemPrioritySeperation 0x004 SET</li>
+</ul>
+
+<h6><a name="SystemPlugPlayBusInformation" id=
+"SystemPlugPlayBusInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPlugPlayBusInformation NOT_IMPLEMENTED, GET</li>
+</ul>
+
+<h6><a name="SystemDockInformation" id="SystemDockInformation"></a>
+</h6>
+
+<ul>
+<li>SystemDockInformation NOT_IMPLEMENTED, GET</li>
+</ul>
+
+<h6><a name="SystemPowerInformation" id=
+"SystemPowerInformation"></a>
+</h6>
+
+<ul>
+<li>SystemPowerInformation INVALID_INFO_CLASS</li>
+</ul>
+
+<h6><a name="SystemProcessorSpeedInformation" id=
+"SystemProcessorSpeedInformation"></a>
+</h6>
+
+<ul>
+<li>SystemProcessorSpeedInformation INVALID_INFO_CLASS</li>
+</ul>
+
+<h6><a name="SystemCurrentTimeZoneInformation" id=
+"SystemCurrentTimeZoneInformation"></a>
+</h6>
+
+<ul>
+<li>SystemCurrentTimeZoneInformation 0x0AC GET</li>
+</ul>
+
+<h6><a name="SystemLookasideInformation" id=
+"SystemLookasideInformation"></a>
+</h6>
+
+<ul>
+<li>SystemLookasideInformation 0x000 GET<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/System%20Information/NtSetSystemInformation.html">
+NtSetSystemInformation</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

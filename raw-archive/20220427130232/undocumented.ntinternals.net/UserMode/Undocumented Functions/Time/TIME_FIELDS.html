@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d3c5fe08e7b9d23433749c08a25d31cd",petok:"adf08b1c56e1621a8ebeaa78db022f4618219c9a-1490408801-86400",zone:"ntinternals.net",rocket:"0",apps:{"ga_key":{"ua":"UA-69413230-3","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FTime%2FTIME_FIELDS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>TIME_FIELDS</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Time/TIME_FIELDS.html";
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-69413230-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">TIME_FIELDS</div>
+
+<div class="highlight">TIME_FIELDS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _TIME_FIELDS {
+<br>
+
+  USHORT                  <i><font color="blue">Year</font></i>;
+  USHORT                  <i><font color="blue">Month</font></i>;
+  USHORT                  <i><font color="blue">Day</font></i>;
+  USHORT                  <i><font color="blue">Hour</font></i>;
+  USHORT                  <i><font color="blue">Minute</font></i>;
+  USHORT                  <i><font color="blue">Second</font></i>;
+  USHORT                  <i><font color=
+"blue">Milliseconds</font></i>;
+  USHORT                  <i><font color="blue">Weekday</font></i>;
+
+} TIME_FIELDS, *PTIME_FIELDS;
+</pre>
+<br>
+<br>
+<br>
+<b><u>TIME_FIELDS</u></b> structure is <i>NTDLL</i> version of
+<i>Win 32 API</i> <u>SYSTEM_TIME</u>. It contains detailed
+information about date and time.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Year &nbsp;&nbsp;&nbsp;&nbsp;Year, in range <b><i>1601 -
+65535</i></b>.</li>
+</ul>
+
+<ul>
+<li>Month &nbsp;&nbsp;&nbsp;&nbsp;Month, in range <b><i>1 -
+12</i></b>.</li>
+</ul>
+
+<ul>
+<li>Day &nbsp;&nbsp;&nbsp;&nbsp;Day, in range <b><i>1 - 31</i></b>,
+dependly on <font class="ParamNameDesc">Month</font> member.</li>
+</ul>
+
+<ul>
+<li>Hour &nbsp;&nbsp;&nbsp;&nbsp;Hour, in range <b><i>0 -
+23</i></b>.</li>
+</ul>
+
+<ul>
+<li>Minute &nbsp;&nbsp;&nbsp;&nbsp;Minute, in range <b><i>0 -
+59</i></b>.</li>
+</ul>
+
+<ul>
+<li>Second &nbsp;&nbsp;&nbsp;&nbsp;Second, in range <b><i>0 -
+59</i></b>.</li>
+</ul>
+
+<ul>
+<li>Milliseconds &nbsp;&nbsp;&nbsp;&nbsp;Milliseconds, in range
+<b><i>0 - 1000</i></b>.</li>
+</ul>
+
+<ul>
+<li>Weekday &nbsp;&nbsp;&nbsp;&nbsp;Day of week, in range <b><i>0 -
+6</i></b>, where <i>0</i> means <font color="red">"Sunday"</font>,
+<i>1</i> means <font color="red">"Monday"</font> etc.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/Time/NtQuerySystemTime.html">NtQuerySystemTime</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/Time/NtSetSystemTime.html">NtSetSystemTime</a><br>
+
+</dd>
+
+<dd><a href="RtlTimeFieldsToTime.html">RtlTimeFieldsToTime</a><br>
+</dd>
+
+<dd><a href="RtlTimeToTimeFields.html">RtlTimeToTimeFields</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

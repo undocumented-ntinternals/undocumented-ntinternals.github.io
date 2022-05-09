@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d3c5fe08e7b9d23433749c08a25d31cd",petok:"6c6954ba8e566a8d60fbfff9d8f5229ce9518a79-1490406146-86400",zone:"ntinternals.net",rocket:"0",apps:{"ga_key":{"ua":"UA-69413230-3","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FTimer%2FNtCreateTimer.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateTimer</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Timer/NtCreateTimer.html";
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-69413230-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br>
+
+<div class="text">NtCreateTimer</div>
+
+<div class="highlight">NtCreateTimer</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateTimer(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">TimerHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i> OPTIONAL,
+  IN TIMER_TYPE           <i><font color=
+"blue">TimerType</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>TimerHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to Timer Object.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &nbsp;&nbsp;&nbsp;&nbsp;Access mask for
+<font class="ParamNameDesc">TimerHandle</font>. Can be set of (from
+<b><i>&lt;WinNT.h&gt;</i></b>):</li>
+</ul>
+
+<ul type="circle">
+<li><b>TIMER_QUERY_STATE</b>
+</li>
+
+<li><b>TIMER_MODIFY_STATE</b>
+</li>
+
+<li><b>TIMER_ALL_ACCESS</b>
+</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &nbsp;&nbsp;&nbsp;&nbsp;Optional name of Timer
+Object.</li>
+</ul>
+
+<ul>
+<li>TimerType &nbsp;&nbsp;&nbsp;&nbsp;Can be
+<b><u>NotificationTimer</u></b> or
+<b><u>SynchronizationTimer</u></b> (enumerated type definition from
+<b><i>&lt;ntdef.h&gt;</i></b>). See also <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Event/EVENT_TYPE.html">
+EVENT_TYPE</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Event/EVENT_TYPE.html">
+EVENT_TYPE</a><br>
+</dd>
+
+<dd><a href="NtOpenTimer.html">NtOpenTimer</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

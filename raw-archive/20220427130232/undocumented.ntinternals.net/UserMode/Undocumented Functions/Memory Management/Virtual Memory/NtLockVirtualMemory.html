@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtLockVirtualMemory.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtLockVirtualMemory</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtLockVirtualMemory.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 3 December</p>
+<br>
+
+<div class="text">NtLockVirtualMemory</div>
+
+<div class="highlight">NtLockVirtualMemory</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtLockVirtualMemory(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">ProcessHandle</font></i>,
+  IN PVOID                <i><font color=
+"blue">*BaseAddress</font></i>,
+  IN OUT PULONG           <i><font color=
+"blue">NumberOfBytesToLock</font></i>,
+  IN ULONG                <i><font color=
+"blue">LockOption</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>LockOption</h6>
+
+<pre>Can be one or both of following values:
+
+        #define <b>VM_LOCK_1</b>                <i>0x0001</i>   <i><font color="green">// This is used, when calling </font><b>KERNEL32.DLL</b></i> <b><u>VirtualLock</u></b><i> routine</i>
+    #define <b>VM_LOCK_2</b>                <i>0x0002</i>   <i><font color="green">// This require </font><b><i>SE_LOCK_MEMORY_NAME</i></b> privilege
+</i>
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privilege: <strong class="req">SE_LOCK_MEMORY_NAME</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"NtAllocateVirtualMemory.html">NtAllocateVirtualMemory</a><br>
+</dd>
+
+<dd><a href="NtFreeVirtualMemory.html">NtFreeVirtualMemory</a><br>
+</dd>
+
+<dd><a href=
+"NtUnlockVirtualMemory.html">NtUnlockVirtualMemory</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

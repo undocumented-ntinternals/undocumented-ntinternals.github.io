@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>OBJECT_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/type independed/object_information_class.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ftype%20independed%2Fobject_information_class.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ftype%20independed%2Fobject_information_class.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO4, 3O January</p>
+<br>
+
+<div class="text">OBJECT_INFORMATION_CLASS</div>
+
+<div class="highlight">OBJECT_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _OBJECT_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#objectbasicinformation">ObjectBasicInformation</a>,
+    <a href="#objectnameinformation">ObjectNameInformation</a>,
+    <a href="#objecttypeinformation">ObjectTypeInformation</a>,
+    <a href="#objectallinformation">ObjectAllInformation</a>,
+    <a href="#objectdatainformation">ObjectDataInformation</a>
+
+
+} OBJECT_INFORMATION_CLASS, *POBJECT_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+<br>
+<b><u>OBJECT_INFORMATION_CLASS</u></b> specifies a kind of
+information of any object available in caller context. It's used
+with functions <a href="ntqueryobject.html">NtQueryObject</a> and
+<a href=
+"ntsetinformationobject.html">NtSetInformationObject</a>.<br>
+
+<h6><a name="ObjectBasicInformation" id=
+"ObjectBasicInformation"></a>
+</h6>
+
+<ul>
+<li>ObjectBasicInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x038</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"object_basic_information.html">OBJECT_BASIC_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="ObjectNameInformation" id="ObjectNameInformation"></a>
+</h6>
+
+<ul>
+<li>ObjectNameInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"object_name_information.html">OBJECT_NAME_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="ObjectTypeInformation" id="ObjectTypeInformation"></a>
+</h6>
+
+<ul>
+<li>ObjectTypeInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x070</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"object_type_information.html">OBJECT_TYPE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="ObjectAllInformation" id="ObjectAllInformation"></a>
+</h6>
+
+<ul>
+<li>ObjectAllInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x04+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"object_all_information.html">OBJECT_ALL_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Size of buffer depends on number of objects opened by
+caller.</td>
+</tr>
+</table>
+
+<h6><a name="ObjectDataInformation" id="ObjectDataInformation"></a>
+</h6>
+
+<ul>
+<li>ObjectDataInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x02</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"object_data_information.html">OBJECT_DATA_INFORMATION</a></td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/type%20independed/ntqueryobject.html">
+NtQueryObject</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/type%20independed/ntsetinformationobject.html">
+NtSetInformationObject</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

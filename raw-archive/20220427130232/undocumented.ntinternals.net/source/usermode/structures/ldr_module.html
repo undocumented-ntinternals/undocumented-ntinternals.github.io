@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>LDR_MODULE</title>
+<link href="../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/structures/ldr_module.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fusermode%2Fstructures%2Fldr_module.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fusermode%2Fstructures%2Fldr_module.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 27 December</p>
+<br>
+
+<div class="text">LDR_MODULE</div>
+
+<div class="highlight">LDR_MODULE</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _LDR_MODULE {
+<br>
+
+  LIST_ENTRY              <i><font color=
+"blue">InLoadOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color=
+"blue">InMemoryOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color=
+"blue">InInitializationOrderModuleList</font></i>;
+  PVOID                   <i><font color=
+"blue">BaseAddress</font></i>;
+  PVOID                   <i><font color=
+"blue">EntryPoint</font></i>;
+  ULONG                   <i><font color=
+"blue">SizeOfImage</font></i>;
+  UNICODE_STRING          <i><font color=
+"blue">FullDllName</font></i>;
+  UNICODE_STRING          <i><font color=
+"blue">BaseDllName</font></i>;
+  ULONG                   <i><font color="blue">Flags</font></i>;
+  SHORT                   <i><font color=
+"blue">LoadCount</font></i>;
+  SHORT                   <i><font color=
+"blue">TlsIndex</font></i>;
+  LIST_ENTRY              <i><font color=
+"blue">HashTableEntry</font></i>;
+  ULONG                   <i><font color=
+"blue">TimeDateStamp</font></i>;
+
+} LDR_MODULE, *PLDR_MODULE;
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>InLoadOrderModuleList</h6>
+
+<pre>
+Pointers to previous and next <b><u>LDR_MODULE</u></b> in load order.
+
+</pre>
+
+<h6>InMemoryOrderModuleList</h6>
+
+<pre>
+Pointers to previous and next <b><u>LDR_MODULE</u></b> in memory placement order.
+
+</pre>
+
+<h6>InInitializationOrderModuleList</h6>
+
+<pre>
+Pointers to previous and next <b><u>LDR_MODULE</u></b> in initialization order.
+
+</pre>
+
+<h6>BaseAddress</h6>
+
+<pre>
+Module base address known also as <b>HMODULE</b>.
+
+</pre>
+
+<h6>EntryPoint</h6>
+
+<pre>
+Module entry point (address of initialization procedure).
+
+</pre>
+
+<h6>SizeOfImage</h6>
+
+<pre>
+Sum of all image's sections placed in memory. Rounded up to 4Kb (page size).
+
+</pre>
+
+<h6>FullDllName</h6>
+
+<pre>
+Path and name of module.
+
+</pre>
+
+<h6>BaseDllName</h6>
+
+<pre>
+Module name only.
+
+</pre>
+
+<h6>Flags</h6>
+
+<pre>
+
+</pre>
+
+<h6>LoadCount</h6>
+
+<pre>
+
+</pre>
+
+<h6>TlsIndex</h6>
+
+<pre>
+
+</pre>
+
+<h6>HashTableEntry</h6>
+
+<pre>
+<b>LIST_ENTRY</b> contains pointer to <em>LdrpHashTable</em>. Both prev and next values are the same.
+<em>LdrpHashTable</em> it is table of <b>LIST_ENTRY</b> structures points to <b><u>LDR_MODULE</u></b> for current process.
+
+</pre>
+
+<h6>TimeDateStamp</h6>
+
+<pre>
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../usermode/structures/peb_ldr_data.html">PEB_LDR_DATA</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

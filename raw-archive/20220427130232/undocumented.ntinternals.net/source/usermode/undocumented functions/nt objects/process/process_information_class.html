@@ -1,0 +1,1148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>PROCESS_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/process/process_information_class.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fprocess%2Fprocess_information_class.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fprocess%2Fprocess_information_class.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 6 March</p>
+<br>
+
+<div class="text">PROCESS_INFORMATION_CLASS</div>
+
+<div class="highlight">PROCESS_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _PROCESS_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#processbasicinformation">ProcessBasicInformation</a>,
+    <a href="#processquotalimits">ProcessQuotaLimits</a>,
+    <a href="#processiocounters">ProcessIoCounters</a>,
+    <a href="#processvmcounters">ProcessVmCounters</a>,
+    <a href="#processtimes">ProcessTimes</a>,
+    <a href="#processbasepriority">ProcessBasePriority</a>,
+    <a href="#processraisepriority">ProcessRaisePriority</a>,
+    <a href="#processdebugport">ProcessDebugPort</a>,
+    <a href="#processexceptionport">ProcessExceptionPort</a>,
+    <a href="#processaccesstoken">ProcessAccessToken</a>,
+    <a href="#processldtinformation">ProcessLdtInformation</a>,
+    <a href="#processldtsize">ProcessLdtSize</a>,
+    <a href=
+"#processdefaultharderrormode">ProcessDefaultHardErrorMode</a>,
+    <a href="#processioporthandlers">ProcessIoPortHandlers</a>,
+    <a href=
+"#processpooledusageandlimits">ProcessPooledUsageAndLimits</a>,
+    <a href="#processworkingsetwatch">ProcessWorkingSetWatch</a>,
+    <a href="#processusermodeiopl">ProcessUserModeIOPL</a>,
+    <a href=
+"#processenablealignmentfaultfixup">ProcessEnableAlignmentFaultFixup</a>,
+    <a href="#processpriorityclass">ProcessPriorityClass</a>,
+    <a href="#processwx86information">ProcessWx86Information</a>,
+    <a href="#processhandlecount">ProcessHandleCount</a>,
+    <a href="#processaffinitymask">ProcessAffinityMask</a>,
+    <a href="#processpriorityboost">ProcessPriorityBoost</a>,
+    <a href="#maxprocessinfoclass">MaxProcessInfoClass</a>
+
+
+} PROCESS_INFORMATION_CLASS, *PPROCESS_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+Enumeration type <b><u>PROCESS_INFORMATION_CLASS</u></b> is used in
+a calls to <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/process/ntqueryinformationprocess.html">
+NtQueryInformationProcess</a> and <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/process/ntsetinformationprocess.html">
+NtSetInformationProcess</a>. Structures for sending or receiving
+data are accessable below, separatelly for target information
+class.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<h6><a name="ProcessBasicInformation" id=
+"ProcessBasicInformation"></a>
+</h6>
+
+<ul>
+<li>ProcessBasicInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x018</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"process_basic_information.html">PROCESS_BASIC_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessQuotaLimits" id="ProcessQuotaLimits"></a>
+</h6>
+
+<ul>
+<li>ProcessQuotaLimits</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x020</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="quota_limits.html">QUOTA_LIMITS</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessIoCounters" id="ProcessIoCounters"></a>
+</h6>
+
+<ul>
+<li>ProcessIoCounters</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="io_counters.html">IO_COUNTERS</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessVmCounters" id="ProcessVmCounters"></a>
+</h6>
+
+<ul>
+<li>ProcessVmCounters</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x02C</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="vm_counters.html">VM_COUNTERS</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessTimes" id="ProcessTimes"></a>
+</h6>
+
+<ul>
+<li>ProcessTimes</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x020</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="kernel_user_times.html">KERNEL_USER_TIMES</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessBasePriority" id="ProcessBasePriority"></a>
+</h6>
+
+<ul>
+<li>ProcessBasePriority</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>KPRIORITY</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Base Priority.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessRaisePriority" id="ProcessRaisePriority"></a>
+</h6>
+
+<ul>
+<li>ProcessRaisePriority</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>KPRIORITY</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Raise Priority.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessDebugPort" id="ProcessDebugPort"></a>
+</h6>
+
+<ul>
+<li>ProcessDebugPort</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>HANDLE</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Queries and sets process' Debug Port. See also <a href=
+"ntcreateport.html">NtCreatePort</a>.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessExceptionPort" id="ProcessExceptionPort"></a>
+</h6>
+
+<ul>
+<li>ProcessExceptionPort</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>HANDLE</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Exception Port. See also <a href=
+"ntcreateport.html">NtCreatePort</a>.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessAccessToken" id="ProcessAccessToken"></a>
+</h6>
+
+<ul>
+<li>ProcessAccessToken</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x008</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"process_access_token.html">PROCESS_ACCESS_TOKEN</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessLdtInformation" id="ProcessLdtInformation"></a>
+</h6>
+
+<ul>
+<li>ProcessLdtInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="ldt_entry.html">LDT_ENTRY</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x010</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="ldt_entry.html">LDT_ENTRY</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessLdtSize" id="ProcessLdtSize"></a>
+</h6>
+
+<ul>
+<li>ProcessLdtSize</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>ULONG</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Local Description Table size. See also <a href=
+"ntsetldtentries.html">NtSetLdtEntries</a> function.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessDefaultHardErrorMode" id=
+"ProcessDefaultHardErrorMode"></a>
+</h6>
+
+<ul>
+<li>ProcessDefaultHardErrorMode</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>ULONG</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: ???</td>
+</tr>
+</table>
+
+<h6><a name="ProcessIoPortHandlers" id="ProcessIoPortHandlers"></a>
+</h6>
+
+<ul>
+<li>ProcessIoPortHandlers</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: ???</td>
+</tr>
+</table>
+
+<h6><a name="ProcessPooledUsageAndLimits" id=
+"ProcessPooledUsageAndLimits"></a>
+</h6>
+
+<ul>
+<li>ProcessPooledUsageAndLimits</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x024</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"pooled_usage_and_limits.html">POOLED_USAGE_AND_LIMITS</a></td>
+</tr>
+</table>
+
+<h6><a name="ProcessWorkingSetWatch" id=
+"ProcessWorkingSetWatch"></a>
+</h6>
+
+<ul>
+<li>ProcessWorkingSetWatch</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"process_ws_watch_information.html">PROCESS_WS_WATCH_INFORMATION</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>:</td>
+</tr>
+</table>
+
+<h6><a name="ProcessUserModeIOPL" id="ProcessUserModeIOPL"></a>
+</h6>
+
+<ul>
+<li>ProcessUserModeIOPL</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>???</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>:</td>
+</tr>
+</table>
+
+<h6><a name="ProcessEnableAlignmentFaultFixup" id=
+"ProcessEnableAlignmentFaultFixup"></a>
+</h6>
+
+<ul>
+<li>ProcessEnableAlignmentFaultFixup</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x001</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>BOOLEAN</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: If set, enables automatic fixup of memory dissaligments.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessPriorityClass" id="ProcessPriorityClass"></a>
+</h6>
+
+<ul>
+<li>ProcessPriorityClass</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x002</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>WORD</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Priority Class.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessWx86Information" id=
+"ProcessWx86Information"></a>
+</h6>
+
+<ul>
+<li>ProcessWx86Information</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>ULONG</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: ???</td>
+</tr>
+</table>
+
+<h6><a name="ProcessHandleCount" id="ProcessHandleCount"></a>
+</h6>
+
+<ul>
+<li>ProcessHandleCount</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>ULONG</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Retrives Handle's count for process.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessAffinityMask" id="ProcessAffinityMask"></a>
+</h6>
+
+<ul>
+<li>ProcessAffinityMask</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x0</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>KAFFINITY</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Sets process' Affinity Mask.</td>
+</tr>
+</table>
+
+<h6><a name="ProcessPriorityBoost" id="ProcessPriorityBoost"></a>
+</h6>
+
+<ul>
+<li>ProcessPriorityBoost</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x004</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer</dd>
+</dl>
+</td>
+<td>: <b>KPRIORITY</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Comment</dd>
+</dl>
+</td>
+<td>: Queries and sets process' Priority Boost.</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/process/ntqueryinformationprocess.html">
+NtQueryInformationProcess</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/process/ntsetinformationprocess.html">
+NtSetInformationProcess</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

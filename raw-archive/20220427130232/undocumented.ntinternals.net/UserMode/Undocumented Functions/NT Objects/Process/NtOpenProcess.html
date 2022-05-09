@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FProcess%2FNtOpenProcess.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtOpenProcess</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Process/NtOpenProcess.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 13 November</p>
+<br>
+
+<div class="text">NtOpenProcess</div>
+
+<div class="highlight">NtOpenProcess</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtOpenProcess(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">ProcessHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">AccessMask</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i>,
+  IN PCLIENT_ID           <i><font color=
+"blue">ClientId</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>AccessMask</h6>
+
+<pre>     
+</pre>
+
+<ul>
+<li>PROCESS_TERMINATE</li>
+
+<li>PROCESS_CREATE_THREAD</li>
+
+<li>PROCESS_SET_SESSIONID</li>
+
+<li>PROCESS_VM_OPERATION</li>
+
+<li>PROCESS_VM_READ</li>
+
+<li>PROCESS_VM_WRITE</li>
+
+<li>PROCESS_DUP_HANDLE</li>
+
+<li>PROCESS_CREATE_PROCESS</li>
+
+<li>PROCESS_SET_QUOTA</li>
+
+<li>PROCESS_SET_INFORMATION</li>
+
+<li>PROCESS_QUERY_INFORMATION</li>
+
+<li>PROCESS_ALL_ACCESS</li>
+</ul>
+
+<pre>
+</pre>
+
+<h6>ObjectAttributes</h6>
+
+<pre>For standard processes, all fields of <font class=
+"ParamNameDesc">ObjectAttributes</font> should be <i>NULL</i>.<br>
+</pre>
+
+<h6>ClientId</h6>
+
+<pre>Process id and thread id must be fill with valid values. <br>
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Process/NtCreateProcess.html">
+NtCreateProcess</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Process/NtTerminateProcess.html">
+NtTerminateProcess</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

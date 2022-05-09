@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/ntcreatefile.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntcreatefile.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntcreatefile.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 29 December</p>
+<br>
+
+<div class="text">NtCreateFile</div>
+
+<div class="highlight">NtCreateFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateFile(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">FileHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color=
+"blue">IoStatusBlock</font></i>,
+  IN PLARGE_INTEGER       <i><font color=
+"blue">AllocationSize</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">FileAttributes</font></i>,
+  IN ULONG                <i><font color=
+"blue">ShareAccess</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateDisposition</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateOptions</font></i>,
+  IN PVOID                <i><font color=
+"blue">EaBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">EaLength</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<i>(Avaiable also in 2000 DDK.)</i>
+<ul>
+<li>FileHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to File Object.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &nbsp;&nbsp;&nbsp;&nbsp;Access mask based on
+definitions in schema <b>FILE_*</b> from
+<b><i>&lt;WinNT.h&gt;</i></b>.</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &nbsp;&nbsp;&nbsp;&nbsp;Name of file to create
+(or open), optionally path in name string. You can also define root
+directory, security descriptor and attributes
+<b>OBJ_CASE_INSENSITIVE</b> and <b>OBJ_INHERIT</b>.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &nbsp;&nbsp;&nbsp;&nbsp;Pointer to
+<b>IO_STATUS_BLOCK</b> structure, that receive final status of
+function call. Can be one of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_CREATED</b>
+</li>
+
+<li><b>FILE_OPENED</b>
+</li>
+
+<li><b>FILE_OVERWRITTEN</b>
+</li>
+
+<li><b>FILE_SUPERSEDED</b>
+</li>
+
+<li><b>FILE_EXISTS</b>
+</li>
+
+<li><b>FILE_DOES_NOT_EXIST</b>
+</li>
+</ul>
+
+<ul>
+<li>AllocationSize &nbsp;&nbsp;&nbsp;&nbsp;File size after
+creation.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;Attributes for newly
+created file, as follows:</li>
+</ul>
+
+<ul>
+<li><b>FILE_ATTRIBUTE_READONLY</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_HIDDEN</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_SYSTEM</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_ARCHIVE</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_NORMAL</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_TEMPORARY</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_OFFLINE</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b>
+</li>
+</ul>
+
+<ul>
+<li>ShareAccess &nbsp;&nbsp;&nbsp;&nbsp;Specifies share method for
+opened object. Can be set to zero or any combination of flags:</li>
+</ul>
+
+<ul>
+<li><b>FILE_SHARE_READ</b>
+</li>
+
+<li><b>FILE_SHARE_WRITE</b>
+</li>
+
+<li><b>FILE_SHARE_DELETE</b>
+</li>
+</ul>
+
+<ul>
+<li>CreateDisposition &nbsp;&nbsp;&nbsp;&nbsp;Specifies disposition
+how to create or open object and can be one of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_SUPERSEDE</b> - If file exists, deletes it before
+creation of new one.</li>
+
+<li><b>FILE_OPEN</b> - Fails, if file not exists.</li>
+
+<li><b>FILE_CREATE</b> - Fails, if file exists.</li>
+
+<li><b>FILE_OPEN_IF</b> - If file exists, opens it. If not, creates
+new one and then open it.</li>
+
+<li><b>FILE_OVERWRITE</b> - If file not exists, create and open it.
+If exists, open them and reset content.</li>
+
+<li><b>FILE_OVERWRITE_IF</b> - As <b>FILE_OVERWRITE</b>, but fails
+if file not exists.</li>
+</ul>
+
+<ul>
+<li>CreateOptions &nbsp;&nbsp;&nbsp;&nbsp;Creation options.</li>
+</ul>
+
+<ul>
+<li>EaBuffer &nbsp;&nbsp;&nbsp;&nbsp;Buffer for Extended Attributes
+contains one or more of <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_full_ea_information.html">
+FILE_FULL_EA_INFORMATION</a> structures.</li>
+</ul>
+
+<ul>
+<li>EaLength &nbsp;&nbsp;&nbsp;&nbsp;Length of <font class=
+"ParamNameDesc">EaBuffer</font>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_full_ea_information.html">
+FILE_FULL_EA_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntdeletefile.html">
+NtDeleteFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntopenfile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntseteafile.html">
+NtSetEaFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

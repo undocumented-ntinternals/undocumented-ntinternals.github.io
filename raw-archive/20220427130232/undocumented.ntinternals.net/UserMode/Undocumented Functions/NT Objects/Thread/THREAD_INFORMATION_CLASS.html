@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FThread%2FTHREAD_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>THREAD_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Thread/THREAD_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 December</p>
+<br>
+
+<div class="text">THREAD_INFORMATION_CLASS</div>
+
+<div class="highlight">THREAD_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">typedef enum _THREAD_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#ThreadBasicInformation">ThreadBasicInformation</a>,
+    <a href="#ThreadTimes">ThreadTimes</a>,
+    <a href="#ThreadPriority">ThreadPriority</a>,
+    <a href="#ThreadBasePriority">ThreadBasePriority</a>,
+    <a href="#ThreadAffinityMask">ThreadAffinityMask</a>,
+    <a href=
+"#ThreadImpersonationToken">ThreadImpersonationToken</a>,
+    <a href=
+"#ThreadDescriptorTableEntry">ThreadDescriptorTableEntry</a>,
+    <a href=
+"#ThreadEnableAlignmentFaultFixup">ThreadEnableAlignmentFaultFixup</a>,
+    <a href="#ThreadEventPair">ThreadEventPair</a>,
+    <a href=
+"#ThreadQuerySetWin32StartAddress">ThreadQuerySetWin32StartAddress</a>,
+    <a href="#ThreadZeroTlsCell">ThreadZeroTlsCell</a>,
+    <a href="#ThreadPerformanceCount">ThreadPerformanceCount</a>,
+    <a href="#ThreadAmILastThread">ThreadAmILastThread</a>,
+    <a href="#ThreadIdealProcessor">ThreadIdealProcessor</a>,
+    <a href="#ThreadPriorityBoost">ThreadPriorityBoost</a>,
+    <a href=
+"#ThreadSetTlsArrayAddress">ThreadSetTlsArrayAddress</a>,
+    <a href="#ThreadIsIoPending">ThreadIsIoPending</a>,
+    <a href="#ThreadHideFromDebugger">ThreadHideFromDebugger</a>
+
+
+} THREAD_INFORMATION_CLASS, *PTHREAD_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+
+<pre>
+<b><u>THREAD_INFORMATION_CLASS</u></b> is information class enumerated type for use with <a href="NtQueryInformationThread.html">NtQueryInformationThread</a> and <a href="NtSetInformationThread.html">NtSetInformationThread</a> calls.
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+</pre>
+
+<h6><font color="#FF0000" size="12"><a name=
+"ThreadBasicInformation" id=
+"ThreadBasicInformation">ThreadBasicInformation</a></font>
+</h6>
+
+<pre><u>QUERY</u> mode only. Required result buffer length is <i><u>0x1C</u></i>. Output buffer points to <a href="../../../Structures/THREAD_BASIC_INFORMATION.html">THREAD_BASIC_INFORMATION</a> structure.
+
+</pre>
+
+<h6><a name="ThreadTimes" id="ThreadTimes">ThreadTimes</a>
+</h6>
+
+<pre><u>QUERY</u> mode only. Required result buffer length is <i><u>0x20</u></i>. Output buffer points to <a href="../../../Structures/THREAD_TIMES_INFORMATION.html">THREAD_TIMES_INFORMATION</a> structure.
+
+</pre>
+
+<h6><a name="ThreadPriority" id="ThreadPriority">ThreadPriority</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>ULONG</b> value.
+(called from <b><i>ADVAPI32.dll</i></b> performance functions)
+
+</pre>
+
+<h6><a name="ThreadBasePriority" id=
+"ThreadBasePriority">ThreadBasePriority</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>ULONG</b> value.
+(called from <b><i>Kernel32.dll</i></b> <b><u>SetThreadPriority</u></b>)
+
+</pre>
+
+<h6><a name="ThreadAffinityMask" id=
+"ThreadAffinityMask">ThreadAffinityMask</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>ULONG</b> value.
+(called from <b><i>Kernel32.dll</i></b> <b><u>SetThreadAffinityMask</u></b>)
+
+</pre>
+
+<h6><a name="ThreadImpersonationToken" id=
+"ThreadImpersonationToken">ThreadImpersonationToken</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>HANDLE</b> value.
+
+</pre>
+
+<h6><a name="ThreadDescriptorTableEntry" id=
+"ThreadDescriptorTableEntry">ThreadDescriptorTableEntry</a>
+</h6>
+
+<pre><u>QUERY</u> mode only. Required result buffer length is <i><u>0x0C</u></i>. Output buffer points to <b><u>DESCRIPTOR_TABLE_ENTRY</u></b> structure defined in <b><i>&lt;windbgkd.h&gt;</i></b> from <i>Win2000 DDK</i>.
+
+</pre>
+
+<h6><a name="ThreadEnableAlignmentFaultFixup" id=
+"ThreadEnableAlignmentFaultFixup">ThreadEnableAlignmentFaultFixup</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x01</u></i> bytes. Output buffer points to <b>BOOLEAN</b> value.
+
+</pre>
+
+<h6><a name="ThreadEventPair" id=
+"ThreadEventPair">ThreadEventPair</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>HANDLE</b> value to EventPair object.
+
+</pre>
+
+<h6><a name="ThreadQuerySetWin32StartAddress" id=
+"ThreadQuerySetWin32StartAddress">ThreadQuerySetWin32StartAddress</a>
+</h6>
+
+<pre><u>QUERY</u> and <u>SET</u> mode. Required buffer length is <i><u>0x04</u></i> bytes. Buffer points to <b>PVOID</b> value specifing address of thread start routine.
+
+</pre>
+
+<h6><a name="ThreadZeroTlsCell" id=
+"ThreadZeroTlsCell">ThreadZeroTlsCell</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>ULONG</b> value.
+(TlsID. Called from <b><i>Kernel32.dll</i></b> <b><u>TlsFree()</u></b>)
+
+</pre>
+
+<h6><a name="ThreadPerformanceCount" id=
+"ThreadPerformanceCount">ThreadPerformanceCount</a>
+</h6>
+
+<pre><u>QUERY</u> mode only. Required result buffer length is <i><u>0x08</u></i>. Output buffer points to <b>LARGE_INTEGER</b> value.
+
+</pre>
+
+<h6><a name="ThreadAmILastThread" id=
+"ThreadAmILastThread">ThreadAmILastThread</a>
+</h6>
+
+<pre><u>QUERY</u> mode only. Required result buffer length is <i><u>0x04</u></i>. Output buffer points to Win32 predefined <b>BOOL</b> value.
+
+</pre>
+
+<h6><a name="ThreadIdealProcessor" id=
+"ThreadIdealProcessor">ThreadIdealProcessor</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>ULONG</b> value.
+(Called from <b><i>Kernel32.dll</i></b> <b><u>SetThreadIdealProcessor()</u></b>)
+
+</pre>
+
+<h6><a name="ThreadPriorityBoost" id=
+"ThreadPriorityBoost">ThreadPriorityBoost</a>
+</h6>
+
+<pre><u>QUERY</u> and <u>SET</u> mode. Required buffer length is <i><u>0x04</u></i> bytes. Buffer points to <b>BOOLEAN</b> value.
+
+</pre>
+
+<h6><a name="ThreadSetTlsArrayAddress" id=
+"ThreadSetTlsArrayAddress">ThreadSetTlsArrayAddress</a>
+</h6>
+
+<pre><u>SET</u> mode only. Required information buffer size is <i><u>0x04</u></i> bytes. Output buffer points to <b>PVOID</b> value specifing <i>ThreadLocalStorage</i> array address.
+
+</pre>
+
+<h6><a name="ThreadIsIoPending" id=
+"ThreadIsIoPending">ThreadIsIoPending</a>
+</h6>
+
+<pre>Not implemented - <b>STATUS_INVALID_INFO_CLASS</b>.
+
+</pre>
+
+<h6><a name="ThreadHideFromDebugger" id=
+"ThreadHideFromDebugger">ThreadHideFromDebugger</a>
+</h6>
+
+<pre>Not implemented - <b>STATUS_INVALID_INFO_CLASS</b>.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"NtQueryInformationThread.html">NtQueryInformationThread</a><br>
+</dd>
+
+<dd><a href=
+"NtSetInformationThread.html">NtSetInformationThread</a><br>
+</dd>
+
+<dd><a href=
+"../../../Structures/THREAD_BASIC_INFORMATION.html">THREAD_BASIC_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href=
+"../../../Structures/THREAD_TIMES_INFORMATION.html">THREAD_TIMES_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

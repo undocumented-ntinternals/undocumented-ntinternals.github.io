@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateNamedPipeFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/ntcreatenamedpipefile.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntcreatenamedpipefile.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntcreatenamedpipefile.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1 March</p>
+<br>
+
+<div class="text">NtCreateNamedPipeFile</div>
+
+<div class="highlight">NtCreateNamedPipeFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateNamedPipeFile(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">NamedPipeFileHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color=
+"blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color=
+"blue">ShareAccess</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateDisposition</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateOptions</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">WriteModeMessage</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">ReadModeMessage</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">NonBlocking</font></i>,
+  IN ULONG                <i><font color=
+"blue">MaxInstances</font></i>,
+  IN ULONG                <i><font color=
+"blue">InBufferSize</font></i>,
+  IN ULONG                <i><font color=
+"blue">OutBufferSize</font></i>,
+  IN PLARGE_INTEGER       <i><font color=
+"blue">DefaultTimeOut</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCreateNamedPipeFile</u></b> creates <i>Named
+Pipe</i> File Object. Named Pipes are especial kind of files, so
+all functionality is provided with file's functions like <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntreadfile.html">
+NtReadFile</a>, <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntwritefile.html">
+NtWriteFile</a> etc.<br>
+Named Pipes are frequently used in NT system, for example as
+<b><i>stdin</i></b> and <b><i>stdout</i></b> handles.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>NamedPipeFileHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+pointer to <b>HANDLE</b> to Named Pipe.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &nbsp;&nbsp;&nbsp;&nbsp;Access rights for
+object's handle. Can be one or combination of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_READ_DATA</b>
+</li>
+
+<li><b>FILE_WRITE_DATA</b>
+</li>
+
+<li><b>FILE_CREATE_PIPE_INSTANCE</b>
+</li>
+
+<li><b>FILE_READ_ATTRIBUTES</b>
+</li>
+
+<li><b>FILE_WRITE_ATTRIBUTES</b>
+</li>
+
+<li><b>SYNCHRONIZE</b>
+</li>
+
+<li><b>READ_CONTROL</b>
+</li>
+
+<li><b>WRITE_OWNER</b>
+</li>
+
+<li><b>WRITE_DAC</b>
+</li>
+
+<li><b>ACCESS_SYSTEM_SECURITY</b>
+</li>
+</ul>
+Also combination of Generic rights are supported.
+
+<ul>
+<li>ObjectAttributes &nbsp;&nbsp;&nbsp;&nbsp;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure contains name of named pipe.
+Name must begin with <font color="red">"\??\PIPE\"</font> string,
+that is Symbolic Link to <i>NamedPipe</i> device object.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &nbsp;&nbsp;&nbsp;&nbsp;IO result of call.</li>
+</ul>
+
+<ul>
+<li>ShareAccess &nbsp;&nbsp;&nbsp;&nbsp;Can be combination of
+following:</li>
+</ul>
+
+<ul>
+<li><b>FILE_SHARE_READ</b>
+</li>
+
+<li><b>FILE_SHARE_WRITE</b>
+</li>
+
+<li><b>FILE_SHARE_DELETE</b>
+</li>
+</ul>
+
+<ul>
+<li>CreateDisposition &nbsp;&nbsp;&nbsp;&nbsp;Use
+<b>FILE_CREATE</b>, <b>FILE_OPEN</b> or <b>FILE_OPEN_IF</b>.</li>
+</ul>
+
+<ul>
+<li>CreateOptions &nbsp;&nbsp;&nbsp;&nbsp;See description of
+<a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a> for possible creation flags.</li>
+</ul>
+
+<ul>
+<li>WriteModeMessage &nbsp;&nbsp;&nbsp;&nbsp;If set, writing to
+created pipe are processed in <i>Message Mode</i>. If not, all
+writes are in <i>Byte Mode</i>.</li>
+</ul>
+
+<ul>
+<li>ReadModeMessage &nbsp;&nbsp;&nbsp;&nbsp;The same functionality
+as <font class="ParamNameDesc">WriteModeMessage</font> parameter,
+but for reading data.</li>
+</ul>
+
+<ul>
+<li>NonBlocking &nbsp;&nbsp;&nbsp;&nbsp;If set, all operations on
+created pipe are asynchronous.</li>
+</ul>
+
+<ul>
+<li>MaxInstances &nbsp;&nbsp;&nbsp;&nbsp;Maximum number of open
+handles for Named Pipe, or <b>FILE_PIPE_UNLIMITED_INSTANCES</b>
+constant.</li>
+</ul>
+
+<ul>
+<li>InBufferSize &nbsp;&nbsp;&nbsp;&nbsp;Input buffer size, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>OutBufferSize &nbsp;&nbsp;&nbsp;&nbsp;Output buffer size, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>DefaultTimeOut &nbsp;&nbsp;&nbsp;&nbsp;Pointer to
+<b>LARGE_INTEGER</b> value specifing pipe's time out, in
+<i>100-ns</i> units. Negative value means relative time.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_information_class.html">
+FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"file_pipe_information.html">FILE_PIPE_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"file_pipe_local_information.html">FILE_PIPE_LOCAL_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href=
+"file_pipe_remote_information.html">FILE_PIPE_REMOTE_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntfscontrolfile.html">
+NtFsControlFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntqueryinformationfile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntreadfile.html">
+NtReadFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntsetinformationfile.html">
+NtSetInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntwritefile.html">
+NtWriteFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

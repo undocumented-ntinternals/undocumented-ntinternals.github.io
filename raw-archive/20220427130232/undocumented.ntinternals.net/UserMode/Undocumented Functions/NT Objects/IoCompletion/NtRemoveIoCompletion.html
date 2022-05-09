@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FIoCompletion%2FNtRemoveIoCompletion.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtRemoveIoCompletion</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/IoCompletion/NtRemoveIoCompletion.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO7, 29 April</p>
+<br>
+
+<div class="text">NtRemoveIoCompletion</div>
+
+<div class="highlight">NtRemoveIoCompletion</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtRemoveIoCompletion(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">IoCompletionHandle</font></i>,
+  OUT PULONG              <i><font color=
+"blue">CompletionKey</font></i>,
+  OUT PULONG              <i><font color=
+"blue">CompletionValue</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color=
+"blue">IoStatusBlock</font></i>,
+  IN PLARGE_INTEGER       <i><font color=
+"blue">Timeout</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtRemoveIoCompletion</u></b> is one of waiting calls
+and it's finished when at least one completion record will be
+avaiable in specified <i>Io Completion</i> object. Records are
+added when I/O operation is finished, but previously <i>File</i>
+object have to been associated with <i>Io Completion</i>
+object.<br>
+Association between <i>File</i> and <i>Io Completion</i> objects is
+maded by call to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a> with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html#FileCompletionInformation">
+FileCompletionInformation</a> information class. Additionally every
+assotiation have to have unique <b>Key</b> defined. This
+functionality allows to use one <i>Io Completion</i> object with
+different <i>File</i> objects.<br>
+Every one <i>File</i> object can have only one <i>Io Completion</i>
+associated with it.<br>
+I/O operations won't be appended to <i>Io Completion</i> object
+except file operations will be called with non-zero value in
+<font class="ParamNameDesc">ApcContext</font> parameters.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>IoCompletionHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to
+previously created or opened <i>Io Completion</i> object.</li>
+</ul>
+
+<ul>
+<li>CompletionKey &nbsp;&nbsp;&nbsp;&nbsp;Receives completion
+<b>Key</b> informing about <i>File</i> object who finishes
+I/O.</li>
+</ul>
+
+<ul>
+<li>CompletionValue &nbsp;&nbsp;&nbsp;&nbsp;Value of <font class=
+"ParamNameDesc">ApcContext</font> file operation parameter.
+<font class="ParamNameDesc">CompletionValue</font> informs about
+operation finished.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &nbsp;&nbsp;&nbsp;&nbsp;Io status of finished
+operation.</li>
+</ul>
+
+<ul>
+<li>Timeout &nbsp;&nbsp;&nbsp;&nbsp;Optionally pointer to time out
+value.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"FILE_COMPLETION_INFORMATION.html">FILE_COMPLETION_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html">
+FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtCreateIoCompletion.html">
+NtCreateIoCompletion</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtOpenIoCompletion.html">
+NtOpenIoCompletion</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtReadFile.html">
+NtReadFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtSetIoCompletion.html">
+NtSetIoCompletion</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtWriteFile.html">
+NtWriteFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

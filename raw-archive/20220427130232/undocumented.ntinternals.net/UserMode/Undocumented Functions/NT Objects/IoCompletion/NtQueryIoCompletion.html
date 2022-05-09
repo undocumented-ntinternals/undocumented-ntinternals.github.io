@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FIoCompletion%2FNtQueryIoCompletion.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtQueryIoCompletion</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/IoCompletion/NtQueryIoCompletion.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">NtQueryIoCompletion</div>
+
+<div class="highlight">NtQueryIoCompletion</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryIoCompletion(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">IoCompletionHandle</font></i>,
+  IN IO_COMPLETION_INFORMATION_CLASS <i><font color=
+"blue">InformationClass</font></i>,
+  OUT PVOID               <i><font color=
+"blue">IoCompletionInformation</font></i>,
+  IN ULONG                <i><font color=
+"blue">InformationBufferLength</font></i>,
+  OUT PULONG              <i><font color=
+"blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtQueryIoCompletion</u></b> receives number of file
+operations pending on specified IO Completion Object.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>IoCompletionHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to IO
+Completion Object opened with <b>IO_COMPLETION_QUERY_STATE</b>
+access.</li>
+</ul>
+
+<ul>
+<li>InformationClass &nbsp;&nbsp;&nbsp;&nbsp;See <a href=
+"IO_COMPLETION_INFORMATION_CLASS.html">IO_COMPLETION_INFORMATION_CLASS</a>
+for possible values.</li>
+</ul>
+
+<ul>
+<li>IoCompletionInformation &nbsp;&nbsp;&nbsp;&nbsp;User's
+allocated buffer for result data.</li>
+</ul>
+
+<ul>
+<li>InformationBufferLength &nbsp;&nbsp;&nbsp;&nbsp;Length of
+<font class="ParamNameDesc">IoCompletionInformation</font> buffer,
+in bytes.</li>
+</ul>
+
+<ul>
+<li>RequiredLength &nbsp;&nbsp;&nbsp;&nbsp;Optionally receives
+required length of buffer.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"IO_COMPLETION_INFORMATION_CLASS.html">IO_COMPLETION_INFORMATION_CLASS</a><br>
+
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtCreateIoCompletion.html">
+NtCreateIoCompletion</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtOpenIoCompletion.html">
+NtOpenIoCompletion</a><br>
+</dd>
+
+<dd><a href=
+"NtRemoveIoCompletion.html">NtRemoveIoCompletion</a><br>
+</dd>
+
+<dd><a href="NtSetIoCompletion.html">NtSetIoCompletion</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

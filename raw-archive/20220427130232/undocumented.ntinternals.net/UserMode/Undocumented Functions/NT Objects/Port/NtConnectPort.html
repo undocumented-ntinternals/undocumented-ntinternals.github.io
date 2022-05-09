@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtConnectPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtConnectPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtConnectPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br>
+
+<div class="text">NtConnectPort</div>
+
+<div class="highlight">NtConnectPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtConnectPort(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">ClientPortHandle</font></i>,
+  IN PUNICODE_STRING      <i><font color=
+"blue">ServerPortName</font></i>,
+  IN PSECURITY_QUALITY_OF_SERVICE <i><font color=
+"blue">SecurityQos</font></i>,
+  IN OUT PLPC_SECTION_OWNER_MEMORY <i><font color=
+"blue">ClientSharedMemory</font></i> OPTIONAL,
+  OUT PLPC_SECTION_MEMORY <i><font color=
+"blue">ServerSharedMemory</font></i> OPTIONAL,
+  OUT PULONG              <i><font color=
+"blue">MaximumMessageLength</font></i> OPTIONAL,
+  IN                      <i><font color=
+"blue">ConnectionInfo</font></i> OPTIONAL,
+  IN PULONG               <i><font color=
+"blue">ConnectionInfoLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtConnectPort</u></b> is used by client process for establish
+<i>LPC</i> connection with Named Port's owner.
+
+<ul>
+<li>ClientPortHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to Port Object.</li>
+</ul>
+
+<ul>
+<li>ServerPortName &nbsp;&nbsp;&nbsp;&nbsp;Name of port to connect
+to.</li>
+</ul>
+
+<ul>
+<li>SecurityQos &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ClientSharedMemory &nbsp;&nbsp;&nbsp;&nbsp;Used when calling
+process created Section Object for shared memory. See <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a> for details.</li>
+</ul>
+
+<ul>
+<li>ServerSharedMemory &nbsp;&nbsp;&nbsp;&nbsp;Used when calling
+process didn't create Section Object. See <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a> for details.</li>
+</ul>
+
+<ul>
+<li>MaximumMessageLength &nbsp;&nbsp;&nbsp;&nbsp;Maximum
+communication message length. This value is calculated by server on
+port creation process (see <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a>).</li>
+</ul>
+
+<ul>
+<li>ConnectionInfo &nbsp;&nbsp;&nbsp;&nbsp;Pointer to RAW buffer
+containing information from client. That information is received by
+server through <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a> with <font class="ParamNameDesc">MessageType</font>
+field set to <b>LPC_CONNECTION_REQUEST</b>.</li>
+</ul>
+
+<ul>
+<li>ConnectionInfoLength &nbsp;&nbsp;&nbsp;&nbsp;Size of
+<font class="ParamNameDesc">ConnectionInfo</font> buffer, in
+bytes.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_OWNER_MEMORY.html">
+LPC_SECTION_OWNER_MEMORY</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCompleteConnectPort.html">
+NtCompleteConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

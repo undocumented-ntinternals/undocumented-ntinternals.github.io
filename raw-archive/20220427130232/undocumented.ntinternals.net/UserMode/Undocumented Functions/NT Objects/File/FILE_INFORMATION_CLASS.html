@@ -1,0 +1,1208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFILE_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>FILE_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FILE_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 14 February</p>
+<br>
+
+<div class="text">FILE_INFORMATION_CLASS</div>
+
+<div class="highlight">FILE_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _FILE_INFORMATION_CLASS {
+<br>
+
+
+    <a href=
+"#FileDirectoryInformation">FileDirectoryInformation=1</a>,
+    <a href=
+"#FileFullDirectoryInformation">FileFullDirectoryInformation</a>,
+    <a href=
+"#FileBothDirectoryInformation">FileBothDirectoryInformation</a>,
+    <a href="#FileBasicInformation">FileBasicInformation</a>,
+    <a href="#FileStandardInformation">FileStandardInformation</a>,
+    <a href="#FileInternalInformation">FileInternalInformation</a>,
+    <a href="#FileEaInformation">FileEaInformation</a>,
+    <a href="#FileAccessInformation">FileAccessInformation</a>,
+    <a href="#FileNameInformation">FileNameInformation</a>,
+    <a href="#FileRenameInformation">FileRenameInformation</a>,
+    <a href="#FileLinkInformation">FileLinkInformation</a>,
+    <a href="#FileNamesInformation">FileNamesInformation</a>,
+    <a href=
+"#FileDispositionInformation">FileDispositionInformation</a>,
+    <a href="#FilePositionInformation">FilePositionInformation</a>,
+    <a href="#FileFullEaInformation">FileFullEaInformation</a>,
+    <a href="#FileModeInformation">FileModeInformation</a>,
+    <a href=
+"#FileAlignmentInformation">FileAlignmentInformation</a>,
+    <a href="#FileAllInformation">FileAllInformation</a>,
+    <a href=
+"#FileAllocationInformation">FileAllocationInformation</a>,
+    <a href=
+"#FileEndOfFileInformation">FileEndOfFileInformation</a>,
+    <a href=
+"#FileAlternateNameInformation">FileAlternateNameInformation</a>,
+    <a href="#FileStreamInformation">FileStreamInformation</a>,
+    <a href="#FilePipeInformation">FilePipeInformation</a>,
+    <a href=
+"#FilePipeLocalInformation">FilePipeLocalInformation</a>,
+    <a href=
+"#FilePipeRemoteInformation">FilePipeRemoteInformation</a>,
+    <a href=
+"#FileMailslotQueryInformation">FileMailslotQueryInformation</a>,
+    <a href=
+"#FileMailslotSetInformation">FileMailslotSetInformation</a>,
+    <a href=
+"#FileCompressionInformation">FileCompressionInformation</a>,
+    <a href=
+"#FileCopyOnWriteInformation">FileCopyOnWriteInformation</a>,
+    <a href=
+"#FileCompletionInformation">FileCompletionInformation</a>,
+    <a href=
+"#FileMoveClusterInformation">FileMoveClusterInformation</a>,
+    <a href="#FileQuotaInformation">FileQuotaInformation</a>,
+    <a href=
+"#FileReparsePointInformation">FileReparsePointInformation</a>,
+    <a href=
+"#FileNetworkOpenInformation">FileNetworkOpenInformation</a>,
+    <a href="#FileObjectIdInformation">FileObjectIdInformation</a>,
+    <a href="#FileTrackingInformation">FileTrackingInformation</a>,
+    <a href=
+"#FileOleDirectoryInformation">FileOleDirectoryInformation</a>,
+    <a href=
+"#FileContentIndexInformation">FileContentIndexInformation</a>,
+    <a href=
+"#FileInheritContentIndexInformation">FileInheritContentIndexInformation</a>,
+    <a href="#FileOleInformation">FileOleInformation</a>,
+    <a href="#FileMaximumInformation">FileMaximumInformation</a>
+
+
+} FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+Enumeration type <b><u>FILE_INFORMATION_CLASS</u></b> defines
+informational classes for File Objects. It's used by <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a>, <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryDirectoryFile.html">
+NtQueryDirectoryFile</a> and <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a> functions.<br>
+<br>
+
+<hr width="40%">
+<br>
+<a name="FileDirectoryInformation" id=
+"FileDirectoryInformation"></a>
+<ul>
+<li>FileDirectoryInformation=1</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x48</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_DIRECTORY_INFORMATION.html">FILE_DIRECTORY_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryDirectoryFile.html">NtQueryDirectoryFile</a></td>
+</tr>
+</table>
+<a name="FileFullDirectoryInformation" id=
+"FileFullDirectoryInformation"></a>
+<ul>
+<li>FileFullDirectoryInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x48</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_FULL_DIR_INFORMATION.html">FILE_FULL_DIR_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryDirectoryFile.html">NtQueryDirectoryFile</a></td>
+</tr>
+</table>
+<a name="FileBothDirectoryInformation" id=
+"FileBothDirectoryInformation"></a>
+<ul>
+<li>FileBothDirectoryInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x48</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_BOTH_DIR_INFORMATION.html">FILE_BOTH_DIR_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryDirectoryFile.html">NtQueryDirectoryFile</a></td>
+</tr>
+</table>
+<a name="FileBasicInformation" id="FileBasicInformation"></a>
+<ul>
+<li>FileBasicInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x28</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_BASIC_INFORMATION.html">FILE_BASIC_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x28</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_BASIC_INFORMATION.html">FILE_BASIC_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileStandardInformation" id="FileStandardInformation"></a>
+<ul>
+<li>FileStandardInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x18</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_STANDARD_INFORMATION.html">FILE_STANDARD_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileInternalInformation" id="FileInternalInformation"></a>
+<ul>
+<li>FileInternalInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_INTERNAL_INFORMATION.html">FILE_INTERNAL_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileEaInformation" id="FileEaInformation"></a>
+<ul>
+<li>FileEaInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x04</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_EA_INFORMATION.html">FILE_EA_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileAccessInformation" id="FileAccessInformation"></a>
+<ul>
+<li>FileAccessInformation &nbsp;&nbsp;&nbsp;&nbsp;// 8
+FILE_ACCESS_INFORMATION 0x04 NtQueryInformationFile <a name=
+"FileNameInformation" id="FileNameInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileNameInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_NAME_INFORMATION.html">FILE_NAME_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileRenameInformation" id="FileRenameInformation"></a>
+<ul>
+<li>FileRenameInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x10</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_RENAME_INFORMATION.html">FILE_RENAME_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileLinkInformation" id="FileLinkInformation"></a>
+<ul>
+<li>FileLinkInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x10</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_LINK_INFORMATION.html">FILE_LINK_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileNamesInformation" id="FileNamesInformation"></a>
+<ul>
+<li>FileNamesInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x10</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_NAMES_INFORMATION.html">FILE_NAMES_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryDirectoryFile.html">NtQueryDirectoryFile</a></td>
+</tr>
+</table>
+<a name="FileDispositionInformation" id=
+"FileDispositionInformation"></a>
+<ul>
+<li>FileDispositionInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x01</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_DISPOSITION_INFORMATION.html">FILE_DISPOSITION_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FilePositionInformation" id="FilePositionInformation"></a>
+<ul>
+<li>FilePositionInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_POSITION_INFORMATION.html">FILE_POSITION_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_POSITION_INFORMATION.html">FILE_POSITION_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileFullEaInformation" id="FileFullEaInformation"></a>
+<ul>
+<li>FileFullEaInformation &nbsp;&nbsp;&nbsp;&nbsp;// 15
+FILE_FULL_EA_INFORMATION ??? ??? <a name="FileModeInformation" id=
+"FileModeInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileModeInformation &nbsp;&nbsp;&nbsp;&nbsp;// 16
+FILE_MODE_INFORMATION 0x04 0x04 NtQueryInformationFile <a name=
+"FileAlignmentInformation" id="FileAlignmentInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileAlignmentInformation &nbsp;&nbsp;&nbsp;&nbsp;// 17
+FILE_ALIGNMENT_INFORMATION 0x04 NtQueryInformationFile <a name=
+"FileAllInformation" id="FileAllInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileAllInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x68</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_ALL_INFORMATION.html">FILE_ALL_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileAllocationInformation" id=
+"FileAllocationInformation"></a>
+<ul>
+<li>FileAllocationInformation &nbsp;&nbsp;&nbsp;&nbsp;// 19
+FILE_ALLOCATION_INFORMATION 0x08 <a name="FileEndOfFileInformation"
+id="FileEndOfFileInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileEndOfFileInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_END_OF_FILE_INFORMATION.html">FILE_END_OF_FILE_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileAlternateNameInformation" id=
+"FileAlternateNameInformation"></a>
+<ul>
+<li>FileAlternateNameInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08+</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_NAME_INFORMATION.html">FILE_NAME_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileStreamInformation" id="FileStreamInformation"></a>
+<ul>
+<li>FileStreamInformation &nbsp;&nbsp;&nbsp;&nbsp;// 22
+FILE_STREAM_INFORMATION 0x20 NtQueryInformationFile <a name=
+"FilePipeInformation" id="FilePipeInformation"></a></li>
+</ul>
+
+<ul>
+<li>FilePipeInformation &nbsp;&nbsp;&nbsp;&nbsp;// 23
+FILE_PIPE_INFORMATION 0x08 0x08 NtQueryInformationFile <a name=
+"FilePipeLocalInformation" id="FilePipeLocalInformation"></a></li>
+</ul>
+
+<ul>
+<li>FilePipeLocalInformation &nbsp;&nbsp;&nbsp;&nbsp;// 24
+FILE_PIPE_LOCAL_INFORMATION 0x28 NtQueryInformationFile <a name=
+"FilePipeRemoteInformation" id=
+"FilePipeRemoteInformation"></a></li>
+</ul>
+
+<ul>
+<li>FilePipeRemoteInformation &nbsp;&nbsp;&nbsp;&nbsp;// 25
+FILE_PIPE_REMOTE_INFORMATION 0x10 0x10 NtQueryInformationFile
+<a name="FileMailslotQueryInformation" id=
+"FileMailslotQueryInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileMailslotQueryInformation &nbsp;&nbsp;&nbsp;&nbsp;// 26
+FILE_MAILSLOT_QUERY_INFORMATION 0x18 NtQueryInformationFile
+<a name="FileMailslotSetInformation" id=
+"FileMailslotSetInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileMailslotSetInformation &nbsp;&nbsp;&nbsp;&nbsp;// 27
+FILE_MAILSLOT_SET_INFORMATION 0x04 <a name=
+"FileCompressionInformation" id=
+"FileCompressionInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileCompressionInformation &nbsp;&nbsp;&nbsp;&nbsp;// 28
+FILE_COMPRESSION_INFORMATION 0x10 NtQueryInformationFile <a name=
+"FileCopyOnWriteInformation" id=
+"FileCopyOnWriteInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileCopyOnWriteInformation &nbsp;&nbsp;&nbsp;&nbsp;// 29
+FILE_COPY_ON_WRITE_INFORMATION 0x10 <a name=
+"FileCompletionInformation" id=
+"FileCompletionInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileCompletionInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_COMPLETION_INFORMATION.html">FILE_COMPLETION_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtSetInformationFile.html">NtSetInformationFile</a></td>
+</tr>
+</table>
+<a name="FileMoveClusterInformation" id=
+"FileMoveClusterInformation"></a>
+<ul>
+<li>FileMoveClusterInformation &nbsp;&nbsp;&nbsp;&nbsp;// 31 0x10
+<a name="FileQuotaInformation" id="FileQuotaInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileQuotaInformation &nbsp;&nbsp;&nbsp;&nbsp;// 32
+FILE_QUOTA_INFORMATION 0x10 -&gt; FileOleClassIdInformation
+<a name="FileReparsePointInformation" id=
+"FileReparsePointInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileReparsePointInformation &nbsp;&nbsp;&nbsp;&nbsp;// 33 0x08
+-&gt; FileOleStateBitsInformation <a name=
+"FileNetworkOpenInformation" id=
+"FileNetworkOpenInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileNetworkOpenInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td width="107">
+<dl>
+<dd>Buffer size</dd>
+</dl>
+</td>
+<td>: <i>0x38</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href=
+"FILE_NETWORK_OPEN_INFORMATION.html">FILE_NETWORK_OPEN_INFORMATION</a></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Function</dd>
+</dl>
+</td>
+<td>: <a href=
+"NtQueryInformationFile.html">NtQueryInformationFile</a></td>
+</tr>
+</table>
+<a name="FileObjectIdInformation" id="FileObjectIdInformation"></a>
+<ul>
+<li>FileObjectIdInformation &nbsp;&nbsp;&nbsp;&nbsp;// 35
+FILE_ATTRIBUTE_TAG_INFORMATION 0x14 <a name=
+"FileTrackingInformation" id="FileTrackingInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileTrackingInformation &nbsp;&nbsp;&nbsp;&nbsp;// 36 0xC0
+NtQueryInformationFile -&gt; FileOleAllInformation <a name=
+"FileOleDirectoryInformation" id=
+"FileOleDirectoryInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileOleDirectoryInformation &nbsp;&nbsp;&nbsp;&nbsp;// 37 0x60
+NtQueryDirectoryFile <a name="FileContentIndexInformation" id=
+"FileContentIndexInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileContentIndexInformation &nbsp;&nbsp;&nbsp;&nbsp;// 38 0x01
+<a name="FileInheritContentIndexInformation" id=
+"FileInheritContentIndexInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileInheritContentIndexInformation &nbsp;&nbsp;&nbsp;&nbsp;//
+39 0x01 <a name="FileOleInformation" id=
+"FileOleInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileOleInformation &nbsp;&nbsp;&nbsp;&nbsp;// 40 0x38 0x38
+NtQueryInformationFile <a name="FileMaximumInformation" id=
+"FileMaximumInformation"></a></li>
+</ul>
+
+<ul>
+<li>FileMaximumInformation &nbsp;&nbsp;&nbsp;&nbsp;// 41<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><strong>SysInternals</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryDirectoryFile.html">
+NtQueryDirectoryFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"NtQueryOleDirectoryFile.html">NtQueryOleDirectoryFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

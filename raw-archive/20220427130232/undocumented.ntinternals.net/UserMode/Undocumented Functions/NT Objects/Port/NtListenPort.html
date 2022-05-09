@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtListenPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtListenPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtListenPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br>
+
+<div class="text">NtListenPort</div>
+
+<div class="highlight">NtListenPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtListenPort(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">PortHandle</font></i>,
+  OUT PLPC_MESSAGE        <i><font color=
+"blue">ConnectionRequest</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtListenPort</u></b> is used by <i>LPC</i> server.
+
+<ul>
+<li>PortHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to named Port
+Object, created with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a>.</li>
+</ul>
+
+<ul>
+<li>ConnectionRequest &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+pointer to structure <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a> filled with incomming connection data.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Server process should create new thread starting from execution of
+<a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a>. Main thread should call
+<b><u>NtListenPort</u></b> again to make possible for other
+processes to connect to port.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtConnectPort.html">
+NtConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

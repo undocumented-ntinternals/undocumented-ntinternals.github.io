@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../index.html?page=UserMode%2FSECTION_OBJECT_POINTERS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>SECTION_OBJECT_POINTERS</title>
+<link href="../tomek.css" rel="stylesheet" type="text/css" title=
+"Style">
+<link rel="stylesheet" href="../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/SECTION_OBJECT_POINTERS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO6, 24 March</p>
+<br>
+
+<div class="text">SECTION_OBJECT_POINTERS</div>
+
+<div class="highlight">SECTION_OBJECT_POINTERS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _SECTION_OBJECT_POINTERS {
+<br>
+
+  PVOID                   <i><font color=
+"blue">DataSectionObject</font></i>;
+  PVOID                   <i><font color=
+"blue">SharedCacheMap</font></i>;
+  PVOID                   <i><font color=
+"blue">ImageSectionObject</font></i>;
+
+} SECTION_OBJECT_POINTERS, *PSECTION_OBJECT_POINTERS;
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>DataSectionObject &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>SharedCacheMap &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ImageSectionObject &nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Microsoft</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="MmCreateSection.html">MmCreateSection</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

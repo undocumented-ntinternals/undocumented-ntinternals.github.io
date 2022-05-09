@@ -1,0 +1,449 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <TITLE>NTAPI Undocumented Functions</TITLE>
+ <STYLE type="text/css">
+.t0i { font-family: Tahoma, Verdana; font-size: 11px; color: #000000; text-decoration: none } 
+.t0im { border: 0px; width: 16px; height: 16px; }
+</STYLE>
+<!-- image preload (by chm2web)-->
+<script type="text/JavaScript">
+ function PreloadImages()
+ { if (document.images) { var imgFiles = PreloadImages.arguments; var preloadArray = new Array();
+ for (var i=0; i<imgFiles.length; i++) { preloadArray[i] = new Image; preloadArray[i].src = "files/" + imgFiles[i] + ".gif"; } } } PreloadImages(0,1,11,2);
+</script>
+</HEAD>
+ <BODY bgcolor="white">
+    <script type="text/JavaScript" src="files/supply.js"></script>
+<script type="text/JavaScript" src="files/tree.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.jstree = new MakeTree(chmtop.c2wtopf.TITEMS, false);
+chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+</script>
+
+<noscript><a href="title.html" target="content">About</a><br>
+<b>UserMode</b><br>
+&nbsp;<b>NTDLL</b><br>
+&nbsp;&nbsp;<b>APC</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/APC/KiUserApcDispatcher.html" target="content">KiUserApcDispatcher</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/APC/NtAlertThread.html" target="content">NtAlertThread</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/APC/NtCallbackReturn.html" target="content">NtCallbackReturn</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/APC/NtQueueApcThread.html" target="content">NtQueueApcThread</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/APC/NtTestAlert.html" target="content">NtTestAlert</a><br>
+&nbsp;&nbsp;<b>Atoms</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/NtAddAtom.html" target="content">NtAddAtom</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/NtDeleteAtom.html" target="content">NtDeleteAtom</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/NtFindAtom.html" target="content">NtFindAtom</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/NtQueryInformationAtom.html" target="content">NtQueryInformationAtom</a><br>
+&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/ATOM_INFORMATION_CLASS.html" target="content">ATOM_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/ATOM_BASIC_INFORMATION.html" target="content">ATOM_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Atoms/ATOM_TABLE_INFORMATION.html" target="content">ATOM_TABLE_INFORMATION</a><br>
+&nbsp;&nbsp;<b>Compression</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Compression/RtlCompressBuffer.html" target="content">RtlCompressBuffer</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Compression/RtlDecompressBuffer.html" target="content">RtlDecompressBuffer</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Compression/RtlGetCompressionWorkSpaceSize.html" target="content">RtlGetCompressionWorkSpaceSize</a><br>
+&nbsp;&nbsp;<b>Debug</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Debug/DbgPrint.html" target="content">DbgPrint</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Debug/NtSystemDebugControl.html" target="content">NtSystemDebugControl</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Debug/RtlCaptureStackBackTrace.html" target="content">RtlCaptureStackBackTrace</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Debug/RtlGetCallersAddress.html" target="content">RtlGetCallersAddress</a><br>
+&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Debug/SYSDBG_COMMAND.html" target="content">SYSDBG_COMMAND</a><br>
+&nbsp;&nbsp;&nbsp;Structures<br>
+&nbsp;&nbsp;<b>Error Handling</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/NtDisplayString.html" target="content">NtDisplayString</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/NtRaiseException.html" target="content">NtRaiseException</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/NtRaiseHardError.html" target="content">NtRaiseHardError</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/NtSetDefaultHardErrorPort.html" target="content">NtSetDefaultHardErrorPort</a><br>
+&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/HARDERROR_RESPONSE.html" target="content">HARDERROR_RESPONSE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/HARDERROR_RESPONSE_OPTION.html" target="content">HARDERROR_RESPONSE_OPTION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Error/HARDERROR_MSG.html" target="content">HARDERROR_MSG</a><br>
+&nbsp;&nbsp;<b>Executable images</b><br>
+&nbsp;&nbsp;&nbsp;<b>Environment</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/NtQuerySystemEnvironmentValue.html" target="content">NtQuerySystemEnvironmentValue</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/NtSetSystemEnvironmentValue.html" target="content">NtSetSystemEnvironmentValue</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlCreateEnvironment.html" target="content">RtlCreateEnvironment</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlDestroyEnvironment.html" target="content">RtlDestroyEnvironment</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlExpandEnvironmentStrings_U.html" target="content">RtlExpandEnvironmentStrings_U</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlQueryEnvironmentVariable_U.html" target="content">RtlQueryEnvironmentVariable_U</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlSetCurrentEnvironment.html" target="content">RtlSetCurrentEnvironment</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/Environment/RtlSetEnvironmentVariable.html" target="content">RtlSetEnvironmentVariable</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrGetDllHandle.html" target="content">LdrGetDllHandle</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrGetProcedureAddress.html" target="content">LdrGetProcedureAddress</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrLoadDll.html" target="content">LdrLoadDll</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrQueryProcessModuleInformation.html" target="content">LdrQueryProcessModuleInformation</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrShutdownProcess.html" target="content">LdrShutdownProcess</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrShutdownThread.html" target="content">LdrShutdownThread</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/LdrUnloadDll.html" target="content">LdrUnloadDll</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/NtLoadDriver.html" target="content">NtLoadDriver</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/NtUnloadDriver.html" target="content">NtUnloadDriver</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/RtlImageNtHeader.html" target="content">RtlImageNtHeader</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/RtlImageRvaToVa.html" target="content">RtlImageRvaToVa</a><br>
+&nbsp;&nbsp;<b>Hardware Control</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Hardware/NtFlushWriteBuffer.html" target="content">NtFlushWriteBuffer</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Hardware/NtShutdownSystem.html" target="content">NtShutdownSystem</a><br>
+&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Hardware/SHUTDOWN_ACTION.html" target="content">SHUTDOWN_ACTION</a><br>
+&nbsp;&nbsp;&nbsp;Structures<br>
+&nbsp;&nbsp;<b>Locale</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Locale/NtQueryDefaultLocale.html" target="content">NtQueryDefaultLocale</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Locale/NtSetDefaultLocale.html" target="content">NtSetDefaultLocale</a><br>
+&nbsp;&nbsp;<b>Memory Management</b><br>
+&nbsp;&nbsp;&nbsp;<b>Heap Memory</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlAllocateHeap.html" target="content">RtlAllocateHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlCompactHeap.html" target="content">RtlCompactHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlCreateHeap.html" target="content">RtlCreateHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlDestroyHeap.html" target="content">RtlDestroyHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlEnumProcessHeaps.html" target="content">RtlEnumProcessHeaps</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlFreeHeap.html" target="content">RtlFreeHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlGetProcessHeaps.html" target="content">RtlGetProcessHeaps</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlLockHeap.html" target="content">RtlLockHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlProtectHeap.html" target="content">RtlProtectHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlReAllocateHeap.html" target="content">RtlReAllocateHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlSizeHeap.html" target="content">RtlSizeHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlUnlockHeap.html" target="content">RtlUnlockHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlValidateHeap.html" target="content">RtlValidateHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlValidateProcessHeaps.html" target="content">RtlValidateProcessHeaps</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlWalkHeap.html" target="content">RtlWalkHeap</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/RTL_HEAP_DEFINITION.html" target="content">RTL_HEAP_DEFINITION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Virtual Memory</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtAllocateVirtualMemory.html" target="content">NtAllocateVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtFlushVirtualMemory.html" target="content">NtFlushVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtFreeVirtualMemory.html" target="content">NtFreeVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtLockVirtualMemory.html" target="content">NtLockVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtProtectVirtualMemory.html" target="content">NtProtectVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtQueryVirtualMemory.html" target="content">NtQueryVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtReadVirtualMemory.html" target="content">NtReadVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtUnlockVirtualMemory.html" target="content">NtUnlockVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtWriteVirtualMemory.html" target="content">NtWriteVirtualMemory</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/MEMORY_INFORMATION_CLASS.html" target="content">MEMORY_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Memory Management/Virtual Memory/MEMORY_BASIC_INFORMATION.html" target="content">MEMORY_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;<b>NT Objects</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/OtherObjectFunctions.html" target="content">Other object functions</a><br>
+&nbsp;&nbsp;&nbsp;<b>Type Independed</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtClose.html" target="content">NtClose</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtDuplicateObject.html" target="content">NtDuplicateObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtMakeTemporaryObject.html" target="content">NtMakeTemporaryObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtQueryObject.html" target="content">NtQueryObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtSetInformationObject.html" target="content">NtSetInformationObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtSignalAndWaitForSingleObject.html" target="content">NtSignalAndWaitForSingleObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtWaitForMultipleObjects.html" target="content">NtWaitForMultipleObjects</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/NtWaitForSingleObject.html" target="content">NtWaitForSingleObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/OBJECT_INFORMATION_CLASS.html" target="content">OBJECT_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/OBJECT_WAIT_TYPE.html" target="content">OBJECT_WAIT_TYPE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/OBJECT_BASIC_INFORMATION.html" target="content">OBJECT_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Type independed/OBJECT_NAME_INFORMATION.html" target="content">OBJECT_NAME_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>DebugObject</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DebugObject/NtCreateDebugObject.html" target="content">NtCreateDebugObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DebugObject/NtDebugActiveProcess.html" target="content">NtDebugActiveProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DebugObject/NtRemoveProcessDebug.html" target="content">NtRemoveProcessDebug</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DebugObject/DBG_STATE.html" target="content">DBG_STATE</a><br>
+&nbsp;&nbsp;&nbsp;<b>DirectoryObject</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DirectoryObject/NtCreateDirectoryObject.html" target="content">NtCreateDirectoryObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DirectoryObject/NtOpenDirectoryObject.html" target="content">NtOpenDirectoryObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/DirectoryObject/NtQueryDirectoryObject.html" target="content">NtQueryDirectoryObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/OBJDIR_INFORMATION.html" target="content">OBJDIR_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Event</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtClearEvent.html" target="content">NtClearEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtCreateEvent.html" target="content">NtCreateEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtOpenEvent.html" target="content">NtOpenEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtPulseEvent.html" target="content">NtPulseEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtQueryEvent.html" target="content">NtQueryEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtResetEvent.html" target="content">NtResetEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtSetEvent.html" target="content">NtSetEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/NtSetEventBoostPriority.html" target="content">NtSetEventBoostPriority</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/EVENT_INFORMATION_CLASS.html" target="content">EVENT_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/EVENT_TYPE.html" target="content">EVENT_TYPE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Event/EVENT_BASIC_INFORMATION.html" target="content">EVENT_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>EventPair</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtCreateEventPair.html" target="content">NtCreateEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtOpenEventPair.html" target="content">NtOpenEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetHighEventPair.html" target="content">NtSetHighEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetHighWaitLowEventPair.html" target="content">NtSetHighWaitLowEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetHighWaitLowThread.html" target="content">NtSetHighWaitLowThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetLowEventPair.html" target="content">NtSetLowEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetLowWaitHighEventPair.html" target="content">NtSetLowWaitHighEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtSetLowWaitHighThread.html" target="content">NtSetLowWaitHighThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtWaitHighEventPair.html" target="content">NtWaitHighEventPair</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/EventPair/NtWaitLowEventPair.html" target="content">NtWaitLowEventPair</a><br>
+&nbsp;&nbsp;&nbsp;<b>File</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtCancelIoFile.html" target="content">NtCancelIoFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtCreateFile.html" target="content">NtCreateFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtCreateMailslotFile.html" target="content">NtCreateMailslotFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtCreateNamedPipeFile.html" target="content">NtCreateNamedPipeFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtCreatePagingFile.html" target="content">NtCreatePagingFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtDeleteFile.html" target="content">NtDeleteFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtDeviceIoControlFile.html" target="content">NtDeviceIoControlFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtFlushBuffersFile.html" target="content">NtFlushBuffersFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtFsControlFile.html" target="content">NtFsControlFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtLockFile.html" target="content">NtLockFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtNotifyChangeDirectoryFile.html" target="content">NtNotifyChangeDirectoryFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtOpenFile.html" target="content">NtOpenFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryAttributesFile.html" target="content">NtQueryAttributesFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryDirectoryFile.html" target="content">NtQueryDirectoryFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryEaFile.html" target="content">NtQueryEaFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryFullAttributesFile.html" target="content">NtQueryFullAttributesFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryInformationFile.html" target="content">NtQueryInformationFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryOleDirectoryFile.html" target="content">NtQueryOleDirectoryFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtQueryVolumeInformationFile.html" target="content">NtQueryVolumeInformationFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtReadFile.html" target="content">NtReadFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtReadFileScatter.html" target="content">NtReadFileScatter</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtSetEaFile.html" target="content">NtSetEaFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtSetInformationFile.html" target="content">NtSetInformationFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtSetVolumeInformationFile.html" target="content">NtSetVolumeInformationFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtUnlockFile.html" target="content">NtUnlockFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtWriteFile.html" target="content">NtWriteFile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/NtWriteFileGather.html" target="content">NtWriteFileGather</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_INFORMATION_CLASS.html" target="content">FILE_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FS_INFORMATION_CLASS.html" target="content">FS_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_BASIC_INFORMATION.html" target="content">FILE_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_BOTH_DIR_INFORMATION.html" target="content">FILE_BOTH_DIR_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_DIRECTORY_INFORMATION.html" target="content">FILE_DIRECTORY_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_ATTRIBUTE_INFORMATION.html" target="content">FILE_FS_ATTRIBUTE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_CONTROL_INFORMATION.html" target="content">FILE_FS_CONTROL_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_DEVICE_INFORMATION.html" target="content">FILE_FS_DEVICE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_LABEL_INFORMATION.html" target="content">FILE_FS_LABEL_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_SIZE_INFORMATION.html" target="content">FILE_FS_SIZE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FS_VOLUME_INFORMATION.html" target="content">FILE_FS_VOLUME_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FULL_DIR_INFORMATION.html" target="content">FILE_FULL_DIR_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_FULL_EA_INFORMATION.html" target="content">FILE_FULL_EA_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_GET_EA_INFORMATION.html" target="content">FILE_GET_EA_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_INTERNAL_INFORMATION.html" target="content">FILE_INTERNAL_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_LINK_INFORMATION.html" target="content">FILE_LINK_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_NAME_INFORMATION.html" target="content">FILE_NAME_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_NAMES_INFORMATION.html" target="content">FILE_NAMES_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_NETWORK_OPEN_INFORMATION.html" target="content">FILE_NETWORK_OPEN_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_NOTIFY_INFORMATION.html" target="content">FILE_NOTIFY_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/File/FILE_RENAME_INFORMATION.html" target="content">FILE_RENAME_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>IoCompletion</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/NtCreateIoCompletion.html" target="content">NtCreateIoCompletion</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/NtOpenIoCompletion.html" target="content">NtOpenIoCompletion</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/NtQueryIoCompletion.html" target="content">NtQueryIoCompletion</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/NtRemoveIoCompletion.html" target="content">NtRemoveIoCompletion</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/NtSetIoCompletion.html" target="content">NtSetIoCompletion</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/IO_COMPLETION_INFORMATION_CLASS.html" target="content">IO_COMPLETION_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/IoCompletion/IO_COMPLETION_BASIC_INFORMATION.html" target="content">IO_COMPLETION_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Key</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtCompactKeys.html" target="content">NtCompactKeys</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtCompressKey.html" target="content">NtCompressKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtCreateKey.html" target="content">NtCreateKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtDeleteKey.html" target="content">NtDeleteKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtDeleteValueKey.html" target="content">NtDeleteValueKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtEnumerateKey.html" target="content">NtEnumerateKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtEnumerateValueKey.html" target="content">NtEnumerateValueKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtFlushKey.html" target="content">NtFlushKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtLoadKey.html" target="content">NtLoadKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtLoadKey2.html" target="content">NtLoadKey2</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtNotifyChangeKey.html" target="content">NtNotifyChangeKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtOpenKey.html" target="content">NtOpenKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtQueryKey.html" target="content">NtQueryKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtQueryMultipleValueKey.html" target="content">NtQueryMultipleValueKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtQueryValueKey.html" target="content">NtQueryValueKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtReplaceKey.html" target="content">NtReplaceKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtRestoreKey.html" target="content">NtRestoreKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtSaveKey.html" target="content">NtSaveKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtSetInformationKey.html" target="content">NtSetInformationKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtSetValueKey.html" target="content">NtSetValueKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/NtUnloadKey.html" target="content">NtUnloadKey</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/RtlFormatCurrentUserKeyPath.html" target="content">RtlFormatCurrentUserKeyPath</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enumerations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Key/KEY_MULTIPLE_VALUE_INFORMATION.html" target="content">KEY_MULTIPLE_VALUE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>KeyedEvent</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/KeyedEvent/NtCreateKeyedEvent.html" target="content">NtCreateKeyedEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/KeyedEvent/NtOpenKeyedEvent.html" target="content">NtOpenKeyedEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/KeyedEvent/NtReleaseKeyedEvent.html" target="content">NtReleaseKeyedEvent</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/KeyedEvent/NtWaitForKeyedEvent.html" target="content">NtWaitForKeyedEvent</a><br>
+&nbsp;&nbsp;&nbsp;<b>Mutant</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Mutant/NtCreateMutant.html" target="content">NtCreateMutant</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Mutant/NtOpenMutant.html" target="content">NtOpenMutant</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Mutant/NtQueryMutant.html" target="content">NtQueryMutant</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Mutant/NtReleaseMutant.html" target="content">NtReleaseMutant</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enumerations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/MUTANT_BASIC_INFORMATION.html" target="content">MUTANT_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Port</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtAcceptConnectPort.html" target="content">NtAcceptConnectPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtCompleteConnectPort.html" target="content">NtCompleteConnectPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtConnectPort.html" target="content">NtConnectPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtCreatePort.html" target="content">NtCreatePort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtImpersonateClientOfPort.html" target="content">NtImpersonateClientOfPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtListenPort.html" target="content">NtListenPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtQueryInformationPort.html" target="content">NtQueryInformationPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtReadRequestData.html" target="content">NtReadRequestData</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtReplyPort.html" target="content">NtReplyPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtReplyWaitReceivePort.html" target="content">NtReplyWaitReceivePort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtReplyWaitReplyPort.html" target="content">NtReplyWaitReplyPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtRequestPort.html" target="content">NtRequestPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtRequestWaitReplyPort.html" target="content">NtRequestWaitReplyPort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/NtWriteRequestData.html" target="content">NtWriteRequestData</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/PORT_INFORMATION_CLASS.html" target="content">PORT_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/LPC_MESSAGE.html" target="content">LPC_MESSAGE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/LPC_SECTION_MEMORY.html" target="content">LPC_SECTION_MEMORY</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/LPC_SECTION_OWNER_MEMORY.html" target="content">LPC_SECTION_OWNER_MEMORY</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Port/LPC_TERMINATION_MESSAGE.html" target="content">LPC_TERMINATION_MESSAGE</a><br>
+&nbsp;&nbsp;&nbsp;<b>Process</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtCreateProcess.html" target="content">NtCreateProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtFlushInstructionCache.html" target="content">NtFlushInstructionCache</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtOpenProcess.html" target="content">NtOpenProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtQueryInformationProcess.html" target="content">NtQueryInformationProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtSetInformationProcess.html" target="content">NtSetInformationProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/NtTerminateProcess.html" target="content">NtTerminateProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/RtlCreateUserProcess.html" target="content">RtlCreateUserProcess</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/PROCESS_INFORMATION_CLASS.html" target="content">PROCESS_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/PEB.html" target="content">PEB</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/PEB_FREE_BLOCK.html" target="content">PEB_FREE_BLOCK</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/PEB_LDR_DATA.html" target="content">PEB_LDR_DATA</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/POOLED_USAGE_AND_LIMITS.html" target="content">POOLED_USAGE_AND_LIMITS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/PROCESS_ACCESS_TOKEN.html" target="content">PROCESS_ACCESS_TOKEN</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Process/PROCESS_WS_WATCH_INFORMATION.html" target="content">PROCESS_WS_WATCH_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/RTL_USER_PROCESS_PARAMETERS.html" target="content">RTL_USER_PROCESS_PARAMETERS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/RTL_USER_PROCESS_INFORMATION.html" target="content">RTL_USER_PROCESS_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/RTL_DRIVE_LETTER_CURDIR.html" target="content">RTL_DRIVE_LETTER_CURDIR</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/LDR_MODULE.html" target="content">LDR_MODULE</a><br>
+&nbsp;&nbsp;&nbsp;<b>Profile</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/NtCreateProfile.html" target="content">NtCreateProfile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/NtQueryIntervalProfile.html" target="content">NtQueryIntervalProfile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/NtSetIntervalProfile.html" target="content">NtSetIntervalProfile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/NtStartProfile.html" target="content">NtStartProfile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/NtStopProfile.html" target="content">NtStopProfile</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Profile/KPROFILE_SOURCE.html" target="content">KPROFILE_SOURCE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Structures<br>
+&nbsp;&nbsp;&nbsp;<b>Section</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtCreateSection.html" target="content">NtCreateSection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtExtendSection.html" target="content">NtExtendSection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtMapViewOfSection.html" target="content">NtMapViewOfSection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtOpenSection.html" target="content">NtOpenSection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtQuerySection.html" target="content">NtQuerySection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/NtUnmapViewOfSection.html" target="content">NtUnmapViewOfSection</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/SECTION_INFORMATION_CLASS.html" target="content">SECTION_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Section/SECTION_INHERIT.html" target="content">SECTION_INHERIT</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/SECTION_BASIC_INFORMATION.html" target="content">SECTION_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/SECTION_IMAGE_INFORMATION.html" target="content">SECTION_IMAGE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Semaphore</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/NtCreateSemaphore.html" target="content">NtCreateSemaphore</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/NtOpenSemaphore.html" target="content">NtOpenSemaphore</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/NtQuerySemaphore.html" target="content">NtQuerySemaphore</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/NtReleaseSemaphore.html" target="content">NtReleaseSemaphore</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/SEMAPHORE_INFORMATION_CLASS.html" target="content">SEMAPHORE_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Semaphore/SEMAPHORE_BASIC_INFORMATION.html" target="content">SEMAPHORE_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>SymbolicLink</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Symbolic Link/NtCreateSymbolicLinkObject.html" target="content">NtCreateSymbolicLinkObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Symbolic Link/NtOpenSymbolicLinkObject.html" target="content">NtOpenSymbolicLinkObject</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Symbolic Link/NtQuerySymbolicLinkObject.html" target="content">NtQuerySymbolicLinkObject</a><br>
+&nbsp;&nbsp;&nbsp;<b>Thread</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Thread Context</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/Thread Context/NtGetContextThread.html" target="content">NtGetContextThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/Thread Context/NtSetContextThread.html" target="content">NtSetContextThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/Thread Context/RtlInitializeContext.html" target="content">RtlInitializeContext</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtAlertResumeThread.html" target="content">NtAlertResumeThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtContinue.html" target="content">NtContinue</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtCreateThread.html" target="content">NtCreateThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtCurrentTeb.html" target="content">NtCurrentTeb</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtDelayExecution.html" target="content">NtDelayExecution</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtImpersonateThread.html" target="content">NtImpersonateThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtOpenThread.html" target="content">NtOpenThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtQueryInformationThread.html" target="content">NtQueryInformationThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtRegisterThreadTerminatePort.html" target="content">NtRegisterThreadTerminatePort</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtResumeThread.html" target="content">NtResumeThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtSetInformationThread.html" target="content">NtSetInformationThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtSuspendThread.html" target="content">NtSuspendThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtTerminateThread.html" target="content">NtTerminateThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/NtYieldExecution.html" target="content">NtYieldExecution</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Executable Images/RtlCreateUserThread.html" target="content">RtlCreateUserThread</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/THREAD_INFORMATION_CLASS.html" target="content">THREAD_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/INITIAL_TEB.html" target="content">INITIAL_TEB</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Thread/TEB.html" target="content">TEB</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/THREAD_BASIC_INFORMATION.html" target="content">THREAD_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/THREAD_TIMES_INFORMATION.html" target="content">THREAD_TIMES_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Timer</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/NtCancelTimer.html" target="content">NtCancelTimer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/NtCreateTimer.html" target="content">NtCreateTimer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/NtOpenTimer.html" target="content">NtOpenTimer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/NtQueryTimer.html" target="content">NtQueryTimer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/NtSetTimer.html" target="content">NtSetTimer</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/TIMER_INFORMATION_CLASS.html" target="content">TIMER_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Timer/TIMER_BASIC_INFORMATION.html" target="content">TIMER_BASIC_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;<b>Token</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtAdjustGroupsToken.html" target="content">NtAdjustGroupsToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtAdjustPrivilegesToken.html" target="content">NtAdjustPrivilegesToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtCreateToken.html" target="content">NtCreateToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtDuplicateToken.html" target="content">NtDuplicateToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtOpenProcessToken.html" target="content">NtOpenProcessToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtOpenThreadToken.html" target="content">NtOpenThreadToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtQueryInformationToken.html" target="content">NtQueryInformationToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtSetInformationToken.html" target="content">NtSetInformationToken</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enumerations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Structures<br>
+&nbsp;&nbsp;<b>Security</b><br>
+&nbsp;&nbsp;&nbsp;<b>Audit Alarms</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtAccessCheckAndAuditAlarm.html" target="content">NtAccessCheckAndAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtCloseObjectAuditAlarm.html" target="content">NtCloseObjectAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtDeleteObjectAuditAlarm.html" target="content">NtDeleteObjectAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtOpenObjectAuditAlarm.html" target="content">NtOpenObjectAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtPrivilegeObjectAuditAlarm.html" target="content">NtPrivilegeObjectAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtPrivilegedServiceAuditAlarm.html" target="content">NtPrivilegedServiceAuditAlarm</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtAccessCheck.html" target="content">NtAccessCheck</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtAllocateLocallyUniqueId.html" target="content">NtAllocateLocallyUniqueId</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtAllocateUuids.html" target="content">NtAllocateUuids</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/NT Objects/Token/NtPrivilegeCheck.html" target="content">NtPrivilegeCheck</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtQuerySecurityObject.html" target="content">NtQuerySecurityObject</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Security/NtSetSecurityObject.html" target="content">NtSetSecurityObject</a><br>
+&nbsp;&nbsp;<b>System Information</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/NtQuerySystemInformation.html" target="content">NtQuerySystemInformation</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/NtSetSystemInformation.html" target="content">NtSetSystemInformation</a><br>
+&nbsp;&nbsp;&nbsp;<b>Enumerations</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/SYSTEM_INFORMATION_CLASS.html" target="content">SYSTEM_INFORMATION_CLASS</a><br>
+&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/SYSTEM_MODULE.html" target="content">SYSTEM_MODULE</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/SYSTEM_MODULE_INFORMATION.html" target="content">SYSTEM_MODULE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/Structures/SYSTEM_PAGEFILE_INFORMATION.html" target="content">SYSTEM_PAGEFILE_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/Structures/SYSTEM_PROCESS_INFORMATION.html" target="content">SYSTEM_PROCESS_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Structures/SYSTEM_REGISTRY_QUOTA_INFORMATION.html" target="content">SYSTEM_REGISTRY_QUOTA_INFORMATION</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/System Information/Structures/SYSTEM_THREAD.html" target="content">SYSTEM_THREAD</a><br>
+&nbsp;&nbsp;<b>Time</b><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtGetTickCount.html" target="content">NtGetTickCount</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtQueryPerformanceCounter.html" target="content">NtQueryPerformanceCounter</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtQuerySystemTime.html" target="content">NtQuerySystemTime</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtQueryTimerResolution.html" target="content">NtQueryTimerResolution</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtSetSystemTime.html" target="content">NtSetSystemTime</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/NtSetTimerResolution.html" target="content">NtSetTimerResolution</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/RtlTimeFieldsToTime.html" target="content">RtlTimeFieldsToTime</a><br>
+&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/RtlTimeToTimeFields.html" target="content">RtlTimeToTimeFields</a><br>
+&nbsp;&nbsp;&nbsp;Enumerations<br>
+&nbsp;&nbsp;&nbsp;<b>Structures</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="UserMode/Undocumented Functions/Time/TIME_FIELDS.html" target="content">TIME_FIELDS</a><br>
+</noscript>
+ </BODY>
+</HTML>

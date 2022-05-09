@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FSection%2FNtMapViewOfSection.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtMapViewOfSection</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Section/NtMapViewOfSection.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 12 October</p>
+<br>
+
+<div class="text">NtMapViewOfSection</div>
+
+<div class="highlight">NtMapViewOfSection</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtMapViewOfSection(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">SectionHandle</font></i>,
+  IN HANDLE               <i><font color=
+"blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color=
+"blue">*BaseAddress</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">ZeroBits</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">CommitSize</font></i>,
+  IN OUT PLARGE_INTEGER   <i><font color=
+"blue">SectionOffset</font></i> OPTIONAL,
+  IN OUT PULONG           <i><font color=
+"blue">ViewSize</font></i>,
+  IN                      <i><font color=
+"blue">InheritDisposition</font></i>,
+  IN ULONG                <i><font color=
+"blue">AllocationType</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">Protect</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtMapViewOfSection</u></b> maps specified part of
+Section Object into process memory.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>SectionHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to Section
+Object opened with one or more from <b>SECTION_MAP_EXECUTE</b>,
+<b>SECTION_MAP_READ</b>, <b>SECTION_MAP_WRITE</b> attributes.</li>
+</ul>
+
+<ul>
+<li>ProcessHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to Process
+Object opened with <b>PROCESS_VM_OPERATION</b> access.</li>
+</ul>
+
+<ul>
+<li>*BaseAddress &nbsp;&nbsp;&nbsp;&nbsp;Pointer to variable
+receiving virtual address of mapped memory. If this value is not
+<i>NULL</i>, system tries to allocate memory from specified
+value.</li>
+</ul>
+
+<ul>
+<li>ZeroBits &nbsp;&nbsp;&nbsp;&nbsp;Indicates how many high bits
+must not be set in <font class=
+"ParamNameDesc">BaseAddress</font>.</li>
+</ul>
+
+<ul>
+<li>CommitSize &nbsp;&nbsp;&nbsp;&nbsp;Size of initially commited
+memory, in bytes.</li>
+</ul>
+
+<ul>
+<li>SectionOffset &nbsp;&nbsp;&nbsp;&nbsp;Pointer to begin of
+mapped block in section. This value must be rounded up to
+<b>X64K</b> block size (<i>0x10000</i> on <b><i>X86</i></b>).</li>
+</ul>
+
+<ul>
+<li>ViewSize &nbsp;&nbsp;&nbsp;&nbsp;Pointer to size of mapped
+block, in bytes. This value is rounded up to page size
+(<i>0x1000</i> on <b><i>x86</i></b>).</li>
+</ul>
+
+<ul>
+<li>InheritDisposition &nbsp;&nbsp;&nbsp;&nbsp;How to child
+processes inherid maped section. See description of enumeration
+type <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Section/SECTION_INHERIT.html">
+SECTION_INHERIT</a>.</li>
+</ul>
+
+<ul>
+<li>AllocationType &nbsp;&nbsp;&nbsp;&nbsp;Can be one of:</li>
+</ul>
+
+<ul>
+<li><b>MEM_COMMIT</b>
+</li>
+
+<li><b>MEM_RESERVE</b>
+</li>
+</ul>
+
+<ul>
+<li>Protect &nbsp;&nbsp;&nbsp;&nbsp;Page protection. Can be one
+of:</li>
+</ul>
+
+<ul>
+<li><b>PAGE_NOACCESS</b>
+</li>
+
+<li><b>PAGE_READONLY</b>
+</li>
+
+<li><b>PAGE_READWRITE</b>
+</li>
+
+<li><b>PAGE_WRITECOPY</b>
+</li>
+
+<li><b>PAGE_EXECUTE</b>
+</li>
+
+<li><b>PAGE_EXECUTE_READ</b>
+</li>
+
+<li><b>PAGE_EXECUTE_READWRITE</b>
+</li>
+
+<li><b>PAGE_EXECUTE_WRITECOPY</b>
+</li>
+
+<li><b>PAGE_GUARD</b>
+</li>
+
+<li><b>PAGE_NOCACHE</b>
+</li>
+
+<li><b>PAGE_WRITECOMBINE</b>
+</li>
+</ul>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Section/NtCreateSection.html">
+NtCreateSection</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Section/NtOpenSection.html">
+NtOpenSection</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Section/NtUnmapViewOfSection.html">
+NtUnmapViewOfSection</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtSignalAndWaitForSingleObject</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/type independed/ntsignalandwaitforsingleobject.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ftype%20independed%2Fntsignalandwaitforsingleobject.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ftype%20independed%2Fntsignalandwaitforsingleobject.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 3 March</p>
+<br>
+
+<div class="text">NtSignalAndWaitForSingleObject</div>
+
+<div class="highlight">NtSignalAndWaitForSingleObject</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtSignalAndWaitForSingleObject(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">ObjectToSignal</font></i>,
+  IN HANDLE               <i><font color=
+"blue">WaitableObject</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color=
+"blue">Time</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtSignalAndWaitForSingleObject</u></b> signals one
+object and wait for second object. See also <i>Win32 API</i>
+<u>SignalObjectAndWait</u> description in <i>Microsoft SDK</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>ObjectToSignal &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to object
+to signal. Possible object's types are:</li>
+</ul>
+
+<ul>
+<li>Event Object</li>
+
+<li>Semaphore Object</li>
+
+<li>Mutant Object</li>
+</ul>
+
+<ul>
+<li>WaitableObject &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to object
+to wait for. Can be any waitable object.</li>
+</ul>
+
+<ul>
+<li>Alertable &nbsp;&nbsp;&nbsp;&nbsp;If set, <i>APC Routine</i>
+can break waiting.</li>
+</ul>
+
+<ul>
+<li>Time &nbsp;&nbsp;&nbsp;&nbsp;Optionally pointer to
+<b>LARGE_INTEGER</b> value specifing time (absolute or relative)
+when function time outs (in <i>100-ns</i> units). Negative value
+means relative time.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/event/ntcreateevent.html">
+NtCreateEvent</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/mutant/ntcreatemutant.html">
+NtCreateMutant</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/semaphore/ntcreatesemaphore.html">
+NtCreateSemaphore</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/type%20independed/ntwaitformultipleobjects.html">
+NtWaitForMultipleObjects</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/type%20independed/ntwaitforsingleobject.html">
+NtWaitForSingleObject</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

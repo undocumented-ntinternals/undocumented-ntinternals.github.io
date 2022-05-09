@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FTime%2FNtSetTimerResolution.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtSetTimerResolution</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Time/NtSetTimerResolution.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 24 February</p>
+<br>
+
+<div class="text">NtSetTimerResolution</div>
+
+<div class="highlight">NtSetTimerResolution</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtSetTimerResolution(
+<br>
+
+  IN ULONG                <i><font color=
+"blue">DesiredResolution</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">SetResolution</font></i>,
+  OUT PULONG              <i><font color=
+"blue">CurrentResolution</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtSetTimerResolution</u></b> sets resolution of
+system <i>Timer</i> in calling process context.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>DesiredResolution &nbsp;&nbsp;&nbsp;&nbsp;Resolution to set. To
+receive minimum and maximum resolution values, call <a href=
+"../../Undocumented%20Functions/Time/NtQueryTimerResolution.html">NtQueryTimerResolution</a>.</li>
+</ul>
+
+<ul>
+<li>SetResolution &nbsp;&nbsp;&nbsp;&nbsp;If set, system
+<i>Timer's</i> resolution is set to <font class=
+"ParamNameDesc">DesiredResolution</font> value. If no, parameter
+<font class="ParamNameDesc">DesiredResolution</font> is
+ignored.</li>
+</ul>
+
+<ul>
+<li>CurrentResolution &nbsp;&nbsp;&nbsp;&nbsp;Pointer to
+<b>ULONG</b> value receiving current timer's resolution, in
+<i>100-ns</i> units.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/Time/NtGetTickCount.html">NtGetTickCount</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/Time/NtQueryTimerResolution.html">NtQueryTimerResolution</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/NT%20Objects/Timer/NtSetTimer.html">
+NtSetTimer</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

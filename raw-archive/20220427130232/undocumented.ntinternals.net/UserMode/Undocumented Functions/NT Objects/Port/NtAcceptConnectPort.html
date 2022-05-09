@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtAcceptConnectPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtAcceptConnectPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtAcceptConnectPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br>
+
+<div class="text">NtAcceptConnectPort</div>
+
+<div class="highlight">NtAcceptConnectPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtAcceptConnectPort(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">ServerPortHandle</font></i>,
+  IN HANDLE               <i><font color=
+"blue">AlternativeReceivePortHandle</font></i> OPTIONAL,
+  IN PLPC_MESSAGE         <i><font color=
+"blue">ConnectionReply</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">AcceptConnection</font></i>,
+  IN OUT PLPC_SECTION_OWNER_MEMORY <i><font color=
+"blue">ServerSharedMemory</font></i> OPTIONAL,
+  OUT PLPC_SECTION_MEMORY <i><font color=
+"blue">ClientSharedMemory</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtAcceptConnectPort</u></b> function is used in <i>LPC</i>
+communication by server process for establish connection with
+client. It should be called after <a href=
+"NtListenPort.html">NtListenPort</a> completes.
+
+<ul>
+<li>ServerPortHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to Port Object for established connection.</li>
+</ul>
+
+<ul>
+<li>AlternativeReceivePortHandle &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ConnectionReply &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a> structure received from <a href=
+"NtListenPort.html">NtListenPort</a>.</li>
+</ul>
+
+<ul>
+<li>AcceptConnection &nbsp;&nbsp;&nbsp;&nbsp;If not set, connection
+on client's side will be refused.</li>
+</ul>
+
+<ul>
+<li>ServerSharedMemory &nbsp;&nbsp;&nbsp;&nbsp;If connection uses
+large data buffers, and a <b>HANDLE</b> to Section Object for
+shared memory window is created on server side, server process
+shout set this parameter to pointer to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_OWNER_MEMORY.html">
+LPC_SECTION_OWNER_MEMORY</a> structure with filled
+<u>SectionHandle</u> member.</li>
+</ul>
+
+<ul>
+<li>ClientSharedMemory &nbsp;&nbsp;&nbsp;&nbsp;Similar to
+<font class="ParamNameDesc">ServerSharedMemory</font>, but when
+connection client create Section Object. In this case server
+doesn't know section's <b>HANDLE</b>, but shared memory window is
+automatically maped to his address space. Size and base address of
+mapped memory are returned in <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a> structure.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+This function returns <b>HANDLE</b> to newly created Port Object.
+All other <i>LPC</i> functions for currently accepted connection
+should use this <b>HANDLE</b>, not a base named port <b>HANDLE</b>
+created with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_OWNER_MEMORY.html">
+LPC_SECTION_OWNER_MEMORY</a><br>
+</dd>
+
+<dd><a href=
+"NtCompleteConnectPort.html">NtCompleteConnectPort</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Port/NtCreatePort.html">
+NtCreatePort</a><br>
+</dd>
+
+<dd><a href="NtListenPort.html">NtListenPort</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

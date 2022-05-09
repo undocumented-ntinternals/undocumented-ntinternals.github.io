@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FSystem%20Information%2FStructures%2FSYSTEM_PROCESS_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>SYSTEM_PROCESS_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/System Information/Structures/SYSTEM_PROCESS_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO2, 8 April</p>
+<br>
+
+<div class="text">SYSTEM_PROCESS_INFORMATION</div>
+
+<div class="highlight">SYSTEM_PROCESS_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">typedef struct _SYSTEM_PROCESS_INFORMATION {
+<br>
+
+  ULONG                   <i><font color=
+"blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color=
+"blue">NumberOfThreads</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">Reserved[3]</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">CreateTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">UserTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">KernelTime</font></i>;
+  UNICODE_STRING          <i><font color=
+"blue">ImageName</font></i>;
+  KPRIORITY               <i><font color=
+"blue">BasePriority</font></i>;
+  HANDLE                  <i><font color=
+"blue">ProcessId</font></i>;
+  HANDLE                  <i><font color=
+"blue">InheritedFromProcessId</font></i>;
+  ULONG                   <i><font color=
+"blue">HandleCount</font></i>;
+  ULONG                   <i><font color=
+"blue">Reserved2[2]</font></i>;
+  ULONG                   <i><font color=
+"blue">PrivatePageCount</font></i>;
+  VM_COUNTERS             <i><font color=
+"blue">VirtualMemoryCounters</font></i>;
+  IO_COUNTERS             <i><font color=
+"blue">IoCounters</font></i>;
+  SYSTEM_THREAD           <i><font color=
+"blue">Threads[0]</font></i>;
+
+} SYSTEM_PROCESS_INFORMATION, *PSYSTEM_PROCESS_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+<br>
+Structure <b><u>SYSTEM_PROCESS_INFORMATION</u></b> contains list of
+processes and threads and it's avaiable via <a href=
+"../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a> function with <a href=
+"SystemProcessInformation.html">SystemProcessInformation</a>
+information class.<br>
+<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>NextEntryOffset &nbsp;&nbsp;&nbsp;&nbsp;Offset from begining of
+output buffer to next process entry. On last entry contains
+zero.</li>
+</ul>
+
+<ul>
+<li>NumberOfThreads &nbsp;&nbsp;&nbsp;&nbsp;Number of process'es
+threads. Also number of members in <font class=
+"ParamNameDesc">Threads</font> array descripted below.</li>
+</ul>
+
+<ul>
+<li>Reserved[3] &nbsp;&nbsp;&nbsp;&nbsp;Reserved.</li>
+</ul>
+
+<ul>
+<li>CreateTime &nbsp;&nbsp;&nbsp;&nbsp;Process creation time, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>UserTime &nbsp;&nbsp;&nbsp;&nbsp;Effective time in <i>User
+Mode</i>.</li>
+</ul>
+
+<ul>
+<li>KernelTime &nbsp;&nbsp;&nbsp;&nbsp;Effective time in <i>Kernel
+Mode</i>.</li>
+</ul>
+
+<ul>
+<li>ImageName &nbsp;&nbsp;&nbsp;&nbsp;Process name, based on
+executable file name.</li>
+</ul>
+
+<ul>
+<li>BasePriority &nbsp;&nbsp;&nbsp;&nbsp;Process base
+priority.</li>
+</ul>
+
+<ul>
+<li>ProcessId &nbsp;&nbsp;&nbsp;&nbsp;Unique identifier of
+process.</li>
+</ul>
+
+<ul>
+<li>InheritedFromProcessId &nbsp;&nbsp;&nbsp;&nbsp;Creator's
+identifier.</li>
+</ul>
+
+<ul>
+<li>HandleCount &nbsp;&nbsp;&nbsp;&nbsp;Nr of open
+<b>HANDLE</b>s.</li>
+</ul>
+
+<ul>
+<li>Reserved2[2] &nbsp;&nbsp;&nbsp;&nbsp;Reserved.</li>
+</ul>
+
+<ul>
+<li>PrivatePageCount &nbsp;&nbsp;&nbsp;&nbsp;Number of memory pages
+assigned to process.</li>
+</ul>
+
+<ul>
+<li>VirtualMemoryCounters &nbsp;&nbsp;&nbsp;&nbsp;Memory
+performance counters.</li>
+</ul>
+
+<ul>
+<li>IoCounters &nbsp;&nbsp;&nbsp;&nbsp;IO performance
+counters.</li>
+</ul>
+
+<ul>
+<li>Threads[0] &nbsp;&nbsp;&nbsp;&nbsp;Array of <a href=
+"../../../Undocumented%20Functions/System%20Information/Structures/SYSTEM_THREAD.html">
+SYSTEM_THREAD</a> structures descripting process's threads.<br>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/System%20Information/SYSTEM_INFORMATION_CLASS.html">
+SYSTEM_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/System%20Information/Structures/SYSTEM_THREAD.html">
+SYSTEM_THREAD</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

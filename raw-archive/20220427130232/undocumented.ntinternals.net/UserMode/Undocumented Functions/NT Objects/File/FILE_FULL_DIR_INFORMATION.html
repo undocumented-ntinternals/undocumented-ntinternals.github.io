@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d3c5fe08e7b9d23433749c08a25d31cd",petok:"d54eb0d17152d906ab5895cd118901ebfdc0b215-1490902468-86400",zone:"ntinternals.net",rocket:"0",apps:{"ga_key":{"ua":"UA-69413230-3","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFILE_FULL_DIR_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>FILE_FULL_DIR_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FILE_FULL_DIR_INFORMATION.html";
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-69413230-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 13 April</p>
+<br>
+
+<div class="text">FILE_FULL_DIR_INFORMATION</div>
+
+<div class="highlight">FILE_FULL_DIR_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_FULL_DIR_INFORMATION {
+<br>
+
+  ULONG                   <i><font color=
+"blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color=
+"blue">FileIndex</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastAccessTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastWriteTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">ChangeTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">EndOfFile</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">AllocationSize</font></i>;
+  ULONG                   <i><font color=
+"blue">FileAttributes</font></i>;
+  ULONG                   <i><font color=
+"blue">FileNameLength</font></i>;
+  ULONG                   <i><font color="blue">EaSize</font></i>;
+  WCHAR                   <i><font color=
+"blue">FileName[1]</font></i>;
+
+} FILE_FULL_DIR_INFORMATION, *PFILE_FULL_DIR_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>FILE_FULL_DIR_INFORMATION</u></b> is returned as a
+result of call <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryDirectoryFile.html">
+NtQueryDirectoryFile</a> with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html#FileFullDirectoryInformation">
+FileFullDirectoryInformation</a> information class. It contains
+some typical informations about directory entries, like a <a href=
+"FILE_DIRECTORY_INFORMATION.html">FILE_DIRECTORY_INFORMATION</a>
+structure, but additionally contains member specifing size of
+Extended Attributes.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>NextEntryOffset &nbsp;&nbsp;&nbsp;&nbsp;Offset (in bytes) of
+next <b><u>FILE_FULL_DIR_INFORMATION</u></b> structure placed in
+result buffer. If there's no more entries, <font class=
+"ParamNameDesc">NextEntryOffset</font> is set to zero.</li>
+</ul>
+
+<ul>
+<li>FileIndex &nbsp;&nbsp;&nbsp;&nbsp;File index value, or zero, if
+directory indexing is not avaiable.</li>
+</ul>
+
+<ul>
+<li>CreationTime &nbsp;&nbsp;&nbsp;&nbsp;Time of object
+creation;</li>
+</ul>
+
+<ul>
+<li>LastAccessTime &nbsp;&nbsp;&nbsp;&nbsp;Last access time. Means
+time when last open operation was performed.</li>
+</ul>
+
+<ul>
+<li>LastWriteTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last write
+data.</li>
+</ul>
+
+<ul>
+<li>ChangeTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last change.</li>
+</ul>
+
+<ul>
+<li>EndOfFile &nbsp;&nbsp;&nbsp;&nbsp;Specify length of file, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>AllocationSize &nbsp;&nbsp;&nbsp;&nbsp;Specify real size of
+file on device. It must be equal or greater to <font class=
+"ParamNameDesc">EndOfFile</font> member.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;Attributes of file.</li>
+</ul>
+
+<ul>
+<li>FileNameLength &nbsp;&nbsp;&nbsp;&nbsp;Length of <font class=
+"ParamNameDesc">FileName</font> array, in bytes.</li>
+</ul>
+
+<ul>
+<li>EaSize &nbsp;&nbsp;&nbsp;&nbsp;Size of Extended Attributes
+associated with file. See also <a href=
+"FILE_NAMES_INFORMATION.html">FILE_EA_INFORMATION</a>
+structure.</li>
+</ul>
+
+<ul>
+<li>FileName[1] &nbsp;&nbsp;&nbsp;&nbsp;UNICODE string specifing
+file name.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"FILE_BOTH_DIR_INFORMATION.html">FILE_BOTH_DIR_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_DIRECTORY_INFORMATION.html">
+FILE_DIRECTORY_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html">
+FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"FILE_NAMES_INFORMATION.html">FILE_NAMES_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryDirectoryFile.html">
+NtQueryDirectoryFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryOleDirectoryFile.html">
+NtQueryOleDirectoryFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

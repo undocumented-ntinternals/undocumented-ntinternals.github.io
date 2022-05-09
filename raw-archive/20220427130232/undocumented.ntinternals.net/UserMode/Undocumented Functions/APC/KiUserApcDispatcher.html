@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FAPC%2FKiUserApcDispatcher.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>KiUserApcDispatcher</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/APC/KiUserApcDispatcher.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 10 December</p>
+<br>
+
+<div class="text">KiUserApcDispatcher</div>
+
+<div class="highlight">KiUserApcDispatcher</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+VOID
+NTAPI
+<br>
+KiUserApcDispatcher(
+<br>
+
+  IN PVOID                <i><font color="blue">Unused1</font></i>,
+  IN PVOID                <i><font color="blue">Unused2</font></i>,
+  IN PVOID                <i><font color="blue">Unused3</font></i>,
+  IN PVOID                <i><font color=
+"blue">ContextStart</font></i>,
+  IN PVOID                <i><font color=
+"blue">ContextBody</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>Unused1 &nbsp;&nbsp;&nbsp;&nbsp;Unused parameters. Sometimes
+one of them have <b><i>ntdll.dll</i></b> module address.</li>
+</ul>
+
+<ul>
+<li>Unused2 &nbsp;&nbsp;&nbsp;&nbsp;See <font class=
+"ParamNameDesc">Unused1</font>.</li>
+</ul>
+
+<ul>
+<li>Unused3 &nbsp;&nbsp;&nbsp;&nbsp;See <font class=
+"ParamNameDesc">Unused1</font>.</li>
+</ul>
+
+<ul>
+<li>ContextStart &nbsp;&nbsp;&nbsp;&nbsp;Begining of <font class=
+"ParamNameDesc">ContextStart</font> <b><u>CONTEXT</u></b> structure
+is stored.</li>
+</ul>
+
+<ul>
+<li>ContextBody &nbsp;&nbsp;&nbsp;&nbsp;Four bytes from
+<b><u>CONTEXT</u></b> structure at offset <i>0x04</i>.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+<b><u>KiUserApcDispatcher</u></b> isn't standard
+<b><i>ntdll</i></b> function. It's used by kernel to process <i>APC
+queue</i> for calling thread. Five paraters I defined only for
+compatibility with <b><i>ntdll.lib</i></b> export
+(<em>_KiUserApcDispatcher@20</em>). Function first execute code
+placed after call, and next calls <a href=
+"../../NT Objects/Thread/NtContinue.html">NtContinue</a> with
+<b><u>CONTEXT</u></b> specified at 4 parameter position
+(<font color="red">Warning:</font> Not pointer to
+<b><u>CONTEXT</u></b>, but <b><u>CONTEXT</u></b> body must be
+stored on stack).<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/APC/NtAlertThread.html">NtAlertThread</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/NT%20Objects/Thread/NtContinue.html">
+NtContinue</a><br>
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/APC/NtQueueApcThread.html">NtQueueApcThread</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/APC/NtTestAlert.html">NtTestAlert</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

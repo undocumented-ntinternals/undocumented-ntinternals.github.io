@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>FILE_DIRECTORY_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/file_directory_information.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_directory_information.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_directory_information.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 13 April</p>
+<br>
+
+<div class="text">FILE_DIRECTORY_INFORMATION</div>
+
+<div class="highlight">FILE_DIRECTORY_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_DIRECTORY_INFORMATION {
+<br>
+
+  ULONG                   <i><font color=
+"blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color=
+"blue">FileIndex</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastAccessTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastWriteTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">ChangeTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">EndOfFile</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">AllocationSize</font></i>;
+  ULONG                   <i><font color=
+"blue">FileAttributes</font></i>;
+  ULONG                   <i><font color=
+"blue">FileNameLength</font></i>;
+  WCHAR                   <i><font color=
+"blue">FileName[1]</font></i>;
+
+} FILE_DIRECTORY_INFORMATION, *PFILE_DIRECTORY_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>FILE_DIRECTORY_INFORMATION</u></b> is returned as a
+result of call <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntquerydirectoryfile.html">
+NtQueryDirectoryFile</a> with <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_information_class.html#filedirectoryinformation">
+FileDirectoryInformation</a> information class. It contains some
+typical informations about directory entries.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>NextEntryOffset &nbsp;&nbsp;&nbsp;&nbsp;Offset (in bytes) of
+next <b><u>FILE_DIRECTORY_INFORMATION</u></b> structure placed in
+result buffer. If there's no more entries, <font class=
+"ParamNameDesc">NextEntryOffset</font> is set to zero.</li>
+</ul>
+
+<ul>
+<li>FileIndex &nbsp;&nbsp;&nbsp;&nbsp;File index value, or zero, if
+directory indexing is not avaiable.</li>
+</ul>
+
+<ul>
+<li>CreationTime &nbsp;&nbsp;&nbsp;&nbsp;Time of object
+creation;</li>
+</ul>
+
+<ul>
+<li>LastAccessTime &nbsp;&nbsp;&nbsp;&nbsp;Last access time. Means
+time when last open operation was performed.</li>
+</ul>
+
+<ul>
+<li>LastWriteTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last write
+data.</li>
+</ul>
+
+<ul>
+<li>ChangeTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last change.</li>
+</ul>
+
+<ul>
+<li>EndOfFile &nbsp;&nbsp;&nbsp;&nbsp;Specify length of file, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>AllocationSize &nbsp;&nbsp;&nbsp;&nbsp;Specify real size of
+file on device. It must be equal or greater to <font class=
+"ParamNameDesc">EndOfFile</font> member.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;Attributes of file.</li>
+</ul>
+
+<ul>
+<li>FileNameLength &nbsp;&nbsp;&nbsp;&nbsp;Length of <font class=
+"ParamNameDesc">FileName</font> array, in bytes.</li>
+</ul>
+
+<ul>
+<li>FileName[1] &nbsp;&nbsp;&nbsp;&nbsp;UNICODE string specifing
+file name.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"file_both_dir_information.html">FILE_BOTH_DIR_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"file_full_dir_information.html">FILE_FULL_DIR_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_information_class.html">
+FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"file_names_information.html">FILE_NAMES_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntquerydirectoryfile.html">
+NtQueryDirectoryFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

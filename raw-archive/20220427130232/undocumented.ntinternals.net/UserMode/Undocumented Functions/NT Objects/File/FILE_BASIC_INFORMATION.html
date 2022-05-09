@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d3c5fe08e7b9d23433749c08a25d31cd",petok:"26717aa09b231de70c4dc7cbecb0a0f56d0aaf7b-1490901189-86400",zone:"ntinternals.net",rocket:"0",apps:{"ga_key":{"ua":"UA-69413230-3","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFILE_BASIC_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>FILE_BASIC_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FILE_BASIC_INFORMATION.html";
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-69413230-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 5 March</p>
+<br>
+
+<div class="text">FILE_BASIC_INFORMATION</div>
+
+<div class="highlight">FILE_BASIC_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_BASIC_INFORMATION {
+<br>
+
+  LARGE_INTEGER           <i><font color=
+"blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastAccessTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastWriteTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">ChangeTime</font></i>;
+  ULONG                   <i><font color=
+"blue">FileAttributes</font></i>;
+
+} FILE_BASIC_INFORMATION, *PFILE_BASIC_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>FILE_BASIC_INFORMATION</u></b> is used in a call to
+function <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a> with <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html#FileBasicInformation">
+FileBasicInformation</a> information class, and is received in a
+call to <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a> with the same information class. Also
+function <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryAttributesFile.html">
+NtQueryAttributesFile</a> uses as a result
+<b><u>FILE_BASIC_INFORMATION</u></b>, but it fills only
+<font class="ParamNameDesc">FileAttributes</font> field. See
+required function's description for details.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>CreationTime &nbsp;&nbsp;&nbsp;&nbsp;Time of file creation, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>LastAccessTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last open
+operation, in <i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>LastWriteTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last write
+operation, in <i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>ChangeTime &nbsp;&nbsp;&nbsp;&nbsp;Time of any last change, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;File attributes. See
+<a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtCreateFile.html">
+NtCreateFile</a> for possibilities.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Structure is also avaiable in <i>Microsoft DDK</i>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"FILE_INFORMATION_CLASS.html">FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtCreateFile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryAttributesFile.html">
+NtQueryAttributesFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

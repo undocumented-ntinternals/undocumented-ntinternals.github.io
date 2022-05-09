@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FError%2FNtRaiseHardError.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtRaiseHardError</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Error/NtRaiseHardError.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 4 February</p>
+<br>
+
+<div class="text">NtRaiseHardError</div>
+
+<div class="highlight">NtRaiseHardError</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtRaiseHardError(
+<br>
+
+  IN NTSTATUS             <i><font color=
+"blue">ErrorStatus</font></i>,
+  IN ULONG                <i><font color=
+"blue">NumberOfParameters</font></i>,
+  IN PUNICODE_STRING      <i><font color=
+"blue">UnicodeStringParameterMask</font></i> OPTIONAL,
+  IN PVOID                <i><font color=
+"blue">*Parameters</font></i>,
+  IN HARDERROR_RESPONSE_OPTION <i><font color=
+"blue">ResponseOption</font></i>,
+  OUT PHARDERROR_RESPONSE <i><font color=
+"blue">Response</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<br>
+This function sends <a href=
+"../../Undocumented%20Functions/Error/HARDERROR_MSG.html">HARDERROR_MSG</a>
+<i>LPC</i> message to listener (typically <i>CSRSS.EXE</i>). See
+<a href=
+"../../Undocumented%20Functions/Error/NtSetDefaultHardErrorPort.html">
+NtSetDefaultHardErrorPort</a> for more information.<br>
+
+<ul>
+<li>ErrorStatus &nbsp;&nbsp;&nbsp;&nbsp;Error code.</li>
+</ul>
+
+<ul>
+<li>NumberOfParameters &nbsp;&nbsp;&nbsp;&nbsp;Number of optional
+parameters in <font class="ParamNameDesc">Parameters</font>
+array.</li>
+</ul>
+
+<ul>
+<li>UnicodeStringParameterMask &nbsp;&nbsp;&nbsp;&nbsp;Optional
+string parameter (can be only one per error code).</li>
+</ul>
+
+<ul>
+<li>*Parameters &nbsp;&nbsp;&nbsp;&nbsp;Array of <b>DWORD</b>
+parameters for use in error message string.</li>
+</ul>
+
+<ul>
+<li>ResponseOption &nbsp;&nbsp;&nbsp;&nbsp;See <a href=
+"../../Undocumented%20Functions/Error/HARDERROR_RESPONSE_OPTION.html">
+HARDERROR_RESPONSE_OPTION</a> for possible values description.</li>
+</ul>
+
+<ul>
+<li>Response &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"../../Undocumented%20Functions/Error/HARDERROR_RESPONSE.html">HARDERROR_RESPONSE</a>
+enumeration.<br>
+<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+<b><u>NtRaiseHardError</u></b> is easy way to display message in
+<i>GUI</i> without loading <i>Win32 API</i> libraries.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../Undocumented%20Functions/Error/HARDERROR_MSG.html">HARDERROR_MSG</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/Error/HARDERROR_RESPONSE.html">HARDERROR_RESPONSE</a><br>
+
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/Error/HARDERROR_RESPONSE_OPTION.html">
+HARDERROR_RESPONSE_OPTION</a><br>
+</dd>
+
+<dd><a href=
+"../../Undocumented%20Functions/Error/NtSetDefaultHardErrorPort.html">
+NtSetDefaultHardErrorPort</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

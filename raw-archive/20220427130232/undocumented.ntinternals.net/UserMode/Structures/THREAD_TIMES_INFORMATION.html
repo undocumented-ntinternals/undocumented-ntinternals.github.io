@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../index.html?page=UserMode%2FStructures%2FTHREAD_TIMES_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>THREAD_TIMES_INFORMATION</title>
+<link href="../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Structures/THREAD_TIMES_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 December</p>
+<br>
+
+<div class="text">THREAD_TIMES_INFORMATION</div>
+
+<div class="highlight">THREAD_TIMES_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">typedef struct _THREAD_TIMES_INFORMATION {
+<br>
+
+
+  LARGE_INTEGER           <i><font color=
+"blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">ExitTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">KernelTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">UserTime</font></i>;
+
+
+
+} THREAD_TIMES_INFORMATION, *PTHREAD_TIMES_INFORMATION;
+</pre>
+<br>
+<br>
+
+<pre>
+</pre>
+
+<h6>CreationTime</h6>
+
+<pre>Time of thread creation.
+
+</pre>
+
+<h6>ExitTime</h6>
+
+<pre>Time of thread termination.
+
+</pre>
+
+<h6>KernelTime</h6>
+
+<pre>Time that thread spent in <i>KernelMode</i>.
+
+</pre>
+
+<h6>UserTime</h6>
+
+<pre>Time that thread spent in <i>UserMode</i>.
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+Structure is used with <a href=
+"../Undocumented%20Functions/NT%20Objects/Thread/THREAD_INFORMATION_CLASS.html#ThreadTimes">ThreadTimes</a> information class in <a href="../Undocumented%20Functions/NT%20Objects/Thread/NtQueryInformationThread.html">NtQueryInformationThread</a> call.
+
+
+</pre>
+<font color="#FF0000" size="12"><br>
+<br></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../Undocumented%20Functions/NT%20Objects/Thread/NtQueryInformationThread.html">
+NtQueryInformationThread</a><br>
+</dd>
+
+<dd><a href=
+"../Undocumented%20Functions/NT%20Objects/Thread/THREAD_INFORMATION_CLASS.html">
+THREAD_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

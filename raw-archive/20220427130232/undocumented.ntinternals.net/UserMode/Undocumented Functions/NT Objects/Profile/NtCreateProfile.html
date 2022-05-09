@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d3c5fe08e7b9d23433749c08a25d31cd",petok:"b29fea80f51fb2175504c033c49ff01fde7176a0-1490897042-86400",zone:"ntinternals.net",rocket:"0",apps:{"ga_key":{"ua":"UA-69413230-3","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FProfile%2FNtCreateProfile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateProfile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Profile/NtCreateProfile.html";
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-69413230-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 24 February</p>
+<br>
+
+<div class="text">NtCreateProfile</div>
+
+<div class="highlight">NtCreateProfile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateProfile(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">ProfileHandle</font></i>,
+  IN HANDLE               <i><font color=
+"blue">Process</font></i> OPTIONAL,
+  IN PVOID                <i><font color=
+"blue">ImageBase</font></i>,
+  IN ULONG                <i><font color=
+"blue">ImageSize</font></i>,
+  IN ULONG                <i><font color=
+"blue">BucketSize</font></i>,
+  IN PVOID                <i><font color="blue">Buffer</font></i>,
+  IN ULONG                <i><font color=
+"blue">BufferSize</font></i>,
+  IN KPROFILE_SOURCE      <i><font color=
+"blue">ProfileSource</font></i>,
+  IN KAFFINITY            <i><font color=
+"blue">Affinity</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCreateProfile</u></b> creates Profile Object.<br>
+<br>
+Profile Objects are used for application profiling. There're
+<i>24</i> profile counters defined in <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/KPROFILE_SOURCE.html">
+KPROFILE_SOURCE</a> enumeration type. Single Profile Object can be
+used to get information from one performance counter.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>ProfileHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to Profile Object.</li>
+</ul>
+
+<ul>
+<li>Process &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to Process Object
+to profile. Not required if profiled code is placed in Kernel
+address space (above <i>0x80000000</i>).</li>
+</ul>
+
+<ul>
+<li>ImageBase &nbsp;&nbsp;&nbsp;&nbsp;Start address of
+profiling.</li>
+</ul>
+
+<ul>
+<li>ImageSize &nbsp;&nbsp;&nbsp;&nbsp;Size of profiled memory
+block.</li>
+</ul>
+
+<ul>
+<li>BucketSize &nbsp;&nbsp;&nbsp;&nbsp;<i>- ???</i> (cannot be less
+than <i>2</i> ).</li>
+</ul>
+
+<ul>
+<li>Buffer &nbsp;&nbsp;&nbsp;&nbsp;Caller's allocated buffer for
+data.</li>
+</ul>
+
+<ul>
+<li>BufferSize &nbsp;&nbsp;&nbsp;&nbsp;Size of buffer, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>ProfileSource &nbsp;&nbsp;&nbsp;&nbsp;Identifier of performance
+counter. See <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/KPROFILE_SOURCE.html">
+KPROFILE_SOURCE</a> enumeration type for possible values.</li>
+</ul>
+
+<ul>
+<li>Affinity &nbsp;&nbsp;&nbsp;&nbsp;Processor affinity mask. It
+defines processors to ask about performance counter.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privileges for UserMode: <strong class=
+"req">SE_PROF_SINGLE_PROCESS_PRIVILEGE</strong></dd>
+
+<dd>Privileges for KernelMode: <strong class=
+"req">SE_SYSTEM_PROFILE_PRIVILEGE</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/KPROFILE_SOURCE.html">
+KPROFILE_SOURCE</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/NtQueryIntervalProfile.html">
+NtQueryIntervalProfile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/NtSetIntervalProfile.html">
+NtSetIntervalProfile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/NtStartProfile.html">
+NtStartProfile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Profile/NtStopProfile.html">
+NtStopProfile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

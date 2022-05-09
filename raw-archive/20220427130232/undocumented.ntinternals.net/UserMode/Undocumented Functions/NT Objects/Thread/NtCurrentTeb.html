@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FThread%2FNtCurrentTeb.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCurrentTeb</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Thread/NtCurrentTeb.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2 March</p>
+<br>
+
+<div class="text">NtCurrentTeb</div>
+
+<div class="highlight">NtCurrentTeb</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+PTEB
+NTAPI
+<br>
+NtCurrentTeb(
+<br>
+
+ );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCurrentTeb</u></b> returns address of <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/TEB.html">TEB</a>
+<i>(Thread Environment Block)</i> for calling thread.<br>
+<br>
+
+<hr width="40%">
+<br>
+<b><u>NtCurrentTeb</u></b> isn't typical <i>NT CALL</i> realised
+via <i>INT 2E</i>, becouse <a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/TEB.html">TEB</a>
+is accessable at address
+<b>fs:[</b><b><i>0018h</i></b><b>]</b>.<br>
+<br>
+Microsoft declare <b><u>NtCurrentTeb</u></b> as <i>__cdecl</i>, but
+<b><i>ntdll.dll</i></b> export it as <i>__stdcall</i> (it don't
+have metter, becouse function don't have any parameters), so you
+cannot use <b><i>ntdll.dll</i></b> export. In this case the better
+way is write <b><u>NtCurrentTeb</u></b> manually, declaring it as
+<i>__cdecl</i>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Thread/TEB.html">TEB</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

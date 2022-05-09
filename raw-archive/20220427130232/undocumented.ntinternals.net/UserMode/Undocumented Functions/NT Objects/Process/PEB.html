@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FProcess%2FPEB.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>PEB</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Process/PEB.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2 March</p>
+<br>
+
+<div class="text">PEB</div>
+
+<div class="highlight">PEB</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _PEB {
+<br>
+
+  BOOLEAN                 <i><font color=
+"blue">InheritedAddressSpace</font></i>;
+  BOOLEAN                 <i><font color=
+"blue">ReadImageFileExecOptions</font></i>;
+  BOOLEAN                 <i><font color=
+"blue">BeingDebugged</font></i>;
+  BOOLEAN                 <i><font color="blue">Spare</font></i>;
+  HANDLE                  <i><font color="blue">Mutant</font></i>;
+  PVOID                   <i><font color=
+"blue">ImageBaseAddress</font></i>;
+  PPEB_LDR_DATA           <i><font color=
+"blue">LoaderData</font></i>;
+  PRTL_USER_PROCESS_PARAMETERS <i><font color=
+"blue">ProcessParameters</font></i>;
+  PVOID                   <i><font color=
+"blue">SubSystemData</font></i>;
+  PVOID                   <i><font color=
+"blue">ProcessHeap</font></i>;
+  PVOID                   <i><font color=
+"blue">FastPebLock</font></i>;
+  PPEBLOCKROUTINE         <i><font color=
+"blue">FastPebLockRoutine</font></i>;
+  PPEBLOCKROUTINE         <i><font color=
+"blue">FastPebUnlockRoutine</font></i>;
+  ULONG                   <i><font color=
+"blue">EnvironmentUpdateCount</font></i>;
+  PPVOID                  <i><font color=
+"blue">KernelCallbackTable</font></i>;
+  PVOID                   <i><font color=
+"blue">EventLogSection</font></i>;
+  PVOID                   <i><font color=
+"blue">EventLog</font></i>;
+  PPEB_FREE_BLOCK         <i><font color=
+"blue">FreeList</font></i>;
+  ULONG                   <i><font color=
+"blue">TlsExpansionCounter</font></i>;
+  PVOID                   <i><font color=
+"blue">TlsBitmap</font></i>;
+  ULONG                   <i><font color=
+"blue">TlsBitmapBits[0x2]</font></i>;
+  PVOID                   <i><font color=
+"blue">ReadOnlySharedMemoryBase</font></i>;
+  PVOID                   <i><font color=
+"blue">ReadOnlySharedMemoryHeap</font></i>;
+  PPVOID                  <i><font color=
+"blue">ReadOnlyStaticServerData</font></i>;
+  PVOID                   <i><font color=
+"blue">AnsiCodePageData</font></i>;
+  PVOID                   <i><font color=
+"blue">OemCodePageData</font></i>;
+  PVOID                   <i><font color=
+"blue">UnicodeCaseTableData</font></i>;
+  ULONG                   <i><font color=
+"blue">NumberOfProcessors</font></i>;
+  ULONG                   <i><font color=
+"blue">NtGlobalFlag</font></i>;
+  BYTE                    <i><font color=
+"blue">Spare2[0x4]</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">CriticalSectionTimeout</font></i>;
+  ULONG                   <i><font color=
+"blue">HeapSegmentReserve</font></i>;
+  ULONG                   <i><font color=
+"blue">HeapSegmentCommit</font></i>;
+  ULONG                   <i><font color=
+"blue">HeapDeCommitTotalFreeThreshold</font></i>;
+  ULONG                   <i><font color=
+"blue">HeapDeCommitFreeBlockThreshold</font></i>;
+  ULONG                   <i><font color=
+"blue">NumberOfHeaps</font></i>;
+  ULONG                   <i><font color=
+"blue">MaximumNumberOfHeaps</font></i>;
+  PPVOID                  <i><font color=
+"blue">*ProcessHeaps</font></i>;
+  PVOID                   <i><font color=
+"blue">GdiSharedHandleTable</font></i>;
+  PVOID                   <i><font color=
+"blue">ProcessStarterHelper</font></i>;
+  PVOID                   <i><font color=
+"blue">GdiDCAttributeList</font></i>;
+  PVOID                   <i><font color=
+"blue">LoaderLock</font></i>;
+  ULONG                   <i><font color=
+"blue">OSMajorVersion</font></i>;
+  ULONG                   <i><font color=
+"blue">OSMinorVersion</font></i>;
+  ULONG                   <i><font color=
+"blue">OSBuildNumber</font></i>;
+  ULONG                   <i><font color=
+"blue">OSPlatformId</font></i>;
+  ULONG                   <i><font color=
+"blue">ImageSubSystem</font></i>;
+  ULONG                   <i><font color=
+"blue">ImageSubSystemMajorVersion</font></i>;
+  ULONG                   <i><font color=
+"blue">ImageSubSystemMinorVersion</font></i>;
+  ULONG                   <i><font color=
+"blue">GdiHandleBuffer[0x22]</font></i>;
+  ULONG                   <i><font color=
+"blue">PostProcessInitRoutine</font></i>;
+  ULONG                   <i><font color=
+"blue">TlsExpansionBitmap</font></i>;
+  BYTE                    <i><font color=
+"blue">TlsExpansionBitmapBits[0x80]</font></i>;
+  ULONG                   <i><font color=
+"blue">SessionId</font></i>;
+
+} PEB, *PPEB;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>PEB</u></b> <i>(Process Enviroment Block)</i>
+contains all <i>User-Mode</i> parameters associated by system with
+current process.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>InheritedAddressSpace &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ReadImageFileExecOptions &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>BeingDebugged &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>Spare &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>Mutant &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ImageBaseAddress &nbsp;&nbsp;&nbsp;&nbsp;Address of executable
+image in process' memory.</li>
+</ul>
+
+<ul>
+<li>LoaderData &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"../../../Structures/PEB_LDR_DATA.html">PEB_LDR_DATA</a> structure
+contains information filled by Loader.</li>
+</ul>
+
+<ul>
+<li>ProcessParameters &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"../../../Structures/RTL_USER_PROCESS_PARAMETERS.html">RTL_USER_PROCESS_PARAMETERS</a>
+structure.</li>
+</ul>
+
+<ul>
+<li>SubSystemData &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ProcessHeap &nbsp;&nbsp;&nbsp;&nbsp;Address of process' first
+heap allocated by Loader.</li>
+</ul>
+
+<ul>
+<li>FastPebLock &nbsp;&nbsp;&nbsp;&nbsp;Parameter for
+<b><u>PEBLOCKROUTINE</u></b> (see below).</li>
+</ul>
+
+<ul>
+<li>FastPebLockRoutine &nbsp;&nbsp;&nbsp;&nbsp;Address of
+fast-locking routine for <b><u>PEB</u></b>. Definition of routine
+is:<br>
+
+<dl>
+<dd><b>typedef void
+(*</b><b><u>PPEBLOCKROUTINE</u></b><b>)(</b><br>
+</dd>
+
+<dd>PVOID PebLock<br></dd>
+
+<dd><b>);</b>
+</dd>
+</dl></li>
+</ul>
+
+<ul>
+<li>FastPebUnlockRoutine &nbsp;&nbsp;&nbsp;&nbsp;<b><u>PEB</u></b>
+fast-unlock routine.</li>
+</ul>
+
+<ul>
+<li>EnvironmentUpdateCount &nbsp;&nbsp;&nbsp;&nbsp;Counter of
+process environment updates.</li>
+</ul>
+
+<ul>
+<li>KernelCallbackTable &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>EventLogSection &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>EventLog &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>FreeList &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>TlsExpansionCounter &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>TlsBitmap &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>TlsBitmapBits[0x2] &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ReadOnlySharedMemoryBase &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ReadOnlySharedMemoryHeap &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ReadOnlyStaticServerData &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>AnsiCodePageData &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>OemCodePageData &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>UnicodeCaseTableData &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>NumberOfProcessors &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>NtGlobalFlag &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>Spare2[0x4] &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>CriticalSectionTimeout &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>HeapSegmentReserve &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>HeapSegmentCommit &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>HeapDeCommitTotalFreeThreshold &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>HeapDeCommitFreeBlockThreshold &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>NumberOfHeaps &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>MaximumNumberOfHeaps &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>*ProcessHeaps &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>GdiSharedHandleTable &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ProcessStarterHelper &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>GdiDCAttributeList &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>LoaderLock &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>OSMajorVersion &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>OSMinorVersion &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>OSBuildNumber &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>OSPlatformId &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ImageSubSystem &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ImageSubSystemMajorVersion &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>ImageSubSystemMinorVersion &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>GdiHandleBuffer[0x22] &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>PostProcessInitRoutine &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>TlsExpansionBitmap &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>TlsExpansionBitmapBits[0x80] &nbsp;&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<ul>
+<li>SessionId &nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Process/NtQueryInformationProcess.html">
+NtQueryInformationProcess</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Process/PEB_FREE_BLOCK.html">
+PEB_FREE_BLOCK</a><br>
+</dd>
+
+<dd><a href=
+"../../../Structures/PEB_LDR_DATA.html">PEB_LDR_DATA</a><br>
+</dd>
+
+<dd><a href=
+"PROCESS_BASIC_INFORMATION.html">PROCESS_BASIC_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../Structures/RTL_USER_PROCESS_PARAMETERS.html">RTL_USER_PROCESS_PARAMETERS</a><br>
+
+</dd>
+
+<dd><a href="TEB.html">TEB</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

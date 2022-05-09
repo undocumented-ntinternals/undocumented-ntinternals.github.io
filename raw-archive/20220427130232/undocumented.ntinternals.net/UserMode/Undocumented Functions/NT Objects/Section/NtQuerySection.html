@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FSection%2FNtQuerySection.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtQuerySection</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Section/NtQuerySection.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<br>
+
+<div class="text">NtQuerySection</div>
+
+<div class="highlight">NtQuerySection</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQuerySection(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">SectionHandle</font></i>,
+  IN SECTION_INFORMATION_CLASS <i><font color=
+"blue">InformationClass</font></i>,
+  OUT PVOID               <i><font color=
+"blue">InformationBuffer</font></i>,
+  IN ULONG                <i><font color=
+"blue">InformationBufferSize</font></i>,
+  OUT PULONG              <i><font color=
+"blue">ResultLength</font></i> OPTIONAL );
+</pre>
+<br>
+<br>
+
+<h6>InformationClass</h6>
+
+<pre>
+<br>
+Use one of following:<br>
+</pre>
+
+<dd class="reg">
+<ul>
+<li>
+<b>SectionBasicInformation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><font color="green">//
+Result is <a href=
+"../../../Structures/SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a>
+structure</font>
+</li>
+</ul>
+</dd>
+
+<pre>
+</pre>
+
+<dd class="reg">
+<ul>
+<li>
+<b>SectionImageInformation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><font color="green">//
+Result is <a href=
+"../../../Structures/SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a>
+structure</font>
+</li>
+</ul>
+</dd>
+
+<pre>
+<br>
+<br>
+<b>SectionImageInformation</b> Are avaiable only for file-based sections.
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../process/ntcreateprocess.html">NtCreateProcess</a><br>
+</dd>
+
+<dd><a href="NtCreateSection.html">NtCreateSection</a><br>
+</dd>
+
+<dd><a href="NtOpenSection.html">NtOpenSection</a><br>
+</dd>
+
+<dd><a href=
+"../../../Structures/SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href=
+"../../../Structures/SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

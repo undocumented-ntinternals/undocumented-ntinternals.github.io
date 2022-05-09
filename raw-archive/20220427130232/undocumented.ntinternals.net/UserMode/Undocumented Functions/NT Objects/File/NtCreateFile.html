@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtCreateFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtCreateFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtCreateFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 29 December</p>
+<br>
+
+<div class="text">NtCreateFile</div>
+
+<div class="highlight">NtCreateFile</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateFile(
+<br>
+
+  OUT PHANDLE             <i><font color=
+"blue">FileHandle</font></i>,
+  IN ACCESS_MASK          <i><font color=
+"blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color=
+"blue">ObjectAttributes</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color=
+"blue">IoStatusBlock</font></i>,
+  IN PLARGE_INTEGER       <i><font color=
+"blue">AllocationSize</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">FileAttributes</font></i>,
+  IN ULONG                <i><font color=
+"blue">ShareAccess</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateDisposition</font></i>,
+  IN ULONG                <i><font color=
+"blue">CreateOptions</font></i>,
+  IN PVOID                <i><font color=
+"blue">EaBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color=
+"blue">EaLength</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<i>(Avaiable also in 2000 DDK.)</i>
+<ul>
+<li>FileHandle &nbsp;&nbsp;&nbsp;&nbsp;Result of call -
+<b>HANDLE</b> to File Object.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &nbsp;&nbsp;&nbsp;&nbsp;Access mask based on
+definitions in schema <b>FILE_*</b> from
+<b><i>&lt;WinNT.h&gt;</i></b>.</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &nbsp;&nbsp;&nbsp;&nbsp;Name of file to create
+(or open), optionally path in name string. You can also define root
+directory, security descriptor and attributes
+<b>OBJ_CASE_INSENSITIVE</b> and <b>OBJ_INHERIT</b>.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &nbsp;&nbsp;&nbsp;&nbsp;Pointer to
+<b>IO_STATUS_BLOCK</b> structure, that receive final status of
+function call. Can be one of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_CREATED</b>
+</li>
+
+<li><b>FILE_OPENED</b>
+</li>
+
+<li><b>FILE_OVERWRITTEN</b>
+</li>
+
+<li><b>FILE_SUPERSEDED</b>
+</li>
+
+<li><b>FILE_EXISTS</b>
+</li>
+
+<li><b>FILE_DOES_NOT_EXIST</b>
+</li>
+</ul>
+
+<ul>
+<li>AllocationSize &nbsp;&nbsp;&nbsp;&nbsp;File size after
+creation.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;Attributes for newly
+created file, as follows:</li>
+</ul>
+
+<ul>
+<li><b>FILE_ATTRIBUTE_READONLY</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_HIDDEN</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_SYSTEM</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_ARCHIVE</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_NORMAL</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_TEMPORARY</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_OFFLINE</b>
+</li>
+
+<li><b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b>
+</li>
+</ul>
+
+<ul>
+<li>ShareAccess &nbsp;&nbsp;&nbsp;&nbsp;Specifies share method for
+opened object. Can be set to zero or any combination of flags:</li>
+</ul>
+
+<ul>
+<li><b>FILE_SHARE_READ</b>
+</li>
+
+<li><b>FILE_SHARE_WRITE</b>
+</li>
+
+<li><b>FILE_SHARE_DELETE</b>
+</li>
+</ul>
+
+<ul>
+<li>CreateDisposition &nbsp;&nbsp;&nbsp;&nbsp;Specifies disposition
+how to create or open object and can be one of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_SUPERSEDE</b> - If file exists, deletes it before
+creation of new one.</li>
+
+<li><b>FILE_OPEN</b> - Fails, if file not exists.</li>
+
+<li><b>FILE_CREATE</b> - Fails, if file exists.</li>
+
+<li><b>FILE_OPEN_IF</b> - If file exists, opens it. If not, creates
+new one and then open it.</li>
+
+<li><b>FILE_OVERWRITE</b> - If file not exists, create and open it.
+If exists, open them and reset content.</li>
+
+<li><b>FILE_OVERWRITE_IF</b> - As <b>FILE_OVERWRITE</b>, but fails
+if file not exists.</li>
+</ul>
+
+<ul>
+<li>CreateOptions &nbsp;&nbsp;&nbsp;&nbsp;Creation options.</li>
+</ul>
+
+<ul>
+<li>EaBuffer &nbsp;&nbsp;&nbsp;&nbsp;Buffer for Extended Attributes
+contains one or more of <a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_FULL_EA_INFORMATION.html">
+FILE_FULL_EA_INFORMATION</a> structures.</li>
+</ul>
+
+<ul>
+<li>EaLength &nbsp;&nbsp;&nbsp;&nbsp;Length of <font class=
+"ParamNameDesc">EaBuffer</font>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/FILE_FULL_EA_INFORMATION.html">
+FILE_FULL_EA_INFORMATION</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtDeleteFile.html">
+NtDeleteFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtOpenFile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/File/NtSetEaFile.html">
+NtSetEaFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

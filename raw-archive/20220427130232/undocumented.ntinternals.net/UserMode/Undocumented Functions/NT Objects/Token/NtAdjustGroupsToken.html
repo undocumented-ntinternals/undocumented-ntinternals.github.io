@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<script src="/cdn-cgi/apps/head/dAhP5QvOh0ZI2LtowZtOWvdPGcA.js"></script><script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FToken%2FNtAdjustGroupsToken.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>NtAdjustGroupsToken</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Token/NtAdjustGroupsToken.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 17 February</p>
+<br>
+
+<div class="text">NtAdjustGroupsToken</div>
+
+<div class="highlight">NtAdjustGroupsToken</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtAdjustGroupsToken(
+<br>
+
+  IN HANDLE               <i><font color=
+"blue">TokenHandle</font></i>,
+  IN BOOLEAN              <i><font color=
+"blue">ResetToDefault</font></i>,
+  IN PTOKEN_GROUPS        <i><font color=
+"blue">TokenGroups</font></i>,
+  IN ULONG                <i><font color=
+"blue">PreviousGroupsLength</font></i>,
+  OUT PTOKEN_GROUPS       <i><font color=
+"blue">PreviousGroups</font></i> OPTIONAL,
+  OUT PULONG              <i><font color=
+"blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtAdjustGroupsToken</u></b> modify state of one or
+more groups avaialbe for Token Object. See also description of
+similar <i>Win32 API</i> <u>AdjustTokenGroups</u> in <i>Win32
+SDK</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>TokenHandle &nbsp;&nbsp;&nbsp;&nbsp;<b>HANDLE</b> to Token
+Object opened with <b>TOKEN_ADJUST_GROUPS</b> access.</li>
+</ul>
+
+<ul>
+<li>ResetToDefault &nbsp;&nbsp;&nbsp;&nbsp;If set, groups are reset
+to token's defaults. In this case all other parameters are
+ignored.</li>
+</ul>
+
+<ul>
+<li>TokenGroups &nbsp;&nbsp;&nbsp;&nbsp;Pointer to <a href=
+"TOKEN_GROUPS.html">TOKEN_GROUPS</a> structure containing groups to
+modify.</li>
+</ul>
+
+<ul>
+<li>PreviousGroupsLength &nbsp;&nbsp;&nbsp;&nbsp;Specifies length
+of <font class="ParamNameDesc">PreviousGroups</font> buffer, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>PreviousGroups &nbsp;&nbsp;&nbsp;&nbsp;Optionally pointer to
+<a href="TOKEN_GROUPS.html">TOKEN_GROUPS</a> buffer receiving
+information about modified groups before modification begins.</li>
+</ul>
+
+<ul>
+<li>RequiredLength &nbsp;&nbsp;&nbsp;&nbsp;If <font class=
+"ParamNameDesc">PreviousGroups</font> parameter is specified, and
+<font class="ParamNameDesc">PreviousGroupsLength</font> is to
+small, this value receives required length of buffer, in bytes.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtAdjustPrivilegesToken.html">
+NtAdjustPrivilegesToken</a><br>
+</dd>
+
+<dd><a href="NtCreateToken.html">NtCreateToken</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenProcessToken.html">
+NtOpenProcessToken</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenThreadToken.html">
+NtOpenThreadToken</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtQueryInformationToken.html">
+NtQueryInformationToken</a><br>
+</dd>
+
+<dd><a href=
+"../../../Undocumented%20Functions/NT%20Objects/Token/NtSetInformationToken.html">
+NtSetInformationToken</a><br>
+</dd>
+
+<dd><a href="TOKEN_GROUPS.html">TOKEN_GROUPS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

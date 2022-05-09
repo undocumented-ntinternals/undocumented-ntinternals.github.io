@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>FILE_BASIC_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css"
+title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/file_basic_information.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_basic_information.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_basic_information.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 5 March</p>
+<br>
+
+<div class="text">FILE_BASIC_INFORMATION</div>
+
+<div class="highlight">FILE_BASIC_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_BASIC_INFORMATION {
+<br>
+
+  LARGE_INTEGER           <i><font color=
+"blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastAccessTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">LastWriteTime</font></i>;
+  LARGE_INTEGER           <i><font color=
+"blue">ChangeTime</font></i>;
+  ULONG                   <i><font color=
+"blue">FileAttributes</font></i>;
+
+} FILE_BASIC_INFORMATION, *PFILE_BASIC_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>FILE_BASIC_INFORMATION</u></b> is used in a call to
+function <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntsetinformationfile.html">
+NtSetInformationFile</a> with <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/file_information_class.html#filebasicinformation">
+FileBasicInformation</a> information class, and is received in a
+call to <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntqueryinformationfile.html">
+NtQueryInformationFile</a> with the same information class. Also
+function <a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntqueryattributesfile.html">
+NtQueryAttributesFile</a> uses as a result
+<b><u>FILE_BASIC_INFORMATION</u></b>, but it fills only
+<font class="ParamNameDesc">FileAttributes</font> field. See
+required function's description for details.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>CreationTime &nbsp;&nbsp;&nbsp;&nbsp;Time of file creation, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>LastAccessTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last open
+operation, in <i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>LastWriteTime &nbsp;&nbsp;&nbsp;&nbsp;Time of last write
+operation, in <i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>ChangeTime &nbsp;&nbsp;&nbsp;&nbsp;Time of any last change, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>FileAttributes &nbsp;&nbsp;&nbsp;&nbsp;File attributes. See
+<a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a> for possibilities.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Structure is also avaiable in <i>Microsoft DDK</i>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href=
+"file_information_class.html">FILE_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntqueryattributesfile.html">
+NtQueryAttributesFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntqueryinformationfile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href=
+"../../../../usermode/undocumented%20functions/nt%20objects/file/ntsetinformationfile.html">
+NtSetInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>
