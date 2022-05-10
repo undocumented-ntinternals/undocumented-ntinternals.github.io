@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript">if(window.name!="content")window.location="../../../index.html?page=UserMode%2FUndocumented%20Functions%2FDebug%2FRtlGetCallersAddress.html";</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlGetCallersAddress</title>
+<link href="http://undocumented.ntinternals.net/A.tomek.css.pagespeed.cf.agDnaGJZH6.css" rel="stylesheet" type="text/css" title="Style">
+<style>#chm2webdialog{position:absolute;padding:1px;margin:5px;z-index:200;background:#ddd}#chm2webdialog-header{display:block;padding:3px 6px 7px;position:relative;height:14px;font-size:14px;font-weight:bold}#chm2webdialog-title{float:left}#chm2webdialog-close{float:right;cursor:pointer;margin:3px 3px 0 0;height:11px;width:11px;background:url(/files/xdialog_close.gif.pagespeed.ic.MY017T4SDL.webp) no-repeat}#chm2webdialog-content{display:block;padding:5px;height:160px;color:#666;font-size:13px}#chm2webdialog-message{float:left}#chm2webdialog-mask{position:absolute;padding:0;margin:0;top:0;left:0;background:#fff;opacity:0;filter:alpha(opacity=0);min-height:100%;z-index:100}#chm2webdialog-indexlist{margin-top:10px;width:100%;height:110px;font-size:11px}#chm2webdialog input{padding-left:10px;padding-right:10px}.chm2webdialog{border:1px solid #4f6d81;border-top:none}.chm2webdialogheader{background:url(/files/xprompt_header.gif.pagespeed.ic.U9jr8W4uOU.webp) repeat-x;color:#355468;border:1px solid #4f6d81;border-bottom:none}</style>
+
+<script type="text/JavaScript">//<![CDATA[
+function FindTop(start){if(start==top)return top;try{t=start.parent.name;}catch(e){return start;}return FindTop(start.parent);}var chmtop=FindTop(self);function FindFrame(frameName,start){if(start==null)return null;var resframe=null;var frames=start.frames;if(frames.length==0)return null;for(var i=0;i<frames.length;i++){tmpFrame=frames[i];try{tmpFrameName=tmpFrame.name;}catch(e){continue;}if(tmpFrameName.toUpperCase()==frameName.toUpperCase()){resframe=frames[i];}else{resframe=FindFrame(frameName,tmpFrame);}if(resframe!=null)return resframe;}return null;}function navDelta(incr){next=pagenum;if(incr<0){for(i=pagenum-1;i>=0;i--)if(FITEMS[i]!=null){next=i;break;}}else{for(i=pagenum+1;i<FITEMS.length;i++)if(FITEMS[i]!=null){next=i;break;}}if(next==pagenum)return;var url=FITEMS[next];try{jstree.dOpenTreeNode(next);}catch(e){pagenum=next;};window.open(url,"content");}function conPrint(){var frame=FindFrame("content",top);if(frame&&frame.focus&&frame.print&&!window.opera){frame.focus();frame.print();}else{alert("Sorry, your browser does not support the print feature.");}}
+//]]></script>
+<script type="text/JavaScript">chmtop.c2wtopf.pageid="UserMode/Undocumented Functions/Debug/RtlGetCallersAddress.html";</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO5, 2 February</p>
+<br>
+
+<div class="text">RtlGetCallersAddress</div>
+
+<div class="highlight">RtlGetCallersAddress</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+PVOID
+NTAPI
+<br>
+RtlGetCallersAddress(
+<br>
+
+  OUT PVOID               <i><font color="blue">*CallersAddress</font></i>,
+  OUT PVOID               <i><font color="blue">*CallersCaller</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Routine <b><u>RtlGetCallersAddress</u></b> is usefull in program
+debugging or exceptions control. It returns address of calling
+instruction.
+
+<ul>
+<li>CallersAddress &#160;&#160;&#160;&#160;Returns address in body
+of function that call <b><u>RtlGetCallersAddress</u></b>.</li>
+</ul>
+
+<ul>
+<li>CallersCaller &#160;&#160;&#160;&#160;Returns address in
+function's calling function that call
+<b><u>RtlGetCallersAddress</u></b> body.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="RtlCaptureStackBackTrace.html">RtlCaptureStackBackTrace</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">var fe=FindFrame("toc",top);if((fe!=null)&&(chmtop.c2wtopf.jstree!=null)){if(chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum]!=chmtop.c2wtopf.pageid)chmtop.c2wtopf.jstree.OpenTreeNode(""+chmtop.c2wtopf.pageid);}</script>
+</body>
+</html>

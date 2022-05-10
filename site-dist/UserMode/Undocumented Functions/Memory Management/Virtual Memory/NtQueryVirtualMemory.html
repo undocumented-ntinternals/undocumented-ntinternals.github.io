@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtQueryVirtualMemory.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryVirtualMemory</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtQueryVirtualMemory.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 5 December</p>
+<br>
+
+<div class="text">NtQueryVirtualMemory</div>
+
+<div class="highlight">NtQueryVirtualMemory</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryVirtualMemory(
+<br>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN PVOID                <i><font color="blue">BaseAddress</font></i>,
+  IN MEMORY_INFORMATION_CLASS <i><font color="blue">MemoryInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">Buffer</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  OUT PULONG              <i><font color="blue">ResultLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtQueryVirtualMemory</u></b> retrieves parameters of
+queried memory block.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>ProcessHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to process
+containing queried address in process'es address space.</li>
+</ul>
+
+<ul>
+<li>BaseAddress &#160;&#160;&#160;&#160;Virtual address to
+query.</li>
+</ul>
+
+<ul>
+<li>MemoryInformationClass &#160;&#160;&#160;&#160;Information
+class defined in <a href="MEMORY_INFORMATION_CLASS.html">MEMORY_INFORMATION_CLASS</a>
+enumeration type. Currently only one class is supported.</li>
+</ul>
+
+<ul>
+<li>Buffer &#160;&#160;&#160;&#160;As long as only <a href="MemoryBasicInformation.html">MemoryBasicInformation</a> is
+supported, this value points to structure
+<b><u>MEMORY_BASIC_INFORMATION</u></b>, defined in
+<b><i>&lt;WINNT.h&gt;</i></b> and described in <i>MS SDK</i>.</li>
+</ul>
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;Length of <font class="ParamNameDesc">Buffer</font>, in bytes.</li>
+</ul>
+
+<ul>
+<li>ResultLength &#160;&#160;&#160;&#160;Optionally pointer to
+<b>ULONG</b> value receiving required size of <font class="ParamNameDesc">Buffer</font>, in bytes.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="MEMORY_BASIC_INFORMATION.html">MEMORY_BASIC_INFORMATION</a><br>
+</dd>
+
+<dd><a href="MEMORY_INFORMATION_CLASS.html">MEMORY_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtFreeVirtualMemory.html">
+NtFreeVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtLockVirtualMemory.html">
+NtLockVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtProtectVirtualMemory.html">
+NtProtectVirtualMemory</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

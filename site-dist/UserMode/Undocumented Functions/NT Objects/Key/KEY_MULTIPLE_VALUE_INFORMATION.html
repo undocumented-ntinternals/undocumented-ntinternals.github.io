@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FKEY_MULTIPLE_VALUE_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>KEY_MULTIPLE_VALUE_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/KEY_MULTIPLE_VALUE_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2O February</p>
+<br>
+
+<div class="text">KEY_MULTIPLE_VALUE_INFORMATION</div>
+
+<div class="highlight">KEY_MULTIPLE_VALUE_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _KEY_MULTIPLE_VALUE_INFORMATION {
+<br>
+
+  PUNICODE_STRING         <i><font color="blue">ValueName</font></i>;
+  ULONG                   <i><font color="blue">DataLength</font></i>;
+  ULONG                   <i><font color="blue">DataOffset</font></i>;
+  ULONG                   <i><font color="blue">Type</font></i>;
+
+} KEY_MULTIPLE_VALUE_INFORMATION, *PKEY_MULTIPLE_VALUE_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>KEY_MULTIPLE_VALUE_INFORMATION</u></b> is used with
+function <a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryMultipleValueKey.html">
+NtQueryMultipleValueKey</a>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>ValueName &#160;&#160;&#160;&#160;Pointer to
+<b>UNICODE_STRING</b> structure containing value name. If specified
+value not exist, function fails.</li>
+</ul>
+
+<ul>
+<li>DataLength &#160;&#160;&#160;&#160;Length of value's data, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>DataOffset &#160;&#160;&#160;&#160;Offset in output buffer
+(declared in <a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryMultipleValueKey.html">
+NtQueryMultipleValueKey</a>) to value's data.</li>
+</ul>
+
+<ul>
+<li>Type &#160;&#160;&#160;&#160;Type of queried value.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+On entry caller must specify <font class="ParamNameDesc">ValueName</font> parameter, and set other to
+<i>zero</i>. Function <a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryMultipleValueKey.html">
+NtQueryMultipleValueKey</a> fills rest of fields with informations
+about specified value.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryMultipleValueKey.html">
+NtQueryMultipleValueKey</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

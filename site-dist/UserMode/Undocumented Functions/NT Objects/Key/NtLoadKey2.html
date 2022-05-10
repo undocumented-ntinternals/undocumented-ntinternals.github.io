@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FNtLoadKey2.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtLoadKey2</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/NtLoadKey2.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 3 March</p>
+<br>
+
+<div class="text">NtLoadKey2</div>
+
+<div class="highlight">NtLoadKey2</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtLoadKey2(
+<br>
+
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">DestinationKeyName</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">HiveFileName</font></i>,
+  IN ULONG                <i><font color="blue">Flags</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtLoadKey2</u></b> loads Hive file into registry
+structure.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>DestinationKeyName &#160;&#160;&#160;&#160;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure contains name of loaded key and
+virtual parent key (<font color="red">"machine"</font> or
+<font color="red">"user"</font>).</li>
+</ul>
+
+<ul>
+<li>HiveFileName &#160;&#160;&#160;&#160;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure specifing Hive file.</li>
+</ul>
+
+<ul>
+<li>Flags &#160;&#160;&#160;&#160;<b><i>(?)</i></b> Only values
+<i>0x0000</i> and <i>0x0004</i> are valid. If caller set
+<font class="ParamNameDesc">Flags</font> to 0x0000, function works
+as <a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtLoadKey.html">
+NtLoadKey</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privilege: <strong class="req">SE_RESTORE_PRIVILEGE</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtLoadKey.html">
+NtLoadKey</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtSaveKey.html">
+NtSaveKey</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtUnloadKey.html">
+NtUnloadKey</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

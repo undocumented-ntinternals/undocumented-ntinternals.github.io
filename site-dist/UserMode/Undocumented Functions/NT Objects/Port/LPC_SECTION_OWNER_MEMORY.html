@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FLPC_SECTION_OWNER_MEMORY.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>LPC_SECTION_OWNER_MEMORY</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/LPC_SECTION_OWNER_MEMORY.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br>
+
+<div class="text">LPC_SECTION_OWNER_MEMORY</div>
+
+<div class="highlight">LPC_SECTION_OWNER_MEMORY</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _LPC_SECTION_OWNER_MEMORY {
+<br>
+
+  ULONG                   <i><font color="blue">Length</font></i>;
+  HANDLE                  <i><font color="blue">SectionHandle</font></i>;
+  ULONG                   <i><font color="blue">OffsetInSection</font></i>;
+  ULONG                   <i><font color="blue">ViewSize</font></i>;
+  PVOID                   <i><font color="blue">ViewBase</font></i>;
+  PVOID                   <i><font color="blue">OtherSideViewBase</font></i>;
+
+} LPC_SECTION_OWNER_MEMORY, *PLPC_SECTION_OWNER_MEMORY;
+</pre>
+<br>
+<br>
+<br>
+This structure is used by <i>LPC</i> connection functions by
+Section Object creator side (whatever it is client of port or
+server). See <a href="../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a> for more information.
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;Length of structure.</li>
+</ul>
+
+<ul>
+<li>SectionHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to
+SectionObject mapped on both sides of <i>LPC</i> connection.</li>
+</ul>
+
+<ul>
+<li>OffsetInSection &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ViewSize &#160;&#160;&#160;&#160;Receives size of mapped
+window.</li>
+</ul>
+
+<ul>
+<li>ViewBase &#160;&#160;&#160;&#160;Receives base address of
+mapped window.</li>
+</ul>
+
+<ul>
+<li>OtherSideViewBase &#160;&#160;&#160;&#160;Receives base address
+of mapped window for other <i>LPC</i> connection side.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Port/LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a><br>
+</dd>
+
+<dd><a href="NtAcceptConnectPort.html">NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href="NtConnectPort.html">NtConnectPort</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtCreateSection.html">
+NtCreateSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtMapViewOfSection.html">
+NtMapViewOfSection</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

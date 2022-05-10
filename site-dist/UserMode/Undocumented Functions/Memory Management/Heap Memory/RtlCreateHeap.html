@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FHeap%20Memory%2FRtlCreateHeap.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlCreateHeap</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Memory Management/Heap Memory/RtlCreateHeap.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 14 December</p>
+<br>
+
+<div class="text">RtlCreateHeap</div>
+
+<div class="highlight">RtlCreateHeap</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+PVOID
+NTAPI
+<br>
+RtlCreateHeap(
+<br>
+
+  IN ULONG                <i><font color="blue">Flags</font></i>,
+  IN PVOID                <i><font color="blue">Base</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">Reserve</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">Commit</font></i>,
+  IN BOOLEAN              <i><font color="blue">Lock</font></i> OPTIONAL,
+  IN PRTL_HEAP_DEFINITION <i><font color="blue">RtlHeapParams</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+
+<h6>Flags</h6>
+
+<pre>
+Flags are defined in <b><i>&lt;WinNT.h&gt;</i></b>. Can be one of following:
+<b>     HEAP_NO_SERIALIZE
+        HEAP_GROWABLE
+        HEAP_GENERATE_EXCEPTIONS
+        HEAP_ZERO_MEMORY
+        HEAP_REALLOC_IN_PLACE_ONLY
+        HEAP_TAIL_CHECKING_ENABLED
+        HEAP_FREE_CHECKING_ENABLED
+        HEAP_DISABLE_COALESCE_ON_FREE
+        HEAP_CREATE_ALIGN_16
+        HEAP_CREATE_ENABLE_TRACING
+</b><b>
+</b>
+</pre>
+
+<h6>Base</h6>
+
+<pre>
+Base address, where heap should be created. If memory was previously allocated at this address, heap is created at the nearest possibble virtual address.
+
+</pre>
+
+<h6>Reserve</h6>
+
+<pre>
+How much bytes should be reserved. See <a href="../Virtual%20Memory/NtAllocateVirtualMemory.html">NtAllocateVirtualMemory</a>.
+
+</pre>
+
+<h6>Commit</h6>
+
+<pre>
+How meny bytes should be commited. If <font class="ParamNameDesc">Reserve</font> is greater than zero, <font class="ParamNameDesc">Commit</font> must be less or equal to <font class="ParamNameDesc">Reserve</font>.
+
+</pre>
+
+<h6>Lock</h6>
+
+<pre>
+If set, heap will be locked. See <a href="RtlLockHeap.html">RtlLockHeap</a> / <a href="RtlUnlockHeap.html">RtlUnlockHeap</a>.
+
+</pre>
+
+<h6>RtlHeapParams</h6>
+
+<pre>
+Pointer to <a href="../../../Structures/RTL_HEAP_DEFINITION.html">RTL_HEAP_DEFINITION</a> structure. On <i>NT 4.0</i> all bytes of this (except length field) are set to zero.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtLockVirtualMemory.html">
+NtLockVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Structures/RTL_HEAP_DEFINITION.html">RTL_HEAP_DEFINITION</a><br>
+
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Heap%20Memory/RtlDestroyHeap.html">
+RtlDestroyHeap</a><br>
+</dd>
+
+<dd><a href="RtlLockHeap.html">RtlLockHeap</a><br>
+</dd>
+
+<dd><a href="RtlUnlockHeap.html">RtlUnlockHeap</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

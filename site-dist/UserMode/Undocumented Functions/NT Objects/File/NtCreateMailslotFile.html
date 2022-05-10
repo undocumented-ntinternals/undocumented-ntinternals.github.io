@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtCreateMailslotFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtCreateMailslotFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtCreateMailslotFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 14 February</p>
+<br>
+
+<div class="text">NtCreateMailslotFile</div>
+
+<div class="highlight">NtCreateMailslotFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateMailslotFile(
+<br>
+
+  OUT PHANDLE             <i><font color="blue">MailslotFileHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color="blue">CreateOptions</font></i>,
+  IN ULONG                <i><font color="blue">MailslotQuota</font></i>,
+  IN ULONG                <i><font color="blue">MaxMessageSize</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ReadTimeOut</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCreateMailslotFile</u></b> creates especial File
+Object called <i>Mailslot</i>. See <i>Microsoft SDK</i> for more
+information about <i>Mailslots</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>MailslotFileHandle &#160;&#160;&#160;&#160;Result of call -
+<b>HANDLE</b> to Mailslot File Object.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &#160;&#160;&#160;&#160;Access rights associated
+with opened handle.</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &#160;&#160;&#160;&#160;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure contains valid object name. Name
+must be in format <font color="red">"\\??\MAILSLOT\..."</font>
+where <font color="red">"..."</font> means unique name of
+Mailslot.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;IO result of call.</li>
+</ul>
+
+<ul>
+<li>CreateOptions &#160;&#160;&#160;&#160;Can be combination
+of:</li>
+</ul>
+
+<ul>
+<li><b>FILE_WRITE_THROUGH</b>
+</li>
+
+<li><b>FILE_SYNCHRONOUS_IO_ALERT</b>
+</li>
+
+<li><b>FILE_SYNCHRONOUS_IO_NONALERT</b>
+</li>
+</ul>
+
+<ul>
+<li>MailslotQuota &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>MaxMessageSize &#160;&#160;&#160;&#160;Maximum message size, or
+<b>MAILSLOT_SIZE_AUTO</b> for automatic message size.</li>
+</ul>
+
+<ul>
+<li>ReadTimeOut &#160;&#160;&#160;&#160;Timeout value, or <i>-1</i>
+for infinite waiting.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="FILE_MAILSLOT_QUERY_INFORMATION.html">FILE_MAILSLOT_QUERY_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="FILE_MAILSLOT_SET_INFORMATION.html">FILE_MAILSLOT_SET_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtReadFile.html">
+NtReadFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtSetInformationFile.html">
+NtSetInformationFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtWriteFile.html">
+NtWriteFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

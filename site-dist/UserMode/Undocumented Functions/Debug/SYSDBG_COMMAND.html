@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FDebug%2FSYSDBG_COMMAND.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SYSDBG_COMMAND</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Debug/SYSDBG_COMMAND.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 4 March</p>
+<br>
+
+<div class="text">SYSDBG_COMMAND</div>
+
+<div class="highlight">SYSDBG_COMMAND</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _SYSDBG_COMMAND {
+<br>
+
+
+    <a href="#SysDbgQueryModuleInformation=1">SysDbgQueryModuleInformation=1</a>,
+    <a href="#SysDbgQueryTraceInformation">SysDbgQueryTraceInformation</a>,
+    <a href="#SysDbgSetTracepoint">SysDbgSetTracepoint</a>,
+    <a href="#SysDbgSetSpecialCall">SysDbgSetSpecialCall</a>,
+    <a href="#SysDbgClearSpecialCalls">SysDbgClearSpecialCalls</a>,
+    <a href="#SysDbgQuerySpecialCalls">SysDbgQuerySpecialCalls</a>
+
+
+} SYSDBG_COMMAND, *PSYSDBG_COMMAND;
+</pre>
+<br>
+<br>
+<br>
+Enumeration type <b><u>SYSDBG_COMMAND</u></b> is used as a command
+number in a call to <a href="NtSystemDebugControl.html">NtSystemDebugControl</a> function.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<h6><a name="SysDbgQueryModuleInformation" id="SysDbgQueryModuleInformation"></a>
+</h6>
+
+<ul>
+<li>SysDbgQueryModuleInformation
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b></li>
+</ul>
+
+<h6><a name="SysDbgQueryTraceInformation" id="SysDbgQueryTraceInformation"></a>
+</h6>
+
+<ul>
+<li>SysDbgQueryTraceInformation
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b></li>
+</ul>
+
+<h6><a name="SysDbgSetTracepoint" id="SysDbgSetTracepoint"></a>
+</h6>
+
+<ul>
+<li>SysDbgSetTracepoint
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b></li>
+</ul>
+
+<h6><a name="SysDbgSetSpecialCall" id="SysDbgSetSpecialCall"></a>
+</h6>
+
+<ul>
+<li>SysDbgSetSpecialCall
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b></li>
+</ul>
+
+<h6><a name="SysDbgClearSpecialCalls" id="SysDbgClearSpecialCalls"></a>
+</h6>
+
+<ul>
+<li>SysDbgClearSpecialCalls
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b></li>
+</ul>
+
+<h6><a name="SysDbgQuerySpecialCalls" id="SysDbgQuerySpecialCalls"></a>
+</h6>
+
+<ul>
+<li>SysDbgQuerySpecialCalls
+&#160;&#160;&#160;&#160;<b><i>(?)</i></b><br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="NtSystemDebugControl.html">NtSystemDebugControl</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

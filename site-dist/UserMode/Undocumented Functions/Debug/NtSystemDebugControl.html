@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FDebug%2FNtSystemDebugControl.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtSystemDebugControl</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Debug/NtSystemDebugControl.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 4 March</p>
+<br>
+
+<div class="text">NtSystemDebugControl</div>
+
+<div class="highlight">NtSystemDebugControl</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtSystemDebugControl(
+<br>
+
+  IN SYSDBG_COMMAND       <i><font color="blue">Command</font></i>,
+  IN PVOID                <i><font color="blue">InputBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">InputBufferLength</font></i>,
+  OUT PVOID               <i><font color="blue">OutputBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">OutputBufferLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtSystemDebugControl</u></b> is used by some
+low-level debuggers written by <i>Microsoft</i> and avaiable
+typically in <i>DDK</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Command &#160;&#160;&#160;&#160;Command request for system.
+Command's codes are avaiable in enumeration type <a href="../../Undocumented%20Functions/Debug/SYSDBG_COMMAND.html">SYSDBG_COMMAND</a>.</li>
+</ul>
+
+<ul>
+<li>InputBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+with input data.</li>
+</ul>
+
+<ul>
+<li>InputBufferLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">InputBuffer</font>, in bytes.</li>
+</ul>
+
+<ul>
+<li>OutputBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+for output data.</li>
+</ul>
+
+<ul>
+<li>OutputBufferLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">OutputBuffer</font>, in bytes.</li>
+</ul>
+
+<ul>
+<li>ReturnLength &#160;&#160;&#160;&#160;Pointer to <b>ULONG</b>
+value receiving required size of <font class="ParamNameDesc">OutputBuffer</font>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../Undocumented%20Functions/Debug/SYSDBG_COMMAND.html">SYSDBG_COMMAND</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

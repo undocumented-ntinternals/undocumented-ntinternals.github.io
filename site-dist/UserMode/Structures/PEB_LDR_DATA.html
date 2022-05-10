@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../index.html?page=UserMode%2FStructures%2FPEB_LDR_DATA.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>PEB_LDR_DATA</title>
+<link href="../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Structures/PEB_LDR_DATA.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 27 December</p>
+<br>
+
+<div class="text">PEB_LDR_DATA</div>
+
+<div class="highlight">PEB_LDR_DATA</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _PEB_LDR_DATA {
+<br>
+
+
+  ULONG                   <i><font color="blue">Length</font></i>;
+  BOOLEAN                 <i><font color="blue">Initialized</font></i>;
+  PVOID                   <i><font color="blue">SsHandle</font></i>;
+  LIST_ENTRY              <i><font color="blue">InLoadOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color="blue">InMemoryOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color="blue">InInitializationOrderModuleList</font></i>;
+
+
+
+} PEB_LDR_DATA, *PPEB_LDR_DATA;
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>Length</h6>
+
+<pre>
+Size of structure, used by <b>ntdll.dll</b> as structure version ID.
+
+</pre>
+
+<h6>Initialized</h6>
+
+<pre>
+If set, loader data section for current process is initialized.
+
+</pre>
+
+<h6>SsHandle</h6>
+
+<pre>
+- ???
+
+</pre>
+
+<h6>InLoadOrderModuleList</h6>
+
+<pre>
+Doubly linked list containing pointers to <a href="LDR_MODULE.html">LDR_MODULE</a> structure for previous and next module in load order.
+
+</pre>
+
+<h6>InMemoryOrderModuleList</h6>
+
+<pre>
+As above, but in memory placement order.
+
+</pre>
+
+<h6>InInitializationOrderModuleList</h6>
+
+<pre>
+As <font class="ParamNameDesc">InLoadOrderModuleList</font>, but in initialization order.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="LDR_MODULE.html">LDR_MODULE</a><br>
+</dd>
+
+<dd><a href="PEB.html">PEB</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

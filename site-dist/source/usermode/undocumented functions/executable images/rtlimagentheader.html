@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlImageNtHeader</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/executable images/rtlimagentheader.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fexecutable%20images%2Frtlimagentheader.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fexecutable%20images%2Frtlimagentheader.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 18 October</p>
+<br>
+
+<div class="text">RtlImageNtHeader</div>
+
+<div class="highlight">RtlImageNtHeader</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+PIMAGE_NT_HEADERS
+NTAPI
+<br>
+RtlImageNtHeader(
+<br>
+
+  IN PVOID                <i><font color="blue">ModuleAddress</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>ModuleAddress</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Is module base address in process virtual memory,
+known as <b>HMODULE</b>.</div>
+
+<pre>
+
+
+</pre>
+
+<h6>Return value</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Is pointer to <b>IMAGE_NT_HEADERS</b>
+structure.</div>
+
+<pre>
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="../../../usermode/undocumented%20functions/executable%20images/ldrgetdllhandle.html">LdrGetDllHandle</a><br>
+
+<a href="../../../usermode/undocumented%20functions/executable%20images/ldrloaddll.html">
+LdrLoadDll</a><br>
+<a href="rtlimagervatova.html">RtlImageRvaToVa</a><br>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

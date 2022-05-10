@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtNotifyChangeDirectoryFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtNotifyChangeDirectoryFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtNotifyChangeDirectoryFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br>
+
+<div class="text">NtNotifyChangeDirectoryFile</div>
+
+<div class="highlight">NtNotifyChangeDirectoryFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtNotifyChangeDirectoryFile(
+<br>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  OUT PVOID               <i><font color="blue">Buffer</font></i>,
+  IN ULONG                <i><font color="blue">BufferSize</font></i>,
+  IN ULONG                <i><font color="blue">CompletionFilter</font></i>,
+  IN BOOLEAN              <i><font color="blue">WatchTree</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtNotifyChangeDirectoryFile</u></b> is used to process
+changes to directory File Object. Becouse function returns
+immediatelly with <b>STATUS_PENDING</b>, you must decide to use
+Event Object or <i>APC</i> routine as notification form.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>FileHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to File Object
+opened with <b>SYNCHRONIZE</b> access and
+<b>FILE_DIRECTORY_FILE</b> option set.</li>
+</ul>
+
+<ul>
+<li>Event &#160;&#160;&#160;&#160;<b>HANDLE</b> to Event Object.
+Event can be created as <a href="../../../Undocumented%20Functions/NT%20Objects/Event/EVENT_TYPE.html#NotificationEvent.html">
+NotificationEvent</a> or <a href="../../../Undocumented%20Functions/NT%20Objects/Event/EVENT_TYPE.html#SynchronizationEvent.html">
+SynchronizationEvent</a>, but second one is better in this
+situation.</li>
+</ul>
+
+<ul>
+<li>ApcRoutine &#160;&#160;&#160;&#160;Address of user's <i>APC</i>
+routine, queued when change complete.</li>
+</ul>
+
+<ul>
+<li>ApcContext &#160;&#160;&#160;&#160;Optional parameter for
+<font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;IO result of call.
+<u>Status</u> member in <font class="ParamNameDesc">IoStatusBlock</font> can result
+<b>STATUS_NOTIFY_ENUM_DIR</b> when <font class="ParamNameDesc">Buffer</font> was to small.</li>
+</ul>
+
+<ul>
+<li>Buffer &#160;&#160;&#160;&#160;User's allocated buffer for
+change informations. It contains one or more of <a href="FILE_NOTIFY_INFORMATION.html">FILE_NOTIFY_INFORMATION</a>
+structures.</li>
+</ul>
+
+<ul>
+<li>BufferSize &#160;&#160;&#160;&#160;Size of <font class="ParamNameDesc">Buffer</font>, in bytes.</li>
+</ul>
+
+<ul>
+<li>CompletionFilter &#160;&#160;&#160;&#160;Mask specifing what
+sort of changes should be monitored. Can be combination
+of:<br></li>
+</ul>
+
+<ul>
+<li><b>FILE_NOTIFY_CHANGE_FILE_NAME</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_DIR_NAME</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_NAME</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_ATTRIBUTES</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_SIZE</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_LAST_WRITE</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_LAST_ACCESS</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_CREATION</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_EA</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_SECURITY</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_STREAM_NAME</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_STREAM_SIZE</b>
+</li>
+
+<li><b>FILE_NOTIFY_CHANGE_STREAM_WRITE</b>
+</li>
+</ul>
+
+<ul>
+<li>WatchTree &#160;&#160;&#160;&#160;If set, all subdirectiories
+of specified directory will be also monitored.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Event/EVENT_TYPE.html">
+EVENT_TYPE</a><br>
+</dd>
+
+<dd><a href="FILE_NOTIFY_INFORMATION.html">FILE_NOTIFY_INFORMATION</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

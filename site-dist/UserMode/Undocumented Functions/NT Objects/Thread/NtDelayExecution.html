@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FThread%2FNtDelayExecution.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtDelayExecution</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Thread/NtDelayExecution.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 17 December</p>
+<br>
+
+<div class="text">NtDelayExecution</div>
+
+<div class="highlight">NtDelayExecution</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtDelayExecution(
+<br>
+
+  IN BOOLEAN              <i><font color="blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">DelayInterval</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<li>Alertable &#160;&#160;&#160;&#160;If set, execution can break
+in a result of <a href="../../../Undocumented%20Functions/APC/NtAlertThread.html">NtAlertThread</a>
+call.
+
+<ul>
+<li>DelayInterval &#160;&#160;&#160;&#160;Delay in 100-ns units.
+Negative value means delay relative to current.<br>
+<br>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+</dd>
+
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br>
+
+<div class="Require">See also:</div></dd>
+
+<dd><a href="../../../Undocumented%20Functions/APC/NtAlertThread.html">NtAlertThread</a><br>
+
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Type%20independed/NtSignalAndWaitForSingleObject.html">
+NtSignalAndWaitForSingleObject</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Type%20independed/NtWaitForMultipleObjects.html">
+NtWaitForMultipleObjects</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Type%20independed/NtWaitForSingleObject.html">
+NtWaitForSingleObject</a><br>
+
+<hr width="0" size="0" noshade class="page">
+</dd>
+</dl></li>
+</ul></li>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

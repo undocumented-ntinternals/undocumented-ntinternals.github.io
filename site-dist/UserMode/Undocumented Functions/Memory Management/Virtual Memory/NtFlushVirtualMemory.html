@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtFlushVirtualMemory.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtFlushVirtualMemory</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Memory Management/Virtual Memory/NtFlushVirtualMemory.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO4, 28 January</p>
+<br>
+
+<div class="text">NtFlushVirtualMemory</div>
+
+<div class="highlight">NtFlushVirtualMemory</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtFlushVirtualMemory(
+<br>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color="blue">*BaseAddress</font></i>,
+  IN OUT PULONG           <i><font color="blue">NumberOfBytesToFlush</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<br>
+<b>NtFlushVirtualMemory</b> flushes mapped section view to
+file.<br>
+
+<ul>
+<li>ProcessHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> of process
+containing mapped view of section to flush.<br></li>
+</ul>
+
+<ul>
+<li>*BaseAddress &#160;&#160;&#160;&#160;Pointer to <b>PVOID</b>
+value containing address of memory area to flush. On output this
+value is rounded to Page Size <i>(0x1000)</i>.<br></li>
+</ul>
+
+<ul>
+<li>NumberOfBytesToFlush &#160;&#160;&#160;&#160;Pointer to
+<b>ULONG</b> value specifing length of area to flush. On output
+this value is rounded up to Page Size <i>(0x1000)</i>.<br></li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;Pointer to
+<b>IO_STATUS_BLOCK</b> structure. After call Information member
+contains the same value as <font class="ParamNameDesc">NumberOfBytesToFlush</font> parameter.<br>
+<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+<br>
+<b>WARNING:</b> Two (or more) memory pages mapped in different
+calls of <a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtMapViewOfSection.html">
+NtMapViewOfSection</a> cannot be flushed in one function call, even
+if both has the same <i>SECTION</i> as a source.<br>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtCreateSection.html">
+NtCreateSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtMapViewOfSection.html">
+NtMapViewOfSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtOpenSection.html">
+NtOpenSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtUnmapViewOfSection.html">
+NtUnmapViewOfSection</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

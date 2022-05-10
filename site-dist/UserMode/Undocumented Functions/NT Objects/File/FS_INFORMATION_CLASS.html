@@ -1,0 +1,424 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFS_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>FS_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FS_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 19 January</p>
+<br>
+
+<div class="text">FS_INFORMATION_CLASS</div>
+
+<div class="highlight">FS_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _FS_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#FileFsVolumeInformation">FileFsVolumeInformation=1</a>,
+    <a href="#FileFsLabelInformation">FileFsLabelInformation</a>,
+    <a href="#FileFsSizeInformation">FileFsSizeInformation</a>,
+    <a href="#FileFsDeviceInformation">FileFsDeviceInformation</a>,
+    <a href="#FileFsAttributeInformation">FileFsAttributeInformation</a>,
+    <a href="#FileFsControlInformation">FileFsControlInformation</a>,
+    <a href="#FileFsFullSizeInformation">FileFsFullSizeInformation</a>,
+    <a href="#FileFsObjectIdInformation">FileFsObjectIdInformation</a>,
+    <a href="#FileFsMaximumInformation">FileFsMaximumInformation</a>
+
+
+} FS_INFORMATION_CLASS, *PFS_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+<b><u>FS_INFORMATION_CLASS</u></b> enumeration type is used in a
+call to <a href="NtQueryVolumeInformationFile.html">NtQueryVolumeInformationFile</a>
+and <a href="NtSetVolumeInformationFile.html">NtSetVolumeInformationFile</a>.<br>
+
+<br>
+
+<hr width="40%">
+<br>
+
+<h6><a name="FileFsVolumeInformation" id="FileFsVolumeInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsVolumeInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x18</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_VOLUME_INFORMATION.html">FILE_FS_VOLUME_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsLabelInformation" id="FileFsLabelInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsLabelInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_LABEL_INFORMATION.html">FILE_FS_LABEL_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsSizeInformation" id="FileFsSizeInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsSizeInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x18</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_SIZE_INFORMATION.html">FILE_FS_SIZE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsDeviceInformation" id="FileFsDeviceInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsDeviceInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x08</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_DEVICE_INFORMATION.html">FILE_FS_DEVICE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsAttributeInformation" id="FileFsAttributeInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsAttributeInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x10</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_ATTRIBUTE_INFORMATION.html">FILE_FS_ATTRIBUTE_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsControlInformation" id="FileFsControlInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsControlInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query, Set</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x30, 0x30</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: <a href="FILE_FS_CONTROL_INFORMATION.html">FILE_FS_CONTROL_INFORMATION</a></td>
+</tr>
+</table>
+
+<h6><a name="FileFsFullSizeInformation" id="FileFsFullSizeInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsFullSizeInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Query</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x38</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: ???</td>
+</tr>
+</table>
+
+<h6><a name="FileFsObjectIdInformation" id="FileFsObjectIdInformation"></a>
+</h6>
+
+<ul>
+<li>FileFsObjectIdInformation</li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<dl>
+<dd>Action</dd>
+</dl>
+</td>
+<td>: <b>Set</b></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Buffer size&#160;&#160;</dd>
+</dl>
+</td>
+<td>: <i>0x38</i></td>
+</tr>
+
+<tr>
+<td>
+<dl>
+<dd>Structure</dd>
+</dl>
+</td>
+<td>: ???</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="FILE_FS_ATTRIBUTE_INFORMATION.html">FILE_FS_ATTRIBUTE_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="FILE_FS_CONTROL_INFORMATION.html">FILE_FS_CONTROL_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="FILE_FS_DEVICE_INFORMATION.html">FILE_FS_DEVICE_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="FILE_FS_LABEL_INFORMATION.html">FILE_FS_LABEL_INFORMATION</a><br>
+</dd>
+
+<dd><a href="FILE_FS_SIZE_INFORMATION.html">FILE_FS_SIZE_INFORMATION</a><br>
+</dd>
+
+<dd><a href="FILE_FS_VOLUME_INFORMATION.html">FILE_FS_VOLUME_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="NtQueryVolumeInformationFile.html">NtQueryVolumeInformationFile</a><br>
+
+</dd>
+
+<dd><a href="NtSetVolumeInformationFile.html">NtSetVolumeInformationFile</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

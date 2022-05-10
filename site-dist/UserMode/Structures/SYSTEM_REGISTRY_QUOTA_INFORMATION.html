@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../index.html?page=UserMode%2FStructures%2FSYSTEM_REGISTRY_QUOTA_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SYSTEM_REGISTRY_QUOTA_INFORMATION</title>
+<link href="../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Structures/SYSTEM_REGISTRY_QUOTA_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 24 December</p>
+<br>
+
+<div class="text">SYSTEM_REGISTRY_QUOTA_INFORMATION</div>
+
+<div class="highlight">SYSTEM_REGISTRY_QUOTA_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _SYSTEM_REGISTRY_QUOTA_INFORMATION {
+<br>
+
+
+  ULONG                   <i><font color="blue">RegistryQuotaAllowed</font></i>;
+  ULONG                   <i><font color="blue">RegistryQuotaUsed</font></i>;
+  ULONG                   <i><font color="blue">PagedPoolSize</font></i>;
+
+
+
+} SYSTEM_REGISTRY_QUOTA_INFORMATION, *PSYSTEM_REGISTRY_QUOTA_INFORMATION;
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>RegistryQuotaAllowed</h6>
+
+<pre>
+Allowed size of all currently loaded hives.
+
+</pre>
+
+<h6>RegistryQuotaUsed</h6>
+
+<pre>
+Size of all currently loaded hives.
+
+</pre>
+
+<h6>PagedPoolSize</h6>
+
+<pre>
+Paged Pool size. <font class="ParamNameDesc">RegistryQuotaAllowed </font>shouldn't be grater then 80 percent of <font class="ParamNameDesc">PagedPoolSize</font>.
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+
+Remember that registry size is always sum of all loaded hives. So if you call <a href="../Undocumented%20Functions/NT%20Objects/Key/NtSaveKey.html">NtSaveKey</a>, size of registry will have the highest point at the end of saving.
+<b><u>SYSTEM_REGISTRY_QUOTA_INFORMATION</u></b> don't need restart of system to change registry quota. 
+
+</pre>
+<font color="#FF0000" size="12"><br>
+<br></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privileges: <strong class="req">SE_INCREASE_QUOTA_PRIVILEGE</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href="../Undocumented%20Functions/NT%20Objects/Key/NtRestoreKey.html">NtRestoreKey</a><br>
+
+</dd>
+
+<dd><a href="../Undocumented%20Functions/NT%20Objects/Key/NtSaveKey.html">NtSaveKey</a><br>
+
+</dd>
+
+<dd><a href="../Undocumented%20Functions/System%20Information/NtSetSystemInformation.html">
+NtSetSystemInformation</a><br>
+</dd>
+
+<dd><a href="SYSTEM_INFORMATION_CLASS.html">SYSTEM_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

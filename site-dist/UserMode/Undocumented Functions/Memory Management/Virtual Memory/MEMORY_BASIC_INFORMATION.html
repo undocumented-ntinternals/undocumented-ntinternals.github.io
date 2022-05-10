@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FMEMORY_BASIC_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>MEMORY_BASIC_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Memory Management/Virtual Memory/MEMORY_BASIC_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 15 April</p>
+<br>
+
+<div class="text">MEMORY_BASIC_INFORMATION</div>
+
+<div class="highlight">MEMORY_BASIC_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _MEMORY_BASIC_INFORMATION {
+<br>
+
+  PVOID                   <i><font color="blue">BaseAddress</font></i>;
+  PVOID                   <i><font color="blue">AllocationBase</font></i>;
+  ULONG                   <i><font color="blue">AllocationProtect</font></i>;
+  ULONG                   <i><font color="blue">RegionSize</font></i>;
+  ULONG                   <i><font color="blue">State</font></i>;
+  ULONG                   <i><font color="blue">Protect</font></i>;
+  ULONG                   <i><font color="blue">Type</font></i>;
+
+} MEMORY_BASIC_INFORMATION, *PMEMORY_BASIC_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>MEMORY_BASIC_INFORMATION</u></b> is returned as a
+reselt of call <a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtQueryVirtualMemory.html">
+NtQueryVirtualMemory</a> with <a href="MemoryBasicInformation.html">MemoryBasicInformation</a>
+information class. It's also descripted in <i>Ms SDK</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>BaseAddress &#160;&#160;&#160;&#160;Address of queried memory
+page.</li>
+</ul>
+
+<ul>
+<li>AllocationBase &#160;&#160;&#160;&#160;Base address of
+allocation. It's different (typically less) to BaseAddress when
+user allocate more then one page length memory block, and change
+attributes of a part of allocated block.</li>
+</ul>
+
+<ul>
+<li>AllocationProtect &#160;&#160;&#160;&#160;Access type on memory
+allocation. Can be one or combination of following attributes:</li>
+</ul>
+
+<ul>
+<li><b>PAGE_NOACCESS</b>
+</li>
+
+<li><b>PAGE_READONLY</b>
+</li>
+
+<li><b>PAGE_READWRITE</b>
+</li>
+
+<li><b>PAGE_WRITECOPY</b>
+</li>
+
+<li><b>PAGE_EXECUTE</b>
+</li>
+
+<li><b>PAGE_EXECUTE_READ</b>
+</li>
+
+<li><b>PAGE_EXECUTE_READWRITE</b>
+</li>
+
+<li><b>PAGE_EXECUTE_WRITECOPY</b>
+</li>
+
+<li><b>PAGE_GUARD</b>
+</li>
+
+<li><b>PAGE_NOCACHE</b>
+</li>
+
+<li><b>PAGE_WRITECOMBINE</b>
+</li>
+</ul>
+
+<ul>
+<li>RegionSize &#160;&#160;&#160;&#160;Size of queried region, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>State &#160;&#160;&#160;&#160;State of memory block. Can be one
+of:<br></li>
+</ul>
+
+<ul>
+<li><b>MEM_RESERVE</b>
+</li>
+
+<li><b>MEM_COMMIT</b>
+</li>
+
+<li><b>MEM_FREE</b>
+</li>
+</ul>
+
+<ul>
+<li>Protect &#160;&#160;&#160;&#160;Current protection of queried
+memory block. Can be one or combination of values listed for
+<font class="ParamNameDesc">AllocationProtect</font> member.</li>
+</ul>
+
+<ul>
+<li>Type &#160;&#160;&#160;&#160;Type of queried memory block. Can
+be one of:<br></li>
+</ul>
+
+<ul>
+<li><b>MEM_PRIVATE</b> - Queried block was allocated by call
+<a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a>,</li>
+
+<li><b>MEM_MAPPED</b> - Queried block is memory mapped Section
+Object,</li>
+
+<li><b>SEC_IMAGE</b> - Queried block is Section Object representing
+executable image file in memory.</li>
+</ul>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="MEMORY_INFORMATION_CLASS.html">MEMORY_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtProtectVirtualMemory.html">
+NtProtectVirtualMemory</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/Memory%20Management/Virtual%20Memory/NtQueryVirtualMemory.html">
+NtQueryVirtualMemory</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

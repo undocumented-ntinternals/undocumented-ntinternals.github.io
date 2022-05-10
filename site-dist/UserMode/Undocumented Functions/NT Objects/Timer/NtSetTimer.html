@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FTimer%2FNtSetTimer.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtSetTimer</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Timer/NtSetTimer.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br>
+
+<div class="text">NtSetTimer</div>
+
+<div class="highlight">NtSetTimer</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtSetTimer(
+<br>
+
+  IN HANDLE               <i><font color="blue">TimerHandle</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">DueTime</font></i>,
+  IN PTIMER_APC_ROUTINE   <i><font color="blue">TimerApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">TimerContext</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">ResumeTimer</font></i>,
+  IN LONG                 <i><font color="blue">Period</font></i> OPTIONAL,
+  OUT PBOOLEAN            <i><font color="blue">PreviousState</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>TimerHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Timer
+Object opened with <b>TIMER_MODIFY_STATE</b> access.</li>
+</ul>
+
+<ul>
+<li>DueTime &#160;&#160;&#160;&#160;Time when timer should be set,
+in <i>100ns</i> units. If it is negative value, it means relative
+time.</li>
+</ul>
+
+<ul>
+<li>TimerApcRoutine &#160;&#160;&#160;&#160;User's APC routine,
+defined as follows:</li>
+</ul>
+
+<pre>        <font color="blue">typedef void</font> (*<b>PTIMER_APC_ROUTINE</b>)(
+                        IN PVOID TimerContext,
+                        IN ULONG TimerLowValue,
+                        IN LONG TimerHighValue
+                        );
+</pre>
+
+<ul>
+<li>TimerContext &#160;&#160;&#160;&#160;Optional parameter to
+<font class="ParamNameDesc">TimerApcRoutine</font>.</li>
+</ul>
+
+<ul>
+<li>ResumeTimer &#160;&#160;&#160;&#160;If set, Power Management
+restores system to normal mode when timer is signaled.</li>
+</ul>
+
+<ul>
+<li>Period &#160;&#160;&#160;&#160;If zero, timer is set only once.
+Else will be set periodic in time intervals defined in <font class="ParamNameDesc">Period</font> value (in <i>100ms</i> units).</li>
+</ul>
+
+<ul>
+<li>PreviousState &#160;&#160;&#160;&#160;Optional pointer to value
+receiving state of Timer Object before <b><u>NtSetTimer</u></b>
+call.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtCancelTimer.html">
+NtCancelTimer</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtCreateTimer.html">
+NtCreateTimer</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtOpenTimer.html">
+NtOpenTimer</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtQueryTimer.html">
+NtQueryTimer</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

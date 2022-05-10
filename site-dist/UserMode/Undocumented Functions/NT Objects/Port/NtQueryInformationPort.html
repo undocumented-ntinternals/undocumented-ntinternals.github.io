@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtQueryInformationPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryInformationPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtQueryInformationPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 28 January</p>
+<br>
+
+<div class="text">NtQueryInformationPort</div>
+
+<div class="highlight">NtQueryInformationPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryInformationPort(
+<br>
+
+  IN HANDLE               <i><font color="blue">PortHandle</font></i>,
+  IN PORT_INFORMATION_CLASS <i><font color="blue">PortInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">PortInformation</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  OUT PULONG              <i><font color="blue">ResultLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Currently (on <b><i>WinNT 4.0 SP6</i></b>) there are no information
+classes for Port Object.
+
+<ul>
+<li>PortHandle &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>PortInformationClass &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>PortInformation &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ResultLength &#160;&#160;&#160;&#160;<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="PORT_INFORMATION_CLASS.html">PORT_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

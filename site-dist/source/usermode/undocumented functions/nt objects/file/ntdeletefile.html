@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtDeleteFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/ntdeletefile.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntdeletefile.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Fntdeletefile.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 29 December</p>
+<br>
+
+<div class="text">NtDeleteFile</div>
+
+<div class="highlight">NtDeleteFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtDeleteFile(
+<br>
+
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> );
+
+</pre>
+<br>
+<br>
+
+<pre>
+
+It's very interesting NT System Call... Normally, file deletion is realised as <a href="../../../../usermode/undocumented%20functions/nt%20objects/file/file_information_class.html#filedispositioninformation">FileDispositionInformation</a> class in a call to <a href="ntsetinformationfile.html">NtSetInformationFile</a>. When you use <b><u>NtDeleteFile</u></b>, file will be deleted immediatly after call (system isn't waiting for close last <b>HANDLE</b> to file).
+</pre>
+
+<hr width="40%">
+
+<pre>
+
+</pre>
+
+<h6><font color="#FF0000" size="12">ObjectAttributes</font>
+</h6>
+
+<pre>
+You can manipulate <u>ObjectName</u> and <u>RootDirectory</u> members. 
+Example: 
+  If you have only file name as Unicode string, use it as <u>ObjectName</u>.
+  If you have only a <b>HANDLE</b> to file, set it as <u>RootDirectory</u>. Set <u>ObjectName</u> as empty string.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/file/ntopenfile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href="ntsetinformationfile.html">NtSetInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

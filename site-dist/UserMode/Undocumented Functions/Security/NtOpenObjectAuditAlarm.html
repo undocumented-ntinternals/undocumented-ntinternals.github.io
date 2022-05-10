@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FSecurity%2FNtOpenObjectAuditAlarm.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtOpenObjectAuditAlarm</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Security/NtOpenObjectAuditAlarm.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 27 February</p>
+<br>
+
+<div class="text">NtOpenObjectAuditAlarm</div>
+
+<div class="highlight">NtOpenObjectAuditAlarm</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtOpenObjectAuditAlarm(
+<br>
+
+  IN PUNICODE_STRING      <i><font color="blue">SubsystemName</font></i> OPTIONAL,
+  IN PHANDLE              <i><font color="blue">ObjectHandle</font></i> OPTIONAL,
+  IN PUNICODE_STRING      <i><font color="blue">ObjectTypeName</font></i> OPTIONAL,
+  IN PUNICODE_STRING      <i><font color="blue">ObjectName</font></i> OPTIONAL,
+  IN PSECURITY_DESCRIPTOR <i><font color="blue">SecurityDescriptor</font></i> OPTIONAL,
+  IN HANDLE               <i><font color="blue">ClientToken</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">GrantedAccess</font></i>,
+  IN PPRIVILEGE_SET       <i><font color="blue">Privileges</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">ObjectCreation</font></i>,
+  IN BOOLEAN              <i><font color="blue">AccessGranted</font></i>,
+  OUT PBOOLEAN            <i><font color="blue">GenerateOnClose</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtOpenObjectAuditAlarm</u></b> does not work on
+<i>NT40-SP6</i>. For additional information see description of
+<u>ObjectOpenAuditAlarm</u> function in <i>Microsoft SDK</i>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>SubsystemName &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>ObjectHandle &#160;&#160;&#160;&#160;Can be any valid
+<b>HANDLE</b> to object, or <i>NULL</i>.</li>
+</ul>
+
+<ul>
+<li>ObjectTypeName &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>ObjectName &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>SecurityDescriptor &#160;&#160;&#160;&#160;Pointer to <a href="SECURITY_DESCRIPTOR.html">SECURITY_DESCRIPTOR</a> structure, or
+<i>NULL</i>.</li>
+</ul>
+
+<ul>
+<li>ClientToken &#160;&#160;&#160;&#160;<b>HANDLE</b> to Token
+Object previously opened with <b>TOKEN_QUERY</b> access.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>GrantedAccess &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>Privileges &#160;&#160;&#160;&#160;Optionally pointer to
+<a href="PRIVILEGE_SET.html">PRIVILEGE_SET</a> structure filled by
+user with valid privileges.</li>
+</ul>
+
+<ul>
+<li>ObjectCreation &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>AccessGranted &#160;&#160;&#160;&#160;= ???</li>
+</ul>
+
+<ul>
+<li>GenerateOnClose &#160;&#160;&#160;&#160;Optionally pointer to
+<b>BOOLEAN</b> value.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privilege: <strong class="req">SE_AUDIT_PRIVILEGE</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../Undocumented%20Functions/Security/NtAccessCheckAndAuditAlarm.html">
+NtAccessCheckAndAuditAlarm</a><br>
+</dd>
+
+<dd><a href="NtCloseObjectAuditAlarm.html">NtCloseObjectAuditAlarm</a><br>
+</dd>
+
+<dd><a href="NtDeleteObjectAuditAlarm.html">NtDeleteObjectAuditAlarm</a><br>
+</dd>
+
+<dd><a href="PRIVILEGE_SET.html">PRIVILEGE_SET</a><br>
+</dd>
+
+<dd><a href="SECURITY_DESCRIPTOR.html">SECURITY_DESCRIPTOR</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

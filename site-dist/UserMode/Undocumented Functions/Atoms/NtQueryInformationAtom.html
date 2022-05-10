@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FAtoms%2FNtQueryInformationAtom.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryInformationAtom</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Atoms/NtQueryInformationAtom.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br>
+
+<div class="text">NtQueryInformationAtom</div>
+
+<div class="highlight">NtQueryInformationAtom</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryInformationAtom(
+<br>
+
+  IN RTL_ATOM             <i><font color="blue">Atom</font></i>,
+  IN ATOM_INFORMATION_CLASS <i><font color="blue">AtomInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">AtomInformation</font></i>,
+  IN ULONG                <i><font color="blue">AtomInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtQueryInformationAtom</u></b> is used to get single Atom
+properties or to read Global Atom Table.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Atom &#160;&#160;&#160;&#160;Atom to query. If <font class="ParamNameDesc">AtomInformationClass</font> parameter is <a href="AtomTableInformation.html">AtomTableInformation</a>, <font class="ParamNameDesc">Atom</font> parameter is not used.</li>
+</ul>
+
+<ul>
+<li>AtomInformationClass &#160;&#160;&#160;&#160;See <a href="../../Undocumented%20Functions/Atoms/ATOM_INFORMATION_CLASS.html">ATOM_INFORMATION_CLASS</a>
+enumeration type for details.</li>
+</ul>
+
+<ul>
+<li>AtomInformation &#160;&#160;&#160;&#160;Result of call -
+pointer to user's allocated buffer for data.</li>
+</ul>
+
+<ul>
+<li>AtomInformationLength &#160;&#160;&#160;&#160;Size of
+<font class="ParamNameDesc">AtomInformation</font> buffer, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>ReturnLength &#160;&#160;&#160;&#160;Pointer to <b>ULONG</b>
+value contains required <font class="ParamNameDesc">AtomInformation</font> buffer size.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../Undocumented%20Functions/Atoms/ATOM_INFORMATION_CLASS.html">ATOM_INFORMATION_CLASS</a><br>
+
+</dd>
+
+<dd><a href="../../Undocumented%20Functions/Atoms/ATOM_TABLE_INFORMATION.html">ATOM_TABLE_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="NtAddAtom.html">NtAddAtom</a><br>
+</dd>
+
+<dd><a href="NtFindAtom.html">NtFindAtom</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

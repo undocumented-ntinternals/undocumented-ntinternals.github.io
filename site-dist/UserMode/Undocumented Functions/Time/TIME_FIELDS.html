@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FTime%2FTIME_FIELDS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>TIME_FIELDS</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Time/TIME_FIELDS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">TIME_FIELDS</div>
+
+<div class="highlight">TIME_FIELDS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _TIME_FIELDS {
+<br>
+
+  USHORT                  <i><font color="blue">Year</font></i>;
+  USHORT                  <i><font color="blue">Month</font></i>;
+  USHORT                  <i><font color="blue">Day</font></i>;
+  USHORT                  <i><font color="blue">Hour</font></i>;
+  USHORT                  <i><font color="blue">Minute</font></i>;
+  USHORT                  <i><font color="blue">Second</font></i>;
+  USHORT                  <i><font color="blue">Milliseconds</font></i>;
+  USHORT                  <i><font color="blue">Weekday</font></i>;
+
+} TIME_FIELDS, *PTIME_FIELDS;
+</pre>
+<br>
+<br>
+<br>
+<b><u>TIME_FIELDS</u></b> structure is <i>NTDLL</i> version of
+<i>Win 32 API</i> <u>SYSTEM_TIME</u>. It contains detailed
+information about date and time.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Year &#160;&#160;&#160;&#160;Year, in range <b><i>1601 -
+65535</i></b>.</li>
+</ul>
+
+<ul>
+<li>Month &#160;&#160;&#160;&#160;Month, in range <b><i>1 -
+12</i></b>.</li>
+</ul>
+
+<ul>
+<li>Day &#160;&#160;&#160;&#160;Day, in range <b><i>1 - 31</i></b>,
+dependly on <font class="ParamNameDesc">Month</font> member.</li>
+</ul>
+
+<ul>
+<li>Hour &#160;&#160;&#160;&#160;Hour, in range <b><i>0 -
+23</i></b>.</li>
+</ul>
+
+<ul>
+<li>Minute &#160;&#160;&#160;&#160;Minute, in range <b><i>0 -
+59</i></b>.</li>
+</ul>
+
+<ul>
+<li>Second &#160;&#160;&#160;&#160;Second, in range <b><i>0 -
+59</i></b>.</li>
+</ul>
+
+<ul>
+<li>Milliseconds &#160;&#160;&#160;&#160;Milliseconds, in range
+<b><i>0 - 1000</i></b>.</li>
+</ul>
+
+<ul>
+<li>Weekday &#160;&#160;&#160;&#160;Day of week, in range <b><i>0 -
+6</i></b>, where <i>0</i> means <font color="red">"Sunday"</font>,
+<i>1</i> means <font color="red">"Monday"</font> etc.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../Undocumented%20Functions/Time/NtQuerySystemTime.html">NtQuerySystemTime</a><br>
+
+</dd>
+
+<dd><a href="../../Undocumented%20Functions/Time/NtSetSystemTime.html">NtSetSystemTime</a><br>
+
+</dd>
+
+<dd><a href="RtlTimeFieldsToTime.html">RtlTimeFieldsToTime</a><br>
+</dd>
+
+<dd><a href="RtlTimeToTimeFields.html">RtlTimeToTimeFields</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FSystem%20Information%2FStructures%2FSYSTEM_THREAD.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SYSTEM_THREAD</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/System Information/Structures/SYSTEM_THREAD.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO2, 18 March</p>
+<br>
+
+<div class="text">SYSTEM_THREAD</div>
+
+<div class="highlight">SYSTEM_THREAD</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _SYSTEM_THREAD {
+<br>
+
+  LARGE_INTEGER           <i><font color="blue">KernelTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">UserTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">CreateTime</font></i>;
+  ULONG                   <i><font color="blue">WaitTime</font></i>;
+  PVOID                   <i><font color="blue">StartAddress</font></i>;
+  CLIENT_ID               <i><font color="blue">ClientId</font></i>;
+  KPRIORITY               <i><font color="blue">Priority</font></i>;
+  LONG                    <i><font color="blue">BasePriority</font></i>;
+  ULONG                   <i><font color="blue">ContextSwitchCount</font></i>;
+  ULONG                   <i><font color="blue">State</font></i>;
+  KWAIT_REASON            <i><font color="blue">WaitReason</font></i>;
+
+} SYSTEM_THREAD, *PSYSTEM_THREAD;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>SYSTEM_THREAD</u></b> is a part of <a href="SYSTEM_PROCESS_INFORMATION.html">SYSTEM_PROCESS_INFORMATION</a>
+structure avaiable by <a href="../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a> with <a href="../../../Undocumented%20Functions/System%20Information/SYSTEM_INFORMATION_CLASS.html#SystemProcessInformation">
+SystemProcessInformation</a> enumeration type.<br>
+<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>KernelTime &#160;&#160;&#160;&#160; Sum of thread's execution
+time in <font class="ParamNameDesc">KernelMode</font>, in native
+format.<br></li>
+</ul>
+
+<ul>
+<li>UserTime&#160;&#160;&#160;&#160; Sum of thread's execution time
+in <font class="ParamNameDesc">UserMode</font>, in native
+format.</li>
+</ul>
+
+<ul>
+<li>CreateTime&#160;&#160;&#160;&#160; Time of thread creation, in
+native format.</li>
+</ul>
+
+<ul>
+<li>WaitTime &#160;&#160;&#160;&#160; Sum of thread's waiting time,
+in native format.</li>
+</ul>
+
+<ul>
+<li>StartAddress &#160;&#160;&#160;&#160; Thread start
+address.</li>
+</ul>
+
+<ul>
+<li>ClientId &#160;&#160;&#160;&#160; Process and thread
+identyficators.</li>
+</ul>
+
+<ul>
+<li>Priority &#160;&#160;&#160;&#160; Thread prioryty.</li>
+</ul>
+
+<ul>
+<li>BasePriority &#160;&#160;&#160;&#160; Thread base
+prioryty.</li>
+</ul>
+
+<ul>
+<li>ContextSwitchCount &#160;&#160;&#160;&#160; Number of context
+switches executed by thread.</li>
+</ul>
+
+<ul>
+<li>State &#160;&#160;&#160;&#160; Current thread's state.</li>
+</ul>
+
+<ul>
+<li>WaitReason &#160;&#160;&#160;&#160; Reason for waiting (if
+any).<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href="SYSTEM_PROCESS_INFORMATION.html">SYSTEM_PROCESS_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

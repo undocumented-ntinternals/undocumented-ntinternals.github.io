@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFILE_FS_VOLUME_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>FILE_FS_VOLUME_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FILE_FS_VOLUME_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2O January</p>
+<br>
+
+<div class="text">FILE_FS_VOLUME_INFORMATION</div>
+
+<div class="highlight">FILE_FS_VOLUME_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_FS_VOLUME_INFORMATION {
+<br>
+
+  LARGE_INTEGER           <i><font color="blue">VolumeCreationTime</font></i>;
+  ULONG                   <i><font color="blue">VolumeSerialNumber</font></i>;
+  ULONG                   <i><font color="blue">VolumeLabelLength</font></i>;
+  BOOLEAN                 <i><font color="blue">SupportsObjects</font></i>;
+  WCHAR                   <i><font color="blue">VolumeLabel[1]</font></i>;
+
+} FILE_FS_VOLUME_INFORMATION, *PFILE_FS_VOLUME_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure provides basic information about volume. It's filled in a
+result of call <a href="../../../Undocumented%20Functions/NT%20Objects/File/NtQueryVolumeInformationFile.html">
+NtQueryVolumeInformationFile</a> with <a href="../../../Undocumented%20Functions/NT%20Objects/File/FS_INFORMATION_CLASS.html#FileFsVolumeInformation">
+FileFsVolumeInformation</a> class.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>VolumeCreationTime &#160;&#160;&#160;&#160;It means time of
+last Volume Formating Process.</li>
+</ul>
+
+<ul>
+<li>VolumeSerialNumber &#160;&#160;&#160;&#160;Serial number of
+volume, associated in Volume Formating Process.</li>
+</ul>
+
+<ul>
+<li>VolumeLabelLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">VolumeLabel</font> array, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>SupportsObjects &#160;&#160;&#160;&#160;If TRUE, Object Files
+can be stored on specified volume.</li>
+</ul>
+
+<ul>
+<li>VolumeLabel[1] &#160;&#160;&#160;&#160;Name of volume. Can be
+set with <a href="../../../Undocumented%20Functions/NT%20Objects/File/FS_INFORMATION_CLASS.html#FileFsLabelInformation">
+FileFsLabelInformation</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/FILE_FS_LABEL_INFORMATION.html">
+FILE_FS_LABEL_INFORMATION</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/FS_INFORMATION_CLASS.html">
+FS_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtQueryVolumeInformationFile.html">
+NtQueryVolumeInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

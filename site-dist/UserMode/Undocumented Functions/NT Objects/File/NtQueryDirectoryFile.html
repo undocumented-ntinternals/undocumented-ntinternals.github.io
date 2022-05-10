@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtQueryDirectoryFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryDirectoryFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtQueryDirectoryFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 17 January</p>
+<br>
+
+<div class="text">NtQueryDirectoryFile</div>
+
+<div class="highlight">NtQueryDirectoryFile</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryDirectoryFile(
+<br>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  OUT PVOID               <i><font color="blue">FileInformation</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  IN FILE_INFORMATION_CLASS <i><font color="blue">FileInformationClass</font></i>,
+  IN BOOLEAN              <i><font color="blue">ReturnSingleEntry</font></i>,
+  IN PUNICODE_STRING      <i><font color="blue">FileMask</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">RestartScan</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtQueryDirectoryFile</u></b> is used to enumerate entries
+(files or directories) placed into file container object
+(directory). <i>Win32 API</i> use it in
+<b><i><u>FindFirstFile-FindNextFile</u></i></b> routines.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>FileHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to File Object
+opened with <b>FILE_DIRECTORY_FILE</b> option and
+<b>FILE_LIST_DIRECTORY</b> access.</li>
+</ul>
+
+<ul>
+<li>Event &#160;&#160;&#160;&#160;Optional <b>HANDLE</b> to Event
+Object signaled after query complete.</li>
+</ul>
+
+<ul>
+<li>ApcRoutine &#160;&#160;&#160;&#160;Optinal pointer to user's
+<i>APC</i> routine queued after query complete.</li>
+</ul>
+
+<ul>
+<li>ApcContext &#160;&#160;&#160;&#160;Parameter for <font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;Pointer to
+<b>IO_STATUS_BLOCK</b> structure. After enumeration complete,
+<u><i>Information</i></u> member of this structure contains number
+of bytes writed into <font class="ParamNameDesc">FileInformation</font> buffer. <u><i>Status</i></u>
+member contains IO result of call, and can be one of:<br></li>
+</ul>
+
+<ul>
+<li><b>STATUS_SUCCESS</b> - Enumeration has results in <font class="ParamNameDesc">FileInformation</font> buffer.</li>
+
+<li><b>STATUS_NO_MORE_FILES</b> - <font class="ParamNameDesc">FileInformation</font> buffer is empty, and next
+call isn't needed.</li>
+
+<li><b>STATUS_NO_SUCH_FILE</b> - Returned when <font class="ParamNameDesc">FileMask</font> parameter specify exactly one file
+(don't contains <font face="monospace" color="red">'*'</font> or
+<font face="monospace" color="red">'?'</font> characters), and
+queried directory don't contains that file.</li>
+</ul>
+
+<ul>
+<li>FileInformation &#160;&#160;&#160;&#160;User's allocated buffer
+for output data.</li>
+</ul>
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;Length of <font class="ParamNameDesc">FileInformation</font> buffer, in bytes.</li>
+</ul>
+
+<ul>
+<li>FileInformationClass &#160;&#160;&#160;&#160;Information class.
+Can be one of:</li>
+</ul>
+
+<ul>
+<li><a href="FILE_INFORMATION_CLASS.html#FileDirectoryInformation.html">FileDirectoryInformation</a>
+</li>
+
+<li><a href="FILE_INFORMATION_CLASS.html#FileFullDirectoryInformation">FileFullDirectoryInformation</a>
+</li>
+
+<li><a href="FILE_INFORMATION_CLASS.html#FileBothDirectoryInformation">FileBothDirectoryInformation</a>
+</li>
+
+<li><a href="FILE_INFORMATION_CLASS.html#FileNamesInformation">FileNamesInformation</a>
+</li>
+
+<li><a href="FILE_INFORMATION_CLASS.html#FileOleDirectoryInformation">FileOleDirectoryInformation</a>
+</li>
+</ul>
+
+<ul>
+<li>ReturnSingleEntry &#160;&#160;&#160;&#160;If set, only one
+entry is returned.</li>
+</ul>
+
+<ul>
+<li>FileMask &#160;&#160;&#160;&#160;If specified, only information
+about files matches this wildchar mask will be returned.<br>
+&#160;&#160;&#160;&#160;<b>WARNING:</b> There's no rule specifing
+what to do when caller makes two calls to
+<b><u>NtQueryDirectoryFile</u></b> both with different masks.
+Typically <font class="ParamNameDesc">FileMask</font> specified in
+second call will be ignored, and results will match the first (for
+example: <b><i>NTFS.SYS</i></b>). The best solution is to close
+directory <b>HANDLE</b> after every call with <font class="ParamNameDesc">FileMask</font> parameter specified.</li>
+</ul>
+
+<ul>
+<li>RestartScan &#160;&#160;&#160;&#160;Used with <font class="ParamNameDesc">ReturnSingleEntry</font> parameter. If set,
+<b><u>NtQueryDirectoryFile</u></b> continue enumeration after last
+enumerated element in previous call. If no, returns the first entry
+in directory.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+For detailed information about results, see <a href="FILE_INFORMATION_CLASS.html">FILE_INFORMATION_CLASS</a> with
+information classes specified above.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtCreateFile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtOpenFile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtQueryInformationFile.html">
+NtQueryInformationFile</a><br>
+</dd>
+
+<dd><a href="NtQueryOleDirectoryFile.html">NtQueryOleDirectoryFile</a><br>
+</dd>
+
+<dd><a href="NtQueryVolumeInformationFile.html">NtQueryVolumeInformationFile</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

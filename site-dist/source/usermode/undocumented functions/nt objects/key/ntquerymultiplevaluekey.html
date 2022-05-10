@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryMultipleValueKey</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/key/ntquerymultiplevaluekey.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fkey%2Fntquerymultiplevaluekey.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fkey%2Fntquerymultiplevaluekey.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2O February</p>
+<br>
+
+<div class="text">NtQueryMultipleValueKey</div>
+
+<div class="highlight">NtQueryMultipleValueKey</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryMultipleValueKey(
+<br>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN OUT PKEY_MULTIPLE_VALUE_INFORMATION <i><font color="blue">ValuesList</font></i>,
+  IN ULONG                <i><font color="blue">NumberOfValues</font></i>,
+  OUT PVOID               <i><font color="blue">DataBuffer</font></i>,
+  IN OUT ULONG            <i><font color="blue">BufferLength</font></i>,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtQueryMultipleValueKey</u></b> returns data of one
+or more values under specified Key Object.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>KeyHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Key Object
+opened with <b>KEY_READ</b> access.</li>
+</ul>
+
+<ul>
+<li>ValuesList &#160;&#160;&#160;&#160;Array of <a href="../../../../usermode/undocumented%20functions/nt%20objects/key/key_multiple_value_information.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a> structures contains names of
+values to query.</li>
+</ul>
+
+<ul>
+<li>NumberOfValues &#160;&#160;&#160;&#160;Number of members in
+<font class="ParamNameDesc">ValueList</font> array.</li>
+</ul>
+
+<ul>
+<li>DataBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+receiving queried value's data.</li>
+</ul>
+
+<ul>
+<li>BufferLength &#160;&#160;&#160;&#160;Pointer to value specifing
+length of <font class="ParamNameDesc">DataBuffer</font>, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>RequiredLength &#160;&#160;&#160;&#160;Optionally pointer to
+value receiving required <font class="ParamNameDesc">DataBuffer</font> length, in bytes.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/key/key_multiple_value_information.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/key/ntcreatekey.html">
+NtCreateKey</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/key/ntenumeratevaluekey.html">
+NtEnumerateValueKey</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/key/ntopenkey.html">
+NtOpenKey</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/key/ntqueryvaluekey.html">
+NtQueryValueKey</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

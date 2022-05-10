@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FTimer%2FNtQueryTimer.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryTimer</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Timer/NtQueryTimer.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br>
+
+<div class="text">NtQueryTimer</div>
+
+<div class="highlight">NtQueryTimer</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryTimer(
+<br>
+
+  IN HANDLE               <i><font color="blue">TimerHandle</font></i>,
+  IN TIMER_INFORMATION_CLASS <i><font color="blue">TimerInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">TimerInformation</font></i>,
+  IN ULONG                <i><font color="blue">TimerInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>TimerHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Timer
+Object opened with <b>TIMER_QUERY_STATE</b> access.</li>
+</ul>
+
+<ul>
+<li>TimerInformationClass &#160;&#160;&#160;&#160;Information
+class. See <a href="TIMER_INFORMATION_CLASS.html">TIMER_INFORMATION_CLASS</a> for
+details.</li>
+</ul>
+
+<ul>
+<li>TimerInformation &#160;&#160;&#160;&#160;User's allocated
+buffer for result data.</li>
+</ul>
+
+<ul>
+<li>TimerInformationLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">TimerInformation</font> buffer, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>ReturnLength &#160;&#160;&#160;&#160;Optional pointer to value
+received used/required length of <font class="ParamNameDesc">TimerInformation</font> buffer.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtCreateTimer.html">
+NtCreateTimer</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/NtOpenTimer.html">
+NtOpenTimer</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Timer/TIMER_INFORMATION_CLASS.html">
+TIMER_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

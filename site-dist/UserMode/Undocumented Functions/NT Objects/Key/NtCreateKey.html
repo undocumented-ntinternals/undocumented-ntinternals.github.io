@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FNtCreateKey.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtCreateKey</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/NtCreateKey.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 October</p>
+<br>
+
+<div class="text">NtCreateKey</div>
+
+<div class="highlight">NtCreateKey</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateKey(
+<br>
+
+  OUT PHANDLE             <i><font color="blue">pKeyHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i>,
+  IN ULONG                <i><font color="blue">TitleIndex</font></i>,
+  IN PUNICODE_STRING      <i><font color="blue">Class</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">CreateOptions</font></i>,
+  OUT PULONG              <i><font color="blue">Disposition</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+
+<pre>See <b>ZwCreateKey</b> in <i>NT DDK</i> or <i>2000 DDK</i> for detailed description.
+
+
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="NtOpenKey.html">NtOpenKey</a><br>
+<a href="NtDeleteKey.html">NtDeleteKey</a><br>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

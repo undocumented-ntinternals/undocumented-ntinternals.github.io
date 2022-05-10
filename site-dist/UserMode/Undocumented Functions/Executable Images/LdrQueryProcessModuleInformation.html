@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FExecutable%20Images%2FLdrQueryProcessModuleInformation.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>LdrQueryProcessModuleInformation</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Executable Images/LdrQueryProcessModuleInformation.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 22 October</p>
+<br>
+
+<div class="text">LdrQueryProcessModuleInformation</div>
+
+<div class="highlight">LdrQueryProcessModuleInformation</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+LdrQueryProcessModuleInformation(
+<br>
+
+  OUT PSYSTEM_MODULE_INFORMATION <i><font color="blue">SystemModuleInformationBuffer</font></i>,
+  IN ULONG                <i><font color="blue">BufferSize</font></i>,
+  OUT PULONG              <i><font color="blue">RequiredSize</font></i> OPTIONAL );  
+
+</pre>
+<br>
+<br>
+
+<div class="reg">Use for enumerate modules loaded with current
+process.</div>
+
+<pre>
+
+
+</pre>
+
+<h6>BufferSize</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Required minimum size is <b>sizeof(</b><a href="../../Structures/SYSTEM_MODULE_INFORMATION.html">SYSTEM_MODULE_INFORMATION</a><b>)</b>
+(4 bytes).</div>
+
+<pre>
+
+</pre>
+
+<div class="Require">Example results:</div>
+<br>
+
+<table width="1151" border="1" cellspacing="0" cellpadding="2">
+<tr>
+<th>Name</th>
+<th>Path</th>
+<th>Res01</th>
+<th>Res02</th>
+<th>Address</th>
+<th>Size</th>
+<th>Flags</th>
+<th>ID</th>
+<th>Rank</th>
+<th>w18</th>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">EnumModules.exe</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">D:\Program
+Files\Microsoft Visual Studio\MyProject...</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00400000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00016000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">00005000</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">000</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">ntdll.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\System32\ntdll.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77F60000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">0005F000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">00004004</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">001</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0001</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">KERNEL32.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\system32\KERNEL32.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77F00000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00060000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">000C4006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">002</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0002</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">USER32.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\system32\USER32.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77E70000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00055000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">00084006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">003</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">GDI32.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\system32\GDI32.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77ED0000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">0002C000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">00004006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">004</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0005</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">ADVAPI32.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\system32\ADVAPI32.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77DC0000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">0003F000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">000C4006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">005</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0004</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+
+<tr>
+<td width="10%" height="17">
+<p align="left"><b><font face="Arial" size="2">RPCRT4.dll</font></b>
+</p>
+</td>
+<td width="31%" height="17">
+<p align="left"><font face="Arial" size="2">C:\WINNT\system32\RPCRT4.dll</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">BAADF00D</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00000000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">77E10000</font>
+</p>
+</td>
+<td width="8%" height="17">
+<p align="right"><font face="Courier New" size="2">00057000</font>
+</p>
+</td>
+<td width="9%" height="17">
+<p align="center"><font face="Courier New" size="2">000C4006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">006</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">0003</font>
+</p>
+</td>
+<td width="6%" height="17">
+<p align="right"><font face="Courier New" size="2">65535</font>
+</p>
+</td>
+</tr>
+</table>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong><br>
+<br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="../../Structures/SYSTEM_MODULE.html">SYSTEM_MODULE</a><br>
+<a href="../../Structures/SYSTEM_MODULE_INFORMATION.html">SYSTEM_MODULE_INFORMATION</a><br>
+
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

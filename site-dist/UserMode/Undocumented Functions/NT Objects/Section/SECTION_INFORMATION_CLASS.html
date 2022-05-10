@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FSection%2FSECTION_INFORMATION_CLASS.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SECTION_INFORMATION_CLASS</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Section/SECTION_INFORMATION_CLASS.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 14 March</p>
+<br>
+
+<div class="text">SECTION_INFORMATION_CLASS</div>
+
+<div class="highlight">SECTION_INFORMATION_CLASS</div>
+<br>
+
+<pre class="FnDefinition">typedef enum _SECTION_INFORMATION_CLASS {
+<br>
+
+
+    <a href="#SectionBasicInformation">SectionBasicInformation</a>,
+    <a href="#SectionImageInformation">SectionImageInformation</a>
+
+
+} SECTION_INFORMATION_CLASS, *PSECTION_INFORMATION_CLASS;
+</pre>
+<br>
+<br>
+<br>
+Enumeration type <b><u>SECTION_INFORMATION_CLASS</u></b> is used in
+a call to <a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtQuerySection.html">
+NtQuerySection</a> function.<br>
+<br>
+This type can be one of:
+
+<h6><a name="SectionBasicInformation" id="SectionBasicInformation"></a>
+</h6>
+
+<ul>
+<li>SectionBasicInformation &#160;&#160;&#160;&#160;Result buffer
+contains structure <a href="../../../Structures/SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a>.
+Buffer size shoud be set to <i>0x0C</i>.</li>
+</ul>
+
+<h6><a name="SectionImageInformation" id="SectionImageInformation"></a>
+</h6>
+
+<ul>
+<li>SectionImageInformation &#160;&#160;&#160;&#160;Result buffer
+contains structure <a href="../../../Structures/SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a>.
+Buffer size shoud be set to <i>0x28</i>. This information class is
+accessable only where section was created with <b>HANDLE</b> to
+open executable file (see <a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtCreateSection.html">
+NtCreateSection</a> for details).<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtCreateSection.html">
+NtCreateSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtOpenSection.html">
+NtOpenSection</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Section/NtQuerySection.html">
+NtQuerySection</a><br>
+</dd>
+
+<dd><a href="../../../Structures/SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="../../../Structures/SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

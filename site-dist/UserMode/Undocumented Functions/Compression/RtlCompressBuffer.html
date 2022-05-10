@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FCompression%2FRtlCompressBuffer.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlCompressBuffer</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Compression/RtlCompressBuffer.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<br>
+
+<div class="text">RtlCompressBuffer</div>
+
+<div class="highlight">RtlCompressBuffer</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+RtlCompressBuffer(
+<br>
+
+  IN ULONG                <i><font color="blue">CompressionFormat</font></i>,
+  IN PVOID                <i><font color="blue">SourceBuffer</font></i>,
+  IN ULONG                <i><font color="blue">SourceBufferLength</font></i>,
+  OUT PVOID               <i><font color="blue">DestinationBuffer</font></i>,
+  IN ULONG                <i><font color="blue">DestinationBufferLength</font></i>,
+  IN ULONG                <i><font color="blue">Unknown</font></i>,
+  OUT PULONG              <i><font color="blue">pDestinationSize</font></i>,
+  IN PVOID                <i><font color="blue">WorkspaceBuffer</font></i> );
+
+
+</pre>
+<br>
+<br>
+
+<h6>CompressionFormat</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Only lower 2 bytes are supported. Higher byte
+means Compression Engine. Lower byte means Compressing Format.
+
+<ul>
+<li><b><u>Compression format</u></b> (0-15). Bits 4-7 are unused.
+In NT 4.0 sp6 only LZNT1 is supported. <b>#define
+COMPRESSION_FORMAT_NONE (0x0000) <font color="green"><i>//
+[result:STATUS_INVALID_PARAMETER]</i></font> #define
+COMPRESSION_FORMAT_DEFAULT (0x0001) <font color="green"><i>//
+[result:STATUS_INVALID_PARAMETER]</i></font> #define
+COMPRESSION_FORMAT_LZNT1 (0x0002) #define COMPRESSION_FORMAT_NS3
+(0x0003) <font color="green"><i>// STATUS_NOT_SUPPORTED</i></font>
+#define ... <font color="green"><i>//
+STATUS_NOT_SUPPORTED</i></font> #define COMPRESSION_FORMAT_NS15
+(0x000F) <font color="green"><i>// STATUS_NOT_SUPPORTED</i></font>
+#define COMPRESSION_FORMAT_SPARSE (0x4000) <font color="green"><i>// ???
+[result:STATUS_INVALID_PARAMETER]</i></font></b></li>
+
+<li><b><u>Compression engine</u></b>. It's level of compression.
+Higher level means better results, but longer time used for
+compression process. In NT 4.0 sp6 engines works only with
+compression (specified in <a href="rtldecompressbuffer.html">RtlDecompressBuffer</a> are ignored)
+<b>#define COMPRESSION_ENGINE_STANDARD (0x0000) <font color="green"><i>// Standart compression</i></font> #define
+COMPRESSION_ENGINE_MAXIMUM (0x0100) <font color="green"><i>//
+Maximum (slowest but better)</i></font> #define
+COMPRESSION_ENGINE_HIBER (0x0200) <font color="green"><i>//
+STATUS_NOT_SUPPORTED</i></font></b></li>
+</ul></div>
+
+<pre>
+
+</pre>
+
+<h6>Unknown</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Put 0x1000 here. Propably means page size.</div>
+
+<pre>
+
+
+</pre>
+
+<h6>pDestinationSize</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">Size of data after compression.</div>
+
+<pre>
+
+
+</pre>
+
+<h6>WorkspaceBuffer</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">See <a href="rtlgetcompressionworkspacesize.html">RtlGetCompressionWorkSpaceSize</a>
+for more information.</div>
+
+<pre>
+
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="RtlDecompressBuffer.html">RtlDecompressBuffer</a><br>
+<a href="RtlGetCompressionWorkSpaceSize.html">RtlGetCompressionWorkSpaceSize</a><br>
+
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

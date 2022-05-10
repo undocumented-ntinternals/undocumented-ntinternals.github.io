@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FDebugObject%2FDBG_STATE.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>DBG_STATE</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/DebugObject/DBG_STATE.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO8, 17 April</p>
+<br>
+
+<div class="text">DBG_STATE</div>
+
+<div class="highlight">DBG_STATE</div>
+<br>
+
+<pre class="FnDefinition">
+typedef enum _DBG_STATE {
+<br>
+
+
+    <a href="#DbgIdle">DbgIdle</a>,
+    <a href="#DbgReplyPending">DbgReplyPending</a>,
+    <a href="#DbgCreateThreadStateChange">DbgCreateThreadStateChange</a>,
+    <a href="#DbgCreateProcessStateChange">DbgCreateProcessStateChange</a>,
+    <a href="#DbgExitThreadStateChange">DbgExitThreadStateChange</a>,
+    <a href="#DbgExitProcessStateChange">DbgExitProcessStateChange</a>,
+    <a href="#DbgExceptionStateChange">DbgExceptionStateChange</a>,
+    <a href="#DbgBreakpointStateChange">DbgBreakpointStateChange</a>,
+    <a href="#DbgSingleStepStateChange">DbgSingleStepStateChange</a>,
+    <a href="#DbgLoadDllStateChange">DbgLoadDllStateChange</a>,
+    <a href="#DbgUnloadDllStateChange">DbgUnloadDllStateChange</a>
+
+
+} DBG_STATE, *PDBG_STATE;
+</pre>
+<br>
+<br>
+<br>
+<b><u>DBG_STATE</u></b> enumeration is used by <u>Debug Objects</u>
+as a member of <a href="DBGUI_WAIT_STATE_CHANGE.html">DBGUI_WAIT_STATE_CHANGE</a>
+structure returned in successfull call to <a href="NtWaitForDebugEvent.html">NtWaitForDebugEvent</a> function. It
+describes current state of <u>Debug Object</u>. Possible values
+are:<br>
+
+<h6><a name="DbgIdle" id="DbgIdle"></a>
+</h6>
+
+<ul>
+<li>DbgIdle &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgReplyPending" id="DbgReplyPending"></a>
+</h6>
+
+<ul>
+<li>DbgReplyPending &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgCreateThreadStateChange" id="DbgCreateThreadStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgCreateThreadStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgCreateProcessStateChange" id="DbgCreateProcessStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgCreateProcessStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgExitThreadStateChange" id="DbgExitThreadStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgExitThreadStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgExitProcessStateChange" id="DbgExitProcessStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgExitProcessStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgExceptionStateChange" id="DbgExceptionStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgExceptionStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgBreakpointStateChange" id="DbgBreakpointStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgBreakpointStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgSingleStepStateChange" id="DbgSingleStepStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgSingleStepStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgLoadDllStateChange" id="DbgLoadDllStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgLoadDllStateChange &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<h6><a name="DbgUnloadDllStateChange" id="DbgUnloadDllStateChange"></a>
+</h6>
+
+<ul>
+<li>DbgUnloadDllStateChange &#160;&#160;&#160;&#160;<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+
+<dd><strong>Win XP/2003</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="DBGUI_WAIT_STATE_CHANGE.html">DBGUI_WAIT_STATE_CHANGE</a><br>
+</dd>
+
+<dd><a href="NtWaitForDebugObject.html">NtWaitForDebugObject</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>
