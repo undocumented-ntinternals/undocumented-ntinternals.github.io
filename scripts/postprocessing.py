@@ -41,7 +41,20 @@ for html_path in html_paths:
     with open(html_path, 'wb') as html_outfile:
         # Include the original meta_content_type and doctype here, as they are stripped during HTML processing
         html_outfile.write(lxml.html.tostring(parsed_html, method='html', include_meta_content_type=True,
-                doctype='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'))
+                                              doctype='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'))
 
 # Remove bundled analytics scripts
 shutil.rmtree(site_dist_path / Path("cdn-cgi"))
+
+# Add note to title.html
+MIRROR_NOTE = """
+<div><p>This site is a mirror of the original <a href="http://undocumented.ntinternals.net" target="_blank">undocumented.ntinternals.net</a>. See <a href="https://github.com/undocumented-ntinternals/undocumented-ntinternals.github.io" target="_blank">github.com/undocumented-ntinternals/undocumented-ntinternals.github.io</a> for more details.</p></div>
+"""
+title_html_path = site_dist_path / Path("title.html")
+parsed_title_html = lxml.html.parse(title_html_path)
+mirror_note_html = lxml.html.fragments_fromstring(MIRROR_NOTE)[0]
+parsed_title_html.find("//body").append(mirror_note_html)
+
+with open(title_html_path, 'wb') as title_html_outfile:
+    title_html_outfile.write(lxml.html.tostring(parsed_title_html, method='html', include_meta_content_type=True,
+                                                doctype='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">'))
