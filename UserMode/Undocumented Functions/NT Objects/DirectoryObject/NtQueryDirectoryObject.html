@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FDirectoryObject%2FNtQueryDirectoryObject.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryDirectoryObject</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/DirectoryObject/NtQueryDirectoryObject.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 21 December</p>
+<br>
+
+<div class="text">NtQueryDirectoryObject</div>
+
+<div class="highlight">NtQueryDirectoryObject</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryDirectoryObject(
+<br>
+
+  IN HANDLE               <i><font color="blue">DirectoryObjectHandle</font></i>,
+  OUT POBJDIR_INFORMATION <i><font color="blue">DirObjInformation</font></i>,
+  IN ULONG                <i><font color="blue">BufferLength</font></i>,
+  IN BOOLEAN              <i><font color="blue">GetNextIndex</font></i>,
+  IN BOOLEAN              <i><font color="blue">IgnoreInputIndex</font></i>,
+  IN OUT PULONG           <i><font color="blue">ObjectIndex</font></i>,
+  OUT PULONG              <i><font color="blue">DataWritten</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+
+<pre>
+</pre>
+
+<h6>DirectoryObjectHandle</h6>
+
+<pre>Handle to Directory Object opened with <b>DIRECTORY_QUERY</b> access.
+
+</pre>
+
+<h6>DirObjInformation</h6>
+
+<pre>Pointer to <a href="../../../Structures/OBJDIR_INFORMATION.html">OBJDIR_INFORMATION</a> structure. Warning: structure has variable length dependly to length of object name.
+To test for required length of buffer use <font class="ParamNameDesc">DataWritten</font> parameter.
+
+</pre>
+
+<h6>BufferLength</h6>
+
+<pre>Length of <font class="ParamNameDesc">DirObjInformation</font> buffer.
+
+</pre>
+
+<h6>GetNextIndex</h6>
+
+<pre>Decide of <font class="ParamNameDesc">ObjectIndex</font> parameter usage on output.
+  <b><i>If FALSE:</i></b>       <font class="ParamNameDesc">ObjectIndex</font> is number of object in Object Directory.
+  <b><i>If TRUE:</i></b>        <font class="ParamNameDesc">ObjectIndex</font> is index of next object to quered object (see below) in Object Directory.
+
+</pre>
+
+<h6>IgnoreInputIndex</h6>
+
+<pre>Decide how to use <font class="ParamNameDesc">ObjectIndex</font> on function input.
+  <b><i>If FALSE:</i></b>       <font class="ParamNameDesc">ObjectIndex</font> point to <b>ULONG</b> index of object in Object Directory.
+  <b><i>If TRUE:</i></b>        <font class="ParamNameDesc">ObjectIndex</font> input value is ignored. Function always return informations about first object in Object Directory.
+
+</pre>
+
+<h6>ObjectIndex</h6>
+
+<pre>Pointer to <b>ULONG</b> value described above.
+
+</pre>
+
+<h6>DataWritten</h6>
+
+<pre>Pointer to <b>ULONG</b> value receiving required / written buffer size. This parameter is optional.
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/DirectoryObject/NtCreateDirectoryObject.html">
+NtCreateDirectoryObject</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/DirectoryObject/NtOpenDirectoryObject.html">
+NtOpenDirectoryObject</a><br>
+</dd>
+
+<dd><a href="../../../Structures/OBJDIR_INFORMATION.html">OBJDIR_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

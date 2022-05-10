@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FFILE_NOTIFY_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>FILE_NOTIFY_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/FILE_NOTIFY_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br>
+
+<div class="text">FILE_NOTIFY_INFORMATION</div>
+
+<div class="highlight">FILE_NOTIFY_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_NOTIFY_INFORMATION {
+<br>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color="blue">Action</font></i>;
+  ULONG                   <i><font color="blue">FileNameLength</font></i>;
+  WCHAR                   <i><font color="blue">FileName[1]</font></i>;
+
+} FILE_NOTIFY_INFORMATION, *PFILE_NOTIFY_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+<b><u>FILE_NOTIFY_INFORMATION</u></b> structure is used in
+processing results of call <a href="../../../Undocumented%20Functions/NT%20Objects/File/NtNotifyChangeDirectoryFile.html">
+NtNotifyChangeDirectoryFile</a>. It is defined in
+<b><i>&lt;WinNT.h&gt;</i></b> include file.
+
+<ul>
+<li>NextEntryOffset &#160;&#160;&#160;&#160;Offset to next
+<b><u>FILE_NOTIFY_INFORMATION</u></b> structure or zero, if
+last.</li>
+</ul>
+
+<ul>
+<li>Action &#160;&#160;&#160;&#160;Action indicates notification
+purpose. Can be one of:<br></li>
+</ul>
+
+<ul>
+<li><b>FILE_ACTION_ADDED</b>
+</li>
+
+<li><b>FILE_ACTION_REMOVED</b>
+</li>
+
+<li><b>FILE_ACTION_MODIFIED</b>
+</li>
+
+<li><b>FILE_ACTION_RENAMED_OLD_NAME</b>
+</li>
+
+<li><b>FILE_ACTION_RENAMED_NEW_NAME</b>
+</li>
+
+<li><b>FILE_ACTION_ADDED_STREAM</b>
+</li>
+
+<li><b>FILE_ACTION_REMOVED_STREAM</b>
+</li>
+
+<li><b>FILE_ACTION_MODIFIED_STREAM</b>
+</li>
+</ul>
+
+<ul>
+<li>FileNameLength &#160;&#160;&#160;&#160;Length of FileName
+array, in bytes.</li>
+</ul>
+
+<ul>
+<li>FileName[1] &#160;&#160;&#160;&#160;Unicode file name.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Only some of notification reasons can be readed from <font class="ParamNameDesc">Action</font> member. In most cases is contains
+<b>FILE_ACTION_MODIFIED</b> value, and user must check sort of
+notitication manually.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtNotifyChangeDirectoryFile.html">
+NtNotifyChangeDirectoryFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

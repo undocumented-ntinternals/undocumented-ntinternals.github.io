@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FTime%2FRtlTimeFieldsToTime.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlTimeFieldsToTime</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Time/RtlTimeFieldsToTime.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">RtlTimeFieldsToTime</div>
+
+<div class="highlight">RtlTimeFieldsToTime</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+BOOLEAN
+NTAPI
+<br>
+RtlTimeFieldsToTime(
+<br>
+
+  IN PTIME_FIELDS         <i><font color="blue">TimeFields</font></i>,
+  OUT PLARGE_INTEGER      <i><font color="blue">Time</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>RtlTimeFieldsToTime</u></b> converts user-readable
+structure <a href="../../Undocumented%20Functions/Time/TIME_FIELDS.html">TIME_FIELDS</a>
+to <i>64-bit</i> integer.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>TimeFields &#160;&#160;&#160;&#160;Pointer to <a href="../../Undocumented%20Functions/Time/TIME_FIELDS.html">TIME_FIELDS</a>
+structure containing time to convert.</li>
+</ul>
+
+<ul>
+<li>Time &#160;&#160;&#160;&#160;Pointer to <b>LARGE_INTEGER</b>
+receiving converted time.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+See also oposite function <a href="RtlTimeToTimeFields.html">RtlTimeToTimeFields</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="RtlTimeToTimeFields.html">RtlTimeToTimeFields</a><br>
+</dd>
+
+<dd><a href="../../Undocumented%20Functions/Time/TIME_FIELDS.html">TIME_FIELDS</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

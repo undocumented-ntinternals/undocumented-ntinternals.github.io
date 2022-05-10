@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtQueryVolumeInformationFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryVolumeInformationFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtQueryVolumeInformationFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2O January</p>
+<br>
+
+<div class="text">NtQueryVolumeInformationFile</div>
+
+<div class="highlight">NtQueryVolumeInformationFile</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryVolumeInformationFile(
+<br>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  OUT PVOID               <i><font color="blue">FileSystemInformation</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  IN FS_INFORMATION_CLASS <i><font color="blue">FileSystemInformationClass</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>FileHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to File
+Object.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;IO result of call.</li>
+</ul>
+
+<ul>
+<li>FileSystemInformation &#160;&#160;&#160;&#160;Caller's
+allocated buffer for output data.</li>
+</ul>
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;Length of <font class="ParamNameDesc">FileSystemInformation</font> buffer, in bytes.</li>
+</ul>
+
+<ul>
+<li>FileSystemInformationClass &#160;&#160;&#160;&#160;Information
+class descripted in <a href="../../../Undocumented%20Functions/NT%20Objects/File/FS_INFORMATION_CLASS.html">
+FS_INFORMATION_CLASS</a> topic.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+<b><u>NtQueryVolumeInformationFile</u></b> gives information about
+volume (device) containing file specified as <font class="ParamNameDesc">FileHandle</font> parameter.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/FS_INFORMATION_CLASS.html">
+FS_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtOpenFile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtSetVolumeInformationFile.html">
+NtSetVolumeInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

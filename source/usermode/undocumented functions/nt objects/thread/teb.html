@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>TEB</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/thread/teb.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fthread%2Fteb.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Fthread%2Fteb.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2 March</p>
+<br>
+
+<div class="text">TEB</div>
+
+<div class="highlight">TEB</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _TEB {
+<br>
+
+  NT_TIB                  <i><font color="blue">Tib</font></i>;
+  PVOID                   <i><font color="blue">EnvironmentPointer</font></i>;
+  CLIENT_ID               <i><font color="blue">Cid</font></i>;
+  PVOID                   <i><font color="blue">ActiveRpcInfo</font></i>;
+  PVOID                   <i><font color="blue">ThreadLocalStoragePointer</font></i>;
+  PPEB                    <i><font color="blue">Peb</font></i>;
+  ULONG                   <i><font color="blue">LastErrorValue</font></i>;
+  ULONG                   <i><font color="blue">CountOfOwnedCriticalSections</font></i>;
+  PVOID                   <i><font color="blue">CsrClientThread</font></i>;
+  PVOID                   <i><font color="blue">Win32ThreadInfo</font></i>;
+  ULONG                   <i><font color="blue">Win32ClientInfo[0x1F]</font></i>;
+  PVOID                   <i><font color="blue">WOW32Reserved</font></i>;
+  ULONG                   <i><font color="blue">CurrentLocale</font></i>;
+  ULONG                   <i><font color="blue">FpSoftwareStatusRegister</font></i>;
+  PVOID                   <i><font color="blue">SystemReserved1[0x36]</font></i>;
+  PVOID                   <i><font color="blue">Spare1</font></i>;
+  ULONG                   <i><font color="blue">ExceptionCode</font></i>;
+  ULONG                   <i><font color="blue">SpareBytes1[0x28]</font></i>;
+  PVOID                   <i><font color="blue">SystemReserved2[0xA]</font></i>;
+  ULONG                   <i><font color="blue">GdiRgn</font></i>;
+  ULONG                   <i><font color="blue">GdiPen</font></i>;
+  ULONG                   <i><font color="blue">GdiBrush</font></i>;
+  CLIENT_ID               <i><font color="blue">RealClientId</font></i>;
+  PVOID                   <i><font color="blue">GdiCachedProcessHandle</font></i>;
+  ULONG                   <i><font color="blue">GdiClientPID</font></i>;
+  ULONG                   <i><font color="blue">GdiClientTID</font></i>;
+  PVOID                   <i><font color="blue">GdiThreadLocaleInfo</font></i>;
+  PVOID                   <i><font color="blue">UserReserved[5]</font></i>;
+  PVOID                   <i><font color="blue">GlDispatchTable[0x118]</font></i>;
+  ULONG                   <i><font color="blue">GlReserved1[0x1A]</font></i>;
+  PVOID                   <i><font color="blue">GlReserved2</font></i>;
+  PVOID                   <i><font color="blue">GlSectionInfo</font></i>;
+  PVOID                   <i><font color="blue">GlSection</font></i>;
+  PVOID                   <i><font color="blue">GlTable</font></i>;
+  PVOID                   <i><font color="blue">GlCurrentRC</font></i>;
+  PVOID                   <i><font color="blue">GlContext</font></i>;
+  NTSTATUS                <i><font color="blue">LastStatusValue</font></i>;
+  UNICODE_STRING          <i><font color="blue">StaticUnicodeString</font></i>;
+  WCHAR                   <i><font color="blue">StaticUnicodeBuffer[0x105]</font></i>;
+  PVOID                   <i><font color="blue">DeallocationStack</font></i>;
+  PVOID                   <i><font color="blue">TlsSlots[0x40]</font></i>;
+  LIST_ENTRY              <i><font color="blue">TlsLinks</font></i>;
+  PVOID                   <i><font color="blue">Vdm</font></i>;
+  PVOID                   <i><font color="blue">ReservedForNtRpc</font></i>;
+  PVOID                   <i><font color="blue">DbgSsReserved[0x2]</font></i>;
+  ULONG                   <i><font color="blue">HardErrorDisabled</font></i>;
+  PVOID                   <i><font color="blue">Instrumentation[0x10]</font></i>;
+  PVOID                   <i><font color="blue">WinSockData</font></i>;
+  ULONG                   <i><font color="blue">GdiBatchCount</font></i>;
+  ULONG                   <i><font color="blue">Spare2</font></i>;
+  ULONG                   <i><font color="blue">Spare3</font></i>;
+  ULONG                   <i><font color="blue">Spare4</font></i>;
+  PVOID                   <i><font color="blue">ReservedForOle</font></i>;
+  ULONG                   <i><font color="blue">WaitingOnLoaderLock</font></i>;
+  PVOID                   <i><font color="blue">StackCommit</font></i>;
+  PVOID                   <i><font color="blue">StackCommitMax</font></i>;
+  PVOID                   <i><font color="blue">StackReserved</font></i>;
+
+} TEB, *PTEB;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>TEB</u></b> <i>(Thread Environment Block)</i> is
+memory block containing system variables placed in <i>User-Mode</i>
+memory. Every created thread have own <b><u>TEB</u></b> block. User
+can get address of <b><u>TEB</u></b> by call <a href="ntcurrentteb.html">NtCurrentTeb</a> function.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Tib &#160;&#160;&#160;&#160;Structure <b><u>NT_TIB</u></b> is
+avaiable in <b><i>&lt;WinNT.h&gt;</i></b> header file.</li>
+</ul>
+
+<ul>
+<li>EnvironmentPointer &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Cid &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ActiveRpcInfo &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ThreadLocalStoragePointer &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Peb &#160;&#160;&#160;&#160;Pointer to <a href="../../../../usermode/undocumented%20functions/nt%20objects/process/peb.html">
+PEB</a> structure contains <i>Process Environment Block</i>.</li>
+</ul>
+
+<ul>
+<li>LastErrorValue &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>CountOfOwnedCriticalSections &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>CsrClientThread &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Win32ThreadInfo &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Win32ClientInfo[0x1F] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>WOW32Reserved &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>CurrentLocale &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>FpSoftwareStatusRegister &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>SystemReserved1[0x36] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Spare1 &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ExceptionCode &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>SpareBytes1[0x28] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>SystemReserved2[0xA] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiRgn &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiPen &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiBrush &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>RealClientId &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiCachedProcessHandle &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiClientPID &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiClientTID &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiThreadLocaleInfo &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>UserReserved[5] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlDispatchTable[0x118] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlReserved1[0x1A] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlReserved2 &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlSectionInfo &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlSection &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlTable &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlCurrentRC &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GlContext &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>LastStatusValue &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>StaticUnicodeString &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>StaticUnicodeBuffer[0x105] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>DeallocationStack &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>TlsSlots[0x40] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>TlsLinks &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Vdm &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ReservedForNtRpc &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>DbgSsReserved[0x2] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>HardErrorDisabled &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Instrumentation[0x10] &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>WinSockData &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>GdiBatchCount &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Spare2 &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Spare3 &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>Spare4 &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ReservedForOle &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>WaitingOnLoaderLock &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>StackCommit &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>StackCommitMax &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>StackReserved &#160;&#160;&#160;&#160;<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="ntcurrentteb.html">NtCurrentTeb</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/process/peb.html">
+PEB</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/structures/thread_basic_information.html">THREAD_BASIC_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

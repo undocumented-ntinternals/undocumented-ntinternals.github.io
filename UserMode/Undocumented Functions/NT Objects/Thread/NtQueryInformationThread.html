@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FThread%2FNtQueryInformationThread.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryInformationThread</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Thread/NtQueryInformationThread.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 December</p>
+<br>
+
+<div class="text">NtQueryInformationThread</div>
+
+<div class="highlight">NtQueryInformationThread</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryInformationThread(
+<br>
+
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN THREAD_INFORMATION_CLASS <i><font color="blue">ThreadInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">ThreadInformation</font></i>,
+  IN ULONG                <i><font color="blue">ThreadInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>ThreadHandle</h6>
+
+<pre>
+Handle to Thread Object opened with <b>THREAD_QUERY_INFORMATION</b> access.
+
+</pre>
+
+<h6>ThreadInformationClass</h6>
+
+<pre>
+Information class defined in <a href="THREAD_INFORMATION_CLASS.html">THREAD_INFORMATION_CLASS</a> enumerated type.
+
+</pre>
+
+<h6>ThreadInformation</h6>
+
+<pre>
+Caller's allocated buffer for results.
+
+</pre>
+
+<h6>ThreadInformationLength</h6>
+
+<pre>
+Length of buffer, in bytes.
+
+</pre>
+
+<h6>ReturnLength</h6>
+
+<pre>
+Optional pointer to required buffer length.
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+
+See <a href="THREAD_INFORMATION_CLASS.html">THREAD_INFORMATION_CLASS</a> for more information.
+
+</pre>
+<font color="#FF0000" size="12"><br>
+<br></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="NtSetInformationThread.html">NtSetInformationThread</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Thread/THREAD_INFORMATION_CLASS.html">
+THREAD_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

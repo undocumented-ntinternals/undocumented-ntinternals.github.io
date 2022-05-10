@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FAPC%2FNtCallbackReturn.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtCallbackReturn</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/APC/NtCallbackReturn.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 3 March</p>
+<br>
+
+<div class="text">NtCallbackReturn</div>
+
+<div class="highlight">NtCallbackReturn</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI
+NTSTATUS
+NTAPI
+<br>
+NtCallbackReturn(
+<br>
+
+  IN PVOID                <i><font color="blue">Result</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">ResultLength</font></i>,
+  IN NTSTATUS             <i><font color="blue">Status</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCallbackReturn</u></b> finish execution of
+User-Mode callback.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Result &#160;&#160;&#160;&#160;Pointer to user's allocated
+buffer with custom data.</li>
+</ul>
+
+<ul>
+<li>ResultLength &#160;&#160;&#160;&#160;Length of <font class="ParamNameDesc">Result</font> buffer, in bytes.</li>
+</ul>
+
+<ul>
+<li>Status &#160;&#160;&#160;&#160;Callback execution status
+code.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="KiUserCallbackDispatcher.html">KiUserCallbackDispatcher</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FNtQueryMultipleValueKey.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryMultipleValueKey</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/NtQueryMultipleValueKey.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 2O February</p>
+<br>
+
+<div class="text">NtQueryMultipleValueKey</div>
+
+<div class="highlight">NtQueryMultipleValueKey</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryMultipleValueKey(
+<br>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN OUT PKEY_MULTIPLE_VALUE_INFORMATION <i><font color="blue">ValuesList</font></i>,
+  IN ULONG                <i><font color="blue">NumberOfValues</font></i>,
+  OUT PVOID               <i><font color="blue">DataBuffer</font></i>,
+  IN OUT ULONG            <i><font color="blue">BufferLength</font></i>,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtQueryMultipleValueKey</u></b> returns data of one
+or more values under specified Key Object.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>KeyHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Key Object
+opened with <b>KEY_READ</b> access.</li>
+</ul>
+
+<ul>
+<li>ValuesList &#160;&#160;&#160;&#160;Array of <a href="../../../Undocumented%20Functions/NT%20Objects/Key/KEY_MULTIPLE_VALUE_INFORMATION.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a> structures contains names of
+values to query.</li>
+</ul>
+
+<ul>
+<li>NumberOfValues &#160;&#160;&#160;&#160;Number of members in
+<font class="ParamNameDesc">ValueList</font> array.</li>
+</ul>
+
+<ul>
+<li>DataBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+receiving queried value's data.</li>
+</ul>
+
+<ul>
+<li>BufferLength &#160;&#160;&#160;&#160;Pointer to value specifing
+length of <font class="ParamNameDesc">DataBuffer</font>, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>RequiredLength &#160;&#160;&#160;&#160;Optionally pointer to
+value receiving required <font class="ParamNameDesc">DataBuffer</font> length, in bytes.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/KEY_MULTIPLE_VALUE_INFORMATION.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtCreateKey.html">
+NtCreateKey</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtEnumerateValueKey.html">
+NtEnumerateValueKey</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtOpenKey.html">
+NtOpenKey</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryValueKey.html">
+NtQueryValueKey</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

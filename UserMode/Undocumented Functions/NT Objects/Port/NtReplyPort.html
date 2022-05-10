@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FNtReplyPort.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtReplyPort</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/NtReplyPort.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 28 January</p>
+<br>
+
+<div class="text">NtReplyPort</div>
+
+<div class="highlight">NtReplyPort</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtReplyPort(
+<br>
+
+  IN HANDLE               <i><font color="blue">PortHandle</font></i>,
+  IN PLPC_MESSAGE         <i><font color="blue">Reply</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+<b><u>NtReplyPort</u></b> can be used by both sides of <i>LPC</i>
+connection.
+
+<ul>
+<li>PortHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Port
+Object.</li>
+</ul>
+
+<ul>
+<li>Reply &#160;&#160;&#160;&#160;Pointer to <a href="../../../Undocumented%20Functions/NT%20Objects/Port/LPC_MESSAGE.html">
+LPC_MESSAGE</a> structure.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Port/NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Port/NtConnectPort.html">
+NtConnectPort</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Port/NtReplyWaitReceivePort.html">
+NtReplyWaitReceivePort</a><br>
+</dd>
+
+<dd><a href="NtReplyWaitReplyPort.html">NtReplyWaitReplyPort</a><br>
+</dd>
+
+<dd><a href="NtRequestWaitReplyPort.html">NtRequestWaitReplyPort</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

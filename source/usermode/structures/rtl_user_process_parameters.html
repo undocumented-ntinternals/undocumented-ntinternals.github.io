@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RTL_USER_PROCESS_PARAMETERS</title>
+<link href="../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/structures/rtl_user_process_parameters.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fusermode%2Fstructures%2Frtl_user_process_parameters.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fusermode%2Fstructures%2Frtl_user_process_parameters.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 2 December</p>
+<br>
+
+<div class="text">RTL_USER_PROCESS_PARAMETERS</div>
+
+<div class="highlight">RTL_USER_PROCESS_PARAMETERS</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _RTL_USER_PROCESS_PARAMETERS {
+<br>
+
+
+  ULONG                   <i><font color="blue">MaximumLength</font></i>;
+  ULONG                   <i><font color="blue">Length</font></i>;
+  ULONG                   <i><font color="blue">Flags</font></i>;
+  ULONG                   <i><font color="blue">DebugFlags</font></i>;
+  PVOID                   <i><font color="blue">ConsoleHandle</font></i>;
+  ULONG                   <i><font color="blue">ConsoleFlags</font></i>;
+  HANDLE                  <i><font color="blue">StdInputHandle</font></i>;
+  HANDLE                  <i><font color="blue">StdOutputHandle</font></i>;
+  HANDLE                  <i><font color="blue">StdErrorHandle</font></i>;
+  UNICODE_STRING          <i><font color="blue">CurrentDirectoryPath</font></i>;
+  HANDLE                  <i><font color="blue">CurrentDirectoryHandle</font></i>;
+  UNICODE_STRING          <i><font color="blue">DllPath</font></i>;
+  UNICODE_STRING          <i><font color="blue">ImagePathName</font></i>;
+  UNICODE_STRING          <i><font color="blue">CommandLine</font></i>;
+  PVOID                   <i><font color="blue">Environment</font></i>;
+  ULONG                   <i><font color="blue">StartingPositionLeft</font></i>;
+  ULONG                   <i><font color="blue">StartingPositionTop</font></i>;
+  ULONG                   <i><font color="blue">Width</font></i>;
+  ULONG                   <i><font color="blue">Height</font></i>;
+  ULONG                   <i><font color="blue">CharWidth</font></i>;
+  ULONG                   <i><font color="blue">CharHeight</font></i>;
+  ULONG                   <i><font color="blue">ConsoleTextAttributes</font></i>;
+  ULONG                   <i><font color="blue">WindowFlags</font></i>;
+  ULONG                   <i><font color="blue">ShowWindowFlags</font></i>;
+  UNICODE_STRING          <i><font color="blue">WindowTitle</font></i>;
+  UNICODE_STRING          <i><font color="blue">DesktopName</font></i>;
+  UNICODE_STRING          <i><font color="blue">ShellInfo</font></i>;
+  UNICODE_STRING          <i><font color="blue">RuntimeData</font></i>;
+  RTL_DRIVE_LETTER_CURDIR <i><font color="blue">DLCurrentDirectory[0x20]</font></i>;
+
+
+
+} RTL_USER_PROCESS_PARAMETERS, *PRTL_USER_PROCESS_PARAMETERS;
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>MaximumLength</h6>
+
+<pre>
+Should be set before call <a href="rtlcreateprocessparameters.html">RtlCreateProcessParameters</a>.
+
+</pre>
+
+<h6>Length</h6>
+
+<pre>
+Length of valid structure.
+
+</pre>
+
+<h6>Flags</h6>
+
+<pre>
+Currently only one flag is known:
+        <b><u>PPF_NORMALIZED</u></b>    <b>(1)</b>              <b><i>// Means that structure is normalized by call</i></b> <a href="rtlnormalizeprocessparams.html">RtlNormalizeProcessParams</a>
+
+</pre>
+
+<h6>DebugFlags</h6>
+
+<pre>
+
+</pre>
+
+<h6>ConsoleHandle</h6>
+
+<pre>
+<b>HWND</b> to console window associated with process (if any).
+
+</pre>
+
+<h6>ConsoleFlags</h6>
+
+<pre>
+
+</pre>
+
+<h6>StdInputHandle</h6>
+
+<pre>
+
+</pre>
+
+<h6>StdOutputHandle</h6>
+
+<pre>
+
+</pre>
+
+<h6>StdErrorHandle</h6>
+
+<pre>
+
+</pre>
+
+<h6>CurrentDirectoryPath</h6>
+
+<pre>
+Specified in DOS-like symbolic link path, ex: <font color="red">"C:\WinNT\SYSTEM32"
+</font>
+</pre>
+
+<h6>CurrentDirectoryHandle</h6>
+
+<pre>
+Handle to <b>FILE</b> object.
+
+</pre>
+
+<h6>DllPath</h6>
+
+<pre>
+DOS-like paths separated by <font color="red">';'</font> where system shoult search for DLL files.
+
+</pre>
+
+<h6>ImagePathName</h6>
+
+<pre>
+Full path in DOS-like format to process'es file image.
+
+</pre>
+
+<h6>CommandLine</h6>
+
+<pre>
+Command line.
+
+</pre>
+
+<h6>Environment</h6>
+
+<pre>
+Pointer to environment block (see <a href="../undocumented%20functions/executable%20images/environment/rtlcreateenvironment.html">RtlCreateEnvironment</a>).
+
+</pre>
+
+<h6>StartingPositionLeft</h6>
+
+<pre>
+
+</pre>
+
+<h6>StartingPositionTop</h6>
+
+<pre>
+
+</pre>
+
+<h6>Width</h6>
+
+<pre>
+
+</pre>
+
+<h6>Height</h6>
+
+<pre>
+
+</pre>
+
+<h6>CharWidth</h6>
+
+<pre>
+
+</pre>
+
+<h6>CharHeight</h6>
+
+<pre>
+
+</pre>
+
+<h6>ConsoleTextAttributes</h6>
+
+<pre>
+
+</pre>
+
+<h6>WindowFlags</h6>
+
+<pre>
+
+</pre>
+
+<h6>ShowWindowFlags</h6>
+
+<pre>
+
+</pre>
+
+<h6>WindowTitle</h6>
+
+<pre>
+
+</pre>
+
+<h6>DesktopName</h6>
+
+<pre>
+Name of <i>WindowStation</i> and <i>Desktop</i> objects, where process is assigned.
+
+</pre>
+
+<h6>ShellInfo</h6>
+
+<pre>
+
+</pre>
+
+<h6>RuntimeData</h6>
+
+<pre>
+
+</pre>
+
+<h6>DLCurrentDirectory[0x20]</h6>
+
+<pre>
+- ???
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+
+<b><u>RTL_USER_PROCESS_PARAMETERS</u></b> is located at address <i>0x20000</i> (for all processes created by call <i>WIN32 API</i> <b>CreateProcess</b>).
+
+
+</pre>
+<font color="#FF0000" size="12"><br>
+<br></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="peb.html">PEB</a><br>
+</dd>
+
+<dd><a href="rtl_drive_letter_curdir.html">RTL_DRIVE_LETTER_CURDIR</a><br>
+</dd>
+
+<dd><a href="../undocumented%20functions/executable%20images/environment/rtlcreateenvironment.html">
+RtlCreateEnvironment</a><br>
+</dd>
+
+<dd><a href="rtlcreateprocessparameters.html">RtlCreateProcessParameters</a><br>
+
+</dd>
+
+<dd><a href="../undocumented%20functions/executable%20images/rtlcreateuserprocess.html">
+RtlCreateUserProcess</a><br>
+</dd>
+
+<dd><a href="rtldenormalizeprocessparams.html">RtlDeNormalizeProcessParams</a><br>
+
+</dd>
+
+<dd><a href="rtldestroyprocessparameters.html">RtlDestroyProcessParameters</a><br>
+
+</dd>
+
+<dd><a href="rtlnormalizeprocessparams.html">RtlNormalizeProcessParams</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

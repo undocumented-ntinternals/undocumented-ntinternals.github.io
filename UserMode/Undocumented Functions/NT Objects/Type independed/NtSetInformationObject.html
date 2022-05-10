@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FType%20independed%2FNtSetInformationObject.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtSetInformationObject</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Type independed/NtSetInformationObject.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 8 December</p>
+<br>
+
+<div class="text">NtSetInformationObject</div>
+
+<div class="highlight">NtSetInformationObject</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtSetInformationObject(
+<br>
+
+  IN HANDLE               <i><font color="blue">ObjectHandle</font></i>,
+  IN OBJECT_INFORMATION_CLASS <i><font color="blue">ObjectInformationClass</font></i>,
+  IN PVOID                <i><font color="blue">ObjectInformation</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i> );
+
+</pre>
+<br>
+<br>
+
+<pre>
+</pre>
+
+<h6>ObjectHandle</h6>
+
+<pre>Open handle to any NT object.
+
+</pre>
+
+<h6>ObjectInformationClass</h6>
+
+<pre>See <a href="NtQueryObject.html">NtQueryObject</a> for detailed description of possible information classes.
+
+</pre>
+
+<h6>ObjectInformation</h6>
+
+<pre>Buffor with data to set.
+
+</pre>
+
+<h6>Length</h6>
+
+<pre>Length of <font class="ParamNameDesc">ObjectInformation</font> buffer, in bytes.
+
+
+</pre>
+
+<hr width="40%">
+
+<pre>
+Currently only one class in allowed in set mode: <b><u>ObjectDataInformation</u></b>. See description of <a href="../../../Structures/OBJECT_DATA_INFORMATION.html">OBJECT_DATA_INFORMATION</a> structure.
+
+
+</pre>
+<font color="#FF0000" size="12"><br>
+<br></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Type%20independed/NtQueryObject.html">
+NtQueryObject</a><br>
+</dd>
+
+<dd><a href="../../../Structures/OBJECT_DATA_INFORMATION.html">OBJECT_DATA_INFORMATION</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

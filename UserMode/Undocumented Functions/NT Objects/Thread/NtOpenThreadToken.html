@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>NtOpenThreadToken</title>
+	<link href="/tomek.css" rel="stylesheet" type="text/css" title="Style">
+</head>
+
+<body>
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 31 December</p>
+<br>
+<div class="text">NtOpenThreadToken</div>
+<div class="highlight">NtOpenThreadToken</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+
+NTAPI
+<p class="FnDefName">NtOpenThreadToken(
+</p><p class="FnDefParams">
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN BOOLEAN              <i><font color="blue">OpenAsSelf</font></i>,
+  OUT PHANDLE             <i><font color="blue">TokenHandle</font></i> );
+
+</p></pre>
+
+<br><br>
+
+
+<pre>
+
+<h6>ThreadHandle</h6><b>HANDLE</b> to thread object.
+
+<h6>DesiredAccess</h6>Access mask for opened Token Object.
+
+<h6>OpenAsSelf</h6>- ???
+
+<h6>TokenHandle</h6>Result of call - <b>HANDLE </b>to Token Object associated with <font class="ParamNameDesc">ThreadHandle </font>thread.
+
+
+<font color="FF0000" size="12"><hr width="40%">
+</font>Usually Win32 threads don't have associated Tokens. If you want to associate Token for Thread Object, use 
+<a href="NtSetInformationThread%20.html">NtSetInformationThread </a>with <a href="ThreadImpersonationToken%20.html">ThreadImpersonationToken </a>information class.
+
+
+
+
+</pre>
+
+<br><br>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong></dd>
+<dd><strong>Reactos</strong></dd>
+
+
+<br><br><br>
+<div class="Require">Requirements:</div>
+<dd>Library: <strong class="req">ntdll.lib</strong>
+
+
+<br><br><br>
+<div class="Require">See also:</div>
+<dd>NtCreateToken<br>
+<dd>NtOpenProcessToken<br>
+<dd><a href="/ted%20Functions/NT%20Objects/Thread/NtOpenThread.html">NtOpenThread</a><br>
+<dd><a href="/ted%20Functions/NT%20Objects/Thread/NtSetInformationThread.html">NtSetInformationThread</a><br>
+<dd><a href="/ted%20Functions/NT%20Objects/Thread/THREAD_INFORMATION_CLASS.html">THREAD_INFORMATION_CLASS</a><br>
+
+
+
+</dd></dd></dd></dd></dd></dd></body>
+</html>

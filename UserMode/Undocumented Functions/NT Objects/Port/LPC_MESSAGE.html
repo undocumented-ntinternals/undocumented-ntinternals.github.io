@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FPort%2FLPC_MESSAGE.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>LPC_MESSAGE</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Port/LPC_MESSAGE.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 14 January</p>
+<br>
+
+<div class="text">LPC_MESSAGE</div>
+
+<div class="highlight">LPC_MESSAGE</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _LPC_MESSAGE {
+<br>
+
+  USHORT                  <i><font color="blue">DataLength</font></i>;
+  USHORT                  <i><font color="blue">Length</font></i>;
+  USHORT                  <i><font color="blue">MessageType</font></i>;
+  USHORT                  <i><font color="blue">DataInfoOffset</font></i>;
+  CLIENT_ID               <i><font color="blue">ClientId</font></i>;
+  ULONG                   <i><font color="blue">MessageId</font></i>;
+  ULONG                   <i><font color="blue">CallbackId</font></i>;
+
+} LPC_MESSAGE, *PLPC_MESSAGE;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>LPC_MESSAGE</u></b> it's a header for all
+<b>LPC</b> messages. Any <b>LPC</b> message must contains at least
+<i>0x18</i> bytes length for <b><u>LPC_MESSAGE</u></b> header.
+<b><i><br>
+<br></i></b>
+
+<hr width="40%">
+<b><i><br></i></b>
+<ul>
+<li>DataLength &#160;&#160;&#160;&#160;Length of additional data in
+message. Maximum length of data is <i>0x130</i> bytes.</li>
+</ul>
+
+<ul>
+<li>Length &#160;&#160;&#160;&#160;Length of message, including
+header. Maximum value is <i>0x148</i> bytes length.</li>
+</ul>
+
+<ul>
+<li>MessageType &#160;&#160;&#160;&#160;Type of message. This field
+is filled by system in message transfer process. Can be one of
+following:</li>
+</ul>
+
+<ul>
+<li><b>LPC_REQUEST</b>
+</li>
+
+<li><b>LPC_REPLY</b>
+</li>
+
+<li><b>LPC_DATAGRAM</b>
+</li>
+
+<li><b>LPC_LOST_REPLY</b>
+</li>
+
+<li><b>LPC_PORT_CLOSED</b>
+</li>
+
+<li><b>LPC_CLIENT_DIED</b>
+</li>
+
+<li><b>LPC_EXCEPTION</b>
+</li>
+
+<li><b>LPC_DEBUG_EVENT</b>
+</li>
+
+<li><b>LPC_ERROR_EVENT</b>
+</li>
+
+<li><b>LPC_CONNECTION_REQUEST</b>
+</li>
+</ul>
+
+<ul>
+<li>DataInfoOffset &#160;&#160;&#160;&#160;</li>
+</ul>
+
+<ul>
+<li>ClientId &#160;&#160;&#160;&#160;Port's client unique
+identifier.</li>
+</ul>
+
+<ul>
+<li>MessageId &#160;&#160;&#160;&#160;System set this field to
+actual value of incremental message counter.</li>
+</ul>
+
+<ul>
+<li>CallbackId &#160;&#160;&#160;&#160;<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Structure is known also as <b><u>LPC_MESSAGE_HEADER</u></b>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="NtAcceptConnectPort.html">NtAcceptConnectPort</a><br>
+</dd>
+
+<dd><a href="NtImpersonateClientOfPort.html">NtImpersonateClientOfPort</a><br>
+</dd>
+
+<dd><a href="NtListenPort.html">NtListenPort</a><br>
+</dd>
+
+<dd><a href="NtReadRequestData.html">NtReadRequestData</a><br>
+</dd>
+
+<dd><a href="NtReplyPort.html">NtReplyPort</a><br>
+</dd>
+
+<dd><a href="NtReplyWaitReceivePort.html">NtReplyWaitReceivePort</a><br>
+</dd>
+
+<dd><a href="NtReplyWaitReplyPort.html">NtReplyWaitReplyPort</a><br>
+</dd>
+
+<dd><a href="NtRequestPort.html">NtRequestPort</a><br>
+</dd>
+
+<dd><a href="NtRequestWaitReplyPort.html">NtRequestWaitReplyPort</a><br>
+</dd>
+
+<dd><a href="NtWriteRequestData.html">NtWriteRequestData</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../index.html?page=UserMode%2FUndocumented%20Functions%2FExecutable%20Images%2FRtlImageRvaToVa.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlImageRvaToVa</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/Executable Images/RtlImageRvaToVa.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 18 October</p>
+<br>
+
+<div class="text">RtlImageRvaToVa</div>
+
+<div class="highlight">RtlImageRvaToVa</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+PVOID
+NTAPI
+<br>
+RtlImageRvaToVa(
+<br>
+
+  IN PIMAGE_NT_HEADERS    <i><font color="blue">NtHeaders</font></i>,
+  IN PVOID                <i><font color="blue">ModuleBase</font></i>,
+  IN ULONG                <i><font color="blue">Rva</font></i>,
+  IN OUT PIMAGE_SECTION_HEADER <i><font color="blue">pLastSection</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+
+<pre>
+
+</pre>
+
+<h6>Return value</h6>
+
+<pre>
+
+</pre>
+
+<div class="reg">It's pointer to vitrual memory in caller's address
+space.</div>
+
+<pre>
+
+<br>
+<br>
+</pre>
+
+<div class="reg">See <b>ImageRvaToVa</b> in
+<b>&lt;Dbghelp.h&gt;</b> for detailed description of use.</div>
+
+<pre>
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="../../Undocumented%20Functions/Executable%20Images/LdrGetDllHandle.html">LdrGetDllHandle</a><br>
+
+<a href="../../Undocumented%20Functions/Executable%20Images/LdrLoadDll.html">
+LdrLoadDll</a><br>
+<a href="RtlImageNtHeader.html">RtlImageNtHeader</a><br>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

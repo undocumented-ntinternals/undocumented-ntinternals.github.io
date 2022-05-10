@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FNtNotifyChangeKey.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtNotifyChangeKey</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/NtNotifyChangeKey.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 October</p>
+<br>
+
+<div class="text">NtNotifyChangeKey</div>
+
+<div class="highlight">NtNotifyChangeKey</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtNotifyChangeKey(
+<br>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN HANDLE               <i><font color="blue">EventHandle</font></i>,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i>,
+  IN PVOID                <i><font color="blue">ApcRoutineContext</font></i>,
+  IN PIO_STATUS_BLOCK     <i><font color="blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color="blue">NotifyFilter</font></i>,
+  IN BOOLEAN              <i><font color="blue">WatchSubtree</font></i>,
+  OUT PVOID               <i><font color="blue">RegChangesDataBuffer</font></i>,
+  IN ULONG                <i><font color="blue">RegChangesDataBufferLength</font></i>,
+  IN BOOLEAN              <i><font color="blue">Asynchronous</font></i> );
+
+</pre>
+<br>
+<br>
+
+<pre>
+
+
+
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtOpenKey.html">NtOpenKey</a><br>
+
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

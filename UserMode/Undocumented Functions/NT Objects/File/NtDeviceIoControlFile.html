@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtDeviceIoControlFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtDeviceIoControlFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtDeviceIoControlFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 11 February</p>
+<br>
+
+<div class="text">NtDeviceIoControlFile</div>
+
+<div class="highlight">NtDeviceIoControlFile</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtDeviceIoControlFile(
+<br>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color="blue">IoControlCode</font></i>,
+  IN PVOID                <i><font color="blue">InputBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">InputBufferLength</font></i>,
+  OUT PVOID               <i><font color="blue">OutputBuffer</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">OutputBufferLength</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtDeviceIoControlFile</u></b> sends <b>IOCTL_*</b>
+control code to Device Driver. It is primary (but not the best)
+solution to communicate between application and Device Driver.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>FileHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Device
+Object opened as a file.</li>
+</ul>
+
+<ul>
+<li>Event &#160;&#160;&#160;&#160;Optional <b>HANDLE</b> to Event
+Object signalled on the end of processing request.</li>
+</ul>
+
+<ul>
+<li>ApcRoutine &#160;&#160;&#160;&#160;Optional pointer to user's
+<i>APC Routine</i> called on the end of processing request.</li>
+</ul>
+
+<ul>
+<li>ApcContext &#160;&#160;&#160;&#160;User's parameter to
+<font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+
+<ul>
+<li>IoStatusBlock &#160;&#160;&#160;&#160;IO result of call.</li>
+</ul>
+
+<ul>
+<li>IoControlCode &#160;&#160;&#160;&#160;IO Control code
+[<b>IOCTL_*</b>].</li>
+</ul>
+
+<ul>
+<li>InputBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+with input data.</li>
+</ul>
+
+<ul>
+<li>InputBufferLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">InputBuffer</font>, in bytes.</li>
+</ul>
+
+<ul>
+<li>OutputBuffer &#160;&#160;&#160;&#160;User's allocated buffer
+for result data.</li>
+</ul>
+
+<ul>
+<li>OutputBufferLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">OutputBuffer</font>, in bytes.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+See also <a href="NtFsControlFile.html">NtFsControlFile</a>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtCreateFile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href="NtFsControlFile.html">NtFsControlFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtOpenFile.html">
+NtOpenFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

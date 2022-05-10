@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FToken%2FNtCreateToken.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtCreateToken</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Token/NtCreateToken.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 1 March</p>
+<br>
+
+<div class="text">NtCreateToken</div>
+
+<div class="highlight">NtCreateToken</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateToken(
+<br>
+
+  OUT PHANDLE             <i><font color="blue">TokenHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i>,
+  IN TOKEN_TYPE           <i><font color="blue">TokenType</font></i>,
+  IN PLUID                <i><font color="blue">AuthenticationId</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ExpirationTime</font></i>,
+  IN PTOKEN_USER          <i><font color="blue">TokenUser</font></i>,
+  IN PTOKEN_GROUPS        <i><font color="blue">TokenGroups</font></i>,
+  IN PTOKEN_PRIVILEGES    <i><font color="blue">TokenPrivileges</font></i>,
+  IN PTOKEN_OWNER         <i><font color="blue">TokenOwner</font></i>,
+  IN PTOKEN_PRIMARY_GROUP <i><font color="blue">TokenPrimaryGroup</font></i>,
+  IN PTOKEN_DEFAULT_DACL  <i><font color="blue">TokenDefaultDacl</font></i>,
+  IN PTOKEN_SOURCE        <i><font color="blue">TokenSource</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtCreateToken</u></b> creates Token Object.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>TokenHandle &#160;&#160;&#160;&#160;Result of call - pointer to
+<b>HANDLE</b> to Token Object.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &#160;&#160;&#160;&#160;Can be one or more of
+following:</li>
+</ul>
+
+<ul>
+<li><b>TOKEN_ASSIGN_PRIMARY</b>
+</li>
+
+<li><b>TOKEN_DUPLICATE</b>
+</li>
+
+<li><b>TOKEN_IMPERSONATE</b>
+</li>
+
+<li><b>TOKEN_QUERY</b>
+</li>
+
+<li><b>TOKEN_QUERY_SOURCE</b>
+</li>
+
+<li><b>TOKEN_ADJUST_PRIVILEGES</b>
+</li>
+
+<li><b>TOKEN_ADJUST_GROUPS</b>
+</li>
+
+<li><b>TOKEN_ADJUST_DEFAULT</b>
+</li>
+
+<li><b>TOKEN_ADJUST_SESSIONID</b>
+</li>
+
+<li><b>TOKEN_ALL_ACCESS</b>
+</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &#160;&#160;&#160;&#160;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure.</li>
+</ul>
+
+<ul>
+<li>TokenType &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_TYPE.html">TOKEN_TYPE</a> enumeration type.</li>
+</ul>
+
+<ul>
+<li>AuthenticationId &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="../../../Undocumented%20Functions/Security/NtAllocateLocallyUniqueId.html">
+NtAllocateLocallyUniqueId</a> security function.</li>
+</ul>
+
+<ul>
+<li>ExpirationTime &#160;&#160;&#160;&#160;<b><i>(?)</i></b>,
+pointer to <b>LARGE_INTEGER</b> value contains time in
+<i>100-ns</i> format.</li>
+</ul>
+
+<ul>
+<li>TokenUser &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_USER.html">TOKEN_USER</a> structure.</li>
+</ul>
+
+<ul>
+<li>TokenGroups &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_GROUPS.html">TOKEN_GROUPS</a> structure.</li>
+</ul>
+
+<ul>
+<li>TokenPrivileges &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a>
+structure.</li>
+</ul>
+
+<ul>
+<li>TokenOwner &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_OWNER.html">TOKEN_OWNER</a> structure.</li>
+</ul>
+
+<ul>
+<li>TokenPrimaryGroup &#160;&#160;&#160;&#160;<b><i>(?)</i></b>,
+see <a href="TOKEN_PRIMARY_GROUP.html">TOKEN_PRIMARY_GROUP</a>
+structure.</li>
+</ul>
+
+<ul>
+<li>TokenDefaultDacl &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_DEFAULT_DACL.html">TOKEN_DEFAULT_DACL</a>
+structure.</li>
+</ul>
+
+<ul>
+<li>TokenSource &#160;&#160;&#160;&#160;<b><i>(?)</i></b>, see
+<a href="TOKEN_SOURCE.html">TOKEN_SOURCE</a> structure.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+
+<dd>Privilege: <strong class="req">SE_CREATE_TOKEN_PRIVILEGE</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/Security/NtAllocateLocallyUniqueId.html">
+NtAllocateLocallyUniqueId</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtDuplicateToken.html">
+NtDuplicateToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenProcessToken.html">
+NtOpenProcessToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenThreadToken.html">
+NtOpenThreadToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtQueryInformationToken.html">
+NtQueryInformationToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtSetInformationToken.html">
+NtSetInformationToken</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

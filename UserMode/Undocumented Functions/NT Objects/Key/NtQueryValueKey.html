@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FKey%2FNtQueryValueKey.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtQueryValueKey</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Key/NtQueryValueKey.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 19 October</p>
+<br>
+
+<div class="text">NtQueryValueKey</div>
+
+<div class="highlight">NtQueryValueKey</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtQueryValueKey(
+<br>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN PUNICODE_STRING      <i><font color="blue">ValueName</font></i>,
+  IN KEY_VALUE_INFORMATION_CLASS <i><font color="blue">KeyValueInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">KeyValueInformation</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  OUT PULONG              <i><font color="blue">ResultLength</font></i> );
+
+</pre>
+<br>
+<br>
+
+<pre>
+See <b>ZwQueryValueKey</b> in <i>NT DDK</i> or <i>2000 DDK</i> for detailed description.
+
+
+
+
+</pre>
+<br>
+<br>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+
+<dd><br>
+<br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">See also:</div>
+<a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtEnumerateValueKey.html">NtEnumerateValueKey</a><br>
+
+<a href="../../../Undocumented%20Functions/NT%20Objects/Key/NtQueryKey.html">
+NtQueryKey</a><br>
+<a href="NtSetValueKey.html">NtSetValueKey</a><br>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

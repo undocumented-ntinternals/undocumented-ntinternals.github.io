@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FIoCompletion%2FIO_COMPLETION_BASIC_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>IO_COMPLETION_BASIC_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/IoCompletion/IO_COMPLETION_BASIC_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">IO_COMPLETION_BASIC_INFORMATION</div>
+
+<div class="highlight">IO_COMPLETION_BASIC_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">typedef struct _IO_COMPLETION_BASIC_INFORMATION {
+<br>
+
+  ULONG                   <i><font color="blue">Depth</font></i>;
+
+} IO_COMPLETION_BASIC_INFORMATION, *PIO_COMPLETION_BASIC_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>IO_COMPLETION_BASIC_INFORMATION</u></b> is used as
+result of call <a href="../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtQueryIoCompletion.html">
+NtQueryIoCompletion</a> with <a href="../../../Undocumented%20Functions/NT%20Objects/IoCompletion/IO_COMPLETION_INFORMATION_CLASS.html#IoCompletionBasicInformation">
+IoCompletionBasicInformation</a> information class.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>Depth &#160;&#160;&#160;&#160;Number of currently pending file
+operations for specified IO Completion Object.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/IoCompletion/IO_COMPLETION_INFORMATION_CLASS.html">
+IO_COMPLETION_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtQueryIoCompletion.html">
+NtQueryIoCompletion</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

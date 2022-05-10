@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>KiUserApcDispatcher</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/apc/kiuserapcdispatcher.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fapc%2Fkiuserapcdispatcher.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fapc%2Fkiuserapcdispatcher.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 10 December</p>
+<br>
+
+<div class="text">KiUserApcDispatcher</div>
+
+<div class="highlight">KiUserApcDispatcher</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+VOID
+NTAPI
+<br>
+KiUserApcDispatcher(
+<br>
+
+  IN PVOID                <i><font color="blue">Unused1</font></i>,
+  IN PVOID                <i><font color="blue">Unused2</font></i>,
+  IN PVOID                <i><font color="blue">Unused3</font></i>,
+  IN PVOID                <i><font color="blue">ContextStart</font></i>,
+  IN PVOID                <i><font color="blue">ContextBody</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+
+<ul>
+<li>Unused1 &#160;&#160;&#160;&#160;Unused parameters. Sometimes
+one of them have <b><i>ntdll.dll</i></b> module address.</li>
+</ul>
+
+<ul>
+<li>Unused2 &#160;&#160;&#160;&#160;See <font class="ParamNameDesc">Unused1</font>.</li>
+</ul>
+
+<ul>
+<li>Unused3 &#160;&#160;&#160;&#160;See <font class="ParamNameDesc">Unused1</font>.</li>
+</ul>
+
+<ul>
+<li>ContextStart &#160;&#160;&#160;&#160;Begining of <font class="ParamNameDesc">ContextStart</font> <b><u>CONTEXT</u></b> structure
+is stored.</li>
+</ul>
+
+<ul>
+<li>ContextBody &#160;&#160;&#160;&#160;Four bytes from
+<b><u>CONTEXT</u></b> structure at offset <i>0x04</i>.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+<b><u>KiUserApcDispatcher</u></b> isn't standard
+<b><i>ntdll</i></b> function. It's used by kernel to process <i>APC
+queue</i> for calling thread. Five paraters I defined only for
+compatibility with <b><i>ntdll.lib</i></b> export
+(<em>_KiUserApcDispatcher@20</em>). Function first execute code
+placed after call, and next calls <a href="../../nt%20objects/thread/ntcontinue.html">NtContinue</a> with
+<b><u>CONTEXT</u></b> specified at 4 parameter position
+(<font color="red">Warning:</font> Not pointer to
+<b><u>CONTEXT</u></b>, but <b><u>CONTEXT</u></b> body must be
+stored on stack).<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../usermode/undocumented%20functions/apc/ntalertthread.html">
+NtAlertThread</a><br>
+</dd>
+
+<dd><a href="../../../usermode/undocumented%20functions/nt%20objects/thread/ntcontinue.html">
+NtContinue</a><br>
+</dd>
+
+<dd><a href="../../../usermode/undocumented%20functions/apc/ntqueueapcthread.html">
+NtQueueApcThread</a><br>
+</dd>
+
+<dd><a href="../../../usermode/undocumented%20functions/apc/nttestalert.html">NtTestAlert</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

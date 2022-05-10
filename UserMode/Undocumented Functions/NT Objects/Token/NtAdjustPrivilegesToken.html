@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FToken%2FNtAdjustPrivilegesToken.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtAdjustPrivilegesToken</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Token/NtAdjustPrivilegesToken.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 9 February</p>
+<br>
+
+<div class="text">NtAdjustPrivilegesToken</div>
+
+<div class="highlight">NtAdjustPrivilegesToken</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtAdjustPrivilegesToken(
+<br>
+
+  IN HANDLE               <i><font color="blue">TokenHandle</font></i>,
+  IN BOOLEAN              <i><font color="blue">DisableAllPrivileges</font></i>,
+  IN PTOKEN_PRIVILEGES    <i><font color="blue">TokenPrivileges</font></i>,
+  IN ULONG                <i><font color="blue">PreviousPrivilegesLength</font></i>,
+  OUT PTOKEN_PRIVILEGES   <i><font color="blue">PreviousPrivileges</font></i> OPTIONAL,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtAdjustPrivilegesToken</u></b> is used to modify
+state of avaiable token's privileges, and it's descripted also in
+<i>Microsoft SDK</i> help as
+<b><u>AdjustTokenPrivileges</u></b>.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>TokenHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to Token
+Object opened with <b>TOKEN_ADJUST_PRIVILEGES</b> access. If
+<font class="ParamNameDesc">PreviousPrivileges</font> parameter is
+non-NULL, also <b>TOKEN_QUERY</b> access is required.</li>
+</ul>
+
+<ul>
+<li>DisableAllPrivileges &#160;&#160;&#160;&#160;If set, all
+accessable privileges are disabled, and rest of parameters below
+are ignored.</li>
+</ul>
+
+<ul>
+<li>TokenPrivileges &#160;&#160;&#160;&#160;Pointer to <a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a> structure containing
+array of privileges to adjust.</li>
+</ul>
+
+<ul>
+<li>PreviousPrivilegesLength &#160;&#160;&#160;&#160;Length of
+<font class="ParamNameDesc">PreviousPrivileges</font> buffer, in
+bytes.</li>
+</ul>
+
+<ul>
+<li>PreviousPrivileges &#160;&#160;&#160;&#160;Optionally pointer
+to <a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a> structure
+filled by function with previous state of privileges specified by
+<font class="ParamNameDesc">TokenPrivileges</font> array.</li>
+</ul>
+
+<ul>
+<li>RequiredLength &#160;&#160;&#160;&#160;If <font class="ParamNameDesc">PreviousPrivileges</font> buffer was to small, this
+parameter point to required size.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="NtAdjustGroupsToken.html">NtAdjustGroupsToken</a><br>
+</dd>
+
+<dd><a href="NtCreateToken.html">NtCreateToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenProcessToken.html">
+NtOpenProcessToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtOpenThreadToken.html">
+NtOpenThreadToken</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Token/NtPrivilegeCheck.html">
+NtPrivilegeCheck</a><br>
+</dd>
+
+<dd><a href="NtQueryInformationToken.html">NtQueryInformationToken</a><br>
+</dd>
+
+<dd><a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

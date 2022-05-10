@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>RtlCreateUserProcess</title>
+<link href="../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/executable images/rtlcreateuserprocess.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fexecutable%20images%2Frtlcreateuserprocess.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fexecutable%20images%2Frtlcreateuserprocess.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 2 December</p>
+<br>
+
+<div class="text">RtlCreateUserProcess</div>
+
+<div class="highlight">RtlCreateUserProcess</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+RtlCreateUserProcess(
+<br>
+
+  IN PUNICODE_STRING      <i><font color="blue">ImagePath</font></i>,
+  IN ULONG                <i><font color="blue">ObjectAttributes</font></i>,
+  IN OUT PRTL_USER_PROCESS_PARAMETERS <i><font color="blue">ProcessParameters</font></i>,
+  IN PSECURITY_DESCRIPTOR <i><font color="blue">ProcessSecurityDescriptor</font></i> OPTIONAL,
+  IN PSECURITY_DESCRIPTOR <i><font color="blue">ThreadSecurityDescriptor</font></i> OPTIONAL,
+  IN HANDLE               <i><font color="blue">ParentProcess</font></i>,
+  IN BOOLEAN              <i><font color="blue">InheritHandles</font></i>,
+  IN HANDLE               <i><font color="blue">DebugPort</font></i> OPTIONAL,
+  IN HANDLE               <i><font color="blue">ExceptionPort</font></i> OPTIONAL,
+  OUT PRTL_USER_PROCESS_INFORMATION <i><font color="blue">ProcessInformation</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>ImagePath</h6>
+
+<pre>
+Full path to executable image, in NT format (ex: <font color="red">"\??\C:\WinNT\SYSTEM32\cmd.exe"</font>).
+
+</pre>
+
+<h6>ObjectAttributes</h6>
+
+<pre>
+Used in File object creation. Valid are <b>OBJ_INHERIT</b> and <b>OBJ_CASE_INSENSITIVE</b>.
+
+</pre>
+
+<h6>ProcessParameters</h6>
+
+<pre>
+Normalized <a href="../../structures/rtl_user_process_parameters.html">RTL_USER_PROCESS_PARAMETERS</a> structure pointer. See <a href="rtlcreateprocessparameters.html">RtlCreateProcessParameters</a> for more information.
+
+</pre>
+
+<h6>ParentProcess</h6>
+
+<pre>
+Handle to object Process, opened with <b>PROCESS_CREATE_PROCESS</b> access.
+
+</pre>
+
+<h6>ProcessInformation</h6>
+
+<pre>
+Pointer to user-allocated structure <a href="../../structures/rtl_user_process_information.html">RTL_USER_PROCESS_INFORMATION</a>.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../usermode/structures/rtl_user_process_information.html">RTL_USER_PROCESS_INFORMATION</a><br>
+
+</dd>
+
+<dd><a href="../../../usermode/structures/rtl_user_process_parameters.html">RTL_USER_PROCESS_PARAMETERS</a><br>
+
+</dd>
+
+<dd><a href="rtlcreateprocessparameters.html">RtlCreateProcessParameters</a><br>
+
+</dd>
+
+<dd><a href="rtlcreateuserthread.html">RtlCreateUserThread</a><br>
+</dd>
+
+<dd><a href="rtlnormalizeprocessparams.html">RtlNormalizeProcessParams</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

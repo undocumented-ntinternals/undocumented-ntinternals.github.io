@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>FILE_FULL_EA_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/nt objects/file/file_full_ea_information.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_full_ea_information.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fnt%20objects%2Ffile%2Ffile_full_ea_information.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 25 January</p>
+<br>
+
+<div class="text">FILE_FULL_EA_INFORMATION</div>
+
+<div class="highlight">FILE_FULL_EA_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _FILE_FULL_EA_INFORMATION {
+<br>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  BYTE                    <i><font color="blue">Flags</font></i>;
+  BYTE                    <i><font color="blue">EaNameLength</font></i>;
+  USHORT                  <i><font color="blue">EaValueLength</font></i>;
+  CHAR                    <i><font color="blue">EaName[1]</font></i>;
+
+} FILE_FULL_EA_INFORMATION, *PFILE_FULL_EA_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>FILE_FULL_EA_INFORMATION</u></b> is used for get or
+store Extended Attributes for <i>NTFS</i> files and directories.
+Extended Attributes (<i>EA</i>) is a list of pair
+<b><i>Name-Value</i></b>. Name is capitalised <i>ASCII</i> string
+up to <i>256</i> characters long. Value is any data and can be up
+to <i>65536</i> bytes long.<br>
+Structure can be used in a call to <a href="../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a> and <a href="ntseteafile.html">NtSetEaFile</a>, or
+as a result of call <a href="ntqueryeafile.html">NtQueryEaFile</a>.
+
+<ul>
+<li>NextEntryOffset &#160;&#160;&#160;&#160;Offset for next
+<b><u>FILE_FULL_EA_INFORMATION</u></b> structure in buffer,
+relative to currently used structure. If current structure is last
+one in buffer, this field has value <i>0</i>.</li>
+</ul>
+
+<ul>
+<li>Flags &#160;&#160;&#160;&#160;- ???</li>
+</ul>
+
+<ul>
+<li>EaNameLength &#160;&#160;&#160;&#160;Length of EA name, in
+bytes (without leading zero).</li>
+</ul>
+
+<ul>
+<li>EaValueLength &#160;&#160;&#160;&#160;Length of EA value, in
+bytes (without leading zero).</li>
+</ul>
+
+<ul>
+<li>EaName[1] &#160;&#160;&#160;&#160;User's allocated buffer
+contains ASCIIZ name and value. ASCII value must be finished by
+zero.<br>
+<br></li>
+</ul>
+
+<hr width="40%">
+<br>
+Structure <b><u>FILE_FULL_EA_INFORMATION</u></b> is also defined in
+<i>Win2000 DDK</i>.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Bo Branten</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="file_ea_information.html">FILE_EA_INFORMATION</a><br>
+</dd>
+
+<dd><a href="file_get_ea_information.html">FILE_GET_EA_INFORMATION</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/nt%20objects/file/ntcreatefile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href="ntqueryeafile.html">NtQueryEaFile</a><br>
+</dd>
+
+<dd><a href="ntseteafile.html">NtSetEaFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

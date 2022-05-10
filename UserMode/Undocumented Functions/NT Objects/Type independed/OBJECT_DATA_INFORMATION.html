@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>OBJECT_DATA_INFORMATION</title>
+	<link href="/tomek.css" rel="stylesheet" type="text/css" title="Style">
+</head>
+
+<body>
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 22 November</p>
+<br>
+<center>
+<a href="http://gridstore.com" target="_blank"><img src="/gridstore.png" border="0" alt="Gridstore - NonStop Storage"></a>
+</center>
+
+<br>
+<div class="text">OBJECT_DATA_INFORMATION</div>
+<div class="highlight">OBJECT_DATA_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _OBJECT_DATA_INFORMATION {
+<p class="FnDefParams">
+
+  BOOLEAN                 <i><font color="blue">InheritHandle</font></i>;
+  BOOLEAN                 <i><font color="blue">ProtectFromClose</font></i>;
+
+
+</p>
+} OBJECT_DATA_INFORMATION, *POBJECT_DATA_INFORMATION;
+</pre>
+
+<br><br>
+
+
+<pre>
+Can be used with <a href="../Undocumented%20Functions/NT%20Objects/Type%20independed/NtSetInformationObject.html">NtSetInformationObject</a>. <i>WIN32 API</i> uses this to protect Port Object from close in Process Creation routine.
+
+</pre>
+
+<br><br>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Sven B. Schreiber</strong></dd>
+<dd><strong>Tomasz Nowak</strong></dd>
+
+
+<br><br><br>
+<div class="Require">Requirements:</div>
+<dd>Library: <strong class="req">ntdll.lib</strong>
+
+
+<br><br><br>
+<div class="Require">See also:</div>
+<dd><a href="../Undocumented%20Functions/NT%20Objects/Type%20independed/NtQueryObject.html">NtQueryObject</a><br>
+<dd><a href="../Undocumented%20Functions/NT%20Objects/Type%20independed/NtSetInformationObject.html">NtSetInformationObject</a><br>
+<dd><a href="/UserMode/Structures/OBJECT_ALL_INFORMATION.html">OBJECT_ALL_INFORMATION</a><br>
+<dd><a href="/UserMode/Structures/OBJECT_BASIC_INFORMATION.html">OBJECT_BASIC_INFORMATION</a><br>
+<dd><a href="/UserMode/Structures/OBJECT_DATA_INFORMATION.html">OBJECT_DATA_INFORMATION</a><br>
+<dd><a href="/UserMode/Structures/OBJECT_NAME_INFORMATION.html">OBJECT_NAME_INFORMATION</a><br>
+<dd><a href="/UserMode/Structures/OBJECT_TYPE_INFORMATION.html">OBJECT_TYPE_INFORMATION</a><br>
+
+
+
+<hr width="0" size="0" noshade class="page">
+
+</dd></dd></dd></dd></dd></dd></dd></dd></body>
+</html>

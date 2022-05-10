@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FFile%2FNtDeleteFile.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtDeleteFile</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/File/NtDeleteFile.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 29 December</p>
+<br>
+
+<div class="text">NtDeleteFile</div>
+
+<div class="highlight">NtDeleteFile</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtDeleteFile(
+<br>
+
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> );
+
+</pre>
+<br>
+<br>
+
+<pre>
+It's very interesting NT System Call... Normally, file deletion is realised as <a href="../../../Undocumented%20Functions/NT%20Objects/File/FILE_INFORMATION_CLASS.html#FileDispositionInformation">FileDispositionInformation</a> class in a call to <a href="NtSetInformationFile.html">NtSetInformationFile</a>. When you use <b><u>NtDeleteFile</u></b>, file will be deleted immediatly after call (system isn't waiting for close last <b>HANDLE</b> to file).
+</pre>
+
+<hr width="40%">
+
+<pre>
+</pre>
+
+<h6><font color="#FF0000" size="12">ObjectAttributes</font>
+</h6>
+
+<pre>You can manipulate <u>ObjectName</u> and <u>RootDirectory</u> members. 
+Example: 
+  If you have only file name as Unicode string, use it as <u>ObjectName</u>.
+  If you have only a <b>HANDLE</b> to file, set it as <u>RootDirectory</u>. Set <u>ObjectName</u> as empty string.
+
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtCreateFile.html">
+NtCreateFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/File/NtOpenFile.html">
+NtOpenFile</a><br>
+</dd>
+
+<dd><a href="NtSetInformationFile.html">NtSetInformationFile</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

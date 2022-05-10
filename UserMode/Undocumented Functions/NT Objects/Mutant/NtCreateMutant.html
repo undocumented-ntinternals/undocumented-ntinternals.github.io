@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FMutant%2FNtCreateMutant.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtCreateMutant</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Mutant/NtCreateMutant.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OOO, 24 November</p>
+<br>
+
+<div class="text">NtCreateMutant</div>
+
+<div class="highlight">NtCreateMutant</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtCreateMutant(
+<br>
+
+  OUT PHANDLE             <i><font color="blue">MutantHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">InitialOwner</font></i> );
+
+</pre>
+<br>
+<br>
+
+<h6>MutantHandle</h6>
+
+<pre>
+Result of function call - handle to newly created Mutant object.<br>
+</pre>
+
+<h6>DesiredAccess</h6>
+
+<pre>
+In most cases there's <b><u>MUTANT_ALL_ACCESS</u></b>. See <b><i>&lt;WinNT.h&gt;</i></b> or <b><i>&lt;WinBase.h&gt;</i></b> for other information about Mutant objects access rights.<br>
+</pre>
+
+<h6>ObjectAttributes</h6>
+
+<pre>
+May be used to creation named Mutant objects. Named Mutant can be used by more then one process.<br>
+</pre>
+
+<h6>InitialOwner</h6>
+
+<pre>
+If <i>TRUE</i>, Mutant is created with non-signaled state. Caller should call <a href="../../../Undocumented%20Functions/NT%20Objects/Mutant/NtReleaseMutant.html">NtReleaseMutant</a> after program initialization.
+<br>
+</pre>
+
+<hr width="40%">
+
+<pre>
+<br>
+Mutant object live in object namespace as long as at least one handle is still open. To destroy Mutant, just call <a href="../Type%20independed/NtClose.html">NtClose</a> with <font class="ParamNameDesc">MutantHandle</font>.<br>
+
+</pre>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Type%20independed/NtClose.html">
+NtClose</a><br>
+</dd>
+
+<dd><a href="NtOpenMutant.html">NtOpenMutant</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

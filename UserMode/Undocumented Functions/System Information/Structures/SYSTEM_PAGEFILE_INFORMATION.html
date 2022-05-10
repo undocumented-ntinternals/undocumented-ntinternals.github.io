@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FSystem%20Information%2FStructures%2FSYSTEM_PAGEFILE_INFORMATION.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SYSTEM_PAGEFILE_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/System Information/Structures/SYSTEM_PAGEFILE_INFORMATION.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 9 February</p>
+<br>
+
+<div class="text">SYSTEM_PAGEFILE_INFORMATION</div>
+
+<div class="highlight">SYSTEM_PAGEFILE_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _SYSTEM_PAGEFILE_INFORMATION {
+<br>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color="blue">TotalSize</font></i>;
+  ULONG                   <i><font color="blue">TotalInUse</font></i>;
+  ULONG                   <i><font color="blue">PeakUsage</font></i>;
+  UNICODE_STRING          <i><font color="blue">PageFileName</font></i>;
+
+} SYSTEM_PAGEFILE_INFORMATION, *PSYSTEM_PAGEFILE_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+Structure <b><u>SYSTEM_PAGEFILE_INFORMATION</u></b> is used as a
+result of call <a href="../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a> with <a href="SystemPageFileInformation.html">SystemPageFileInformation</a>
+information class. If contains information about currently instaled
+Paged Files (files used by system for swap paged pool memory to
+disk).<br>
+<br>
+<br>
+<br>
+
+<hr width="40%">
+<br>
+<br>
+
+<ul>
+<li>NextEntryOffset &#160;&#160;&#160;&#160;Offset to next
+<b><u>SYSTEM_PAGEFILE_INFORMATION</u></b> structure or zero, if
+it's last one.</li>
+</ul>
+
+<ul>
+<li>TotalSize &#160;&#160;&#160;&#160;Size of paged file, in pages
+(Size of page depend on machine type, for <b><i>x86</i></b> one
+page is <i>0x1000</i> (<i>4096</i>) bytes).</li>
+</ul>
+
+<ul>
+<li>TotalInUse &#160;&#160;&#160;&#160;Number of currently used
+pages in paged file.</li>
+</ul>
+
+<ul>
+<li>PeakUsage &#160;&#160;&#160;&#160;Maximum number of pages used
+in this boot session.</li>
+</ul>
+
+<ul>
+<li>PageFileName &#160;&#160;&#160;&#160;System path to paged
+file.<br>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="NtCreatePagingFile.html">NtCreatePagingFile</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/System%20Information/NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href="SYSTEM_INFORMATION_CLASS.html">SYSTEM_INFORMATION_CLASS</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

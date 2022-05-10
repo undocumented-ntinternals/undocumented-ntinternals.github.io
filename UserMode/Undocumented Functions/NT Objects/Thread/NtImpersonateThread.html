@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FThread%2FNtImpersonateThread.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtImpersonateThread</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/Thread/NtImpersonateThread.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 15 February</p>
+<br>
+
+<div class="text">NtImpersonateThread</div>
+
+<div class="highlight">NtImpersonateThread</div>
+<br>
+
+<pre class="FnDefinition">
+NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtImpersonateThread(
+<br>
+
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN HANDLE               <i><font color="blue">ThreadToImpersonate</font></i>,
+  IN PSECURITY_QUALITY_OF_SERVICE <i><font color="blue">SecurityQualityOfService</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtImpersonateThread</u></b> assigns one thread's
+token to another. If source thread don't have associated Token
+Object, function use process'es token to impersonate destination
+thread.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>ThreadHandle &#160;&#160;&#160;&#160;<b>HANDLE</b> to source
+Thread Object.</li>
+</ul>
+
+<ul>
+<li>ThreadToImpersonate &#160;&#160;&#160;&#160;<b>HANDLE</b> to
+destination Thread Object opened with <b>THREAD_IMPERSONATE</b>
+access.</li>
+</ul>
+
+<ul>
+<li>SecurityQualityOfService &#160;&#160;&#160;&#160;Pointer to
+<a href="SECURITY_QUALITY_OF_SERVICE.html">SECURITY_QUALITY_OF_SERVICE</a>
+structure filled by user.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Thread/NtCreateThread.html">
+NtCreateThread</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Port/NtImpersonateClientOfPort.html">
+NtImpersonateClientOfPort</a><br>
+</dd>
+
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/Thread/NtOpenThread.html">
+NtOpenThread</a><br>
+</dd>
+
+<dd><a href="SECURITY_QUALITY_OF_SERVICE.html">SECURITY_QUALITY_OF_SERVICE</a><br>
+
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

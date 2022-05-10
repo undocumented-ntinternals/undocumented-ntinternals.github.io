@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>SYSTEM_PROCESS_INFORMATION</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "usermode/undocumented functions/system information/structures/system_process_information.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fsystem%20information%2Fstructures%2Fsystem_process_information.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fusermode%2Fundocumented%20functions%2Fsystem%20information%2Fstructures%2Fsystem_process_information.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO2, 8 April</p>
+<br>
+
+<div class="text">SYSTEM_PROCESS_INFORMATION</div>
+
+<div class="highlight">SYSTEM_PROCESS_INFORMATION</div>
+<br>
+
+<pre class="FnDefinition">
+typedef struct _SYSTEM_PROCESS_INFORMATION {
+<br>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color="blue">NumberOfThreads</font></i>;
+  LARGE_INTEGER           <i><font color="blue">Reserved[3]</font></i>;
+  LARGE_INTEGER           <i><font color="blue">CreateTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">UserTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">KernelTime</font></i>;
+  UNICODE_STRING          <i><font color="blue">ImageName</font></i>;
+  KPRIORITY               <i><font color="blue">BasePriority</font></i>;
+  HANDLE                  <i><font color="blue">ProcessId</font></i>;
+  HANDLE                  <i><font color="blue">InheritedFromProcessId</font></i>;
+  ULONG                   <i><font color="blue">HandleCount</font></i>;
+  ULONG                   <i><font color="blue">Reserved2[2]</font></i>;
+  ULONG                   <i><font color="blue">PrivatePageCount</font></i>;
+  VM_COUNTERS             <i><font color="blue">VirtualMemoryCounters</font></i>;
+  IO_COUNTERS             <i><font color="blue">IoCounters</font></i>;
+  SYSTEM_THREAD           <i><font color="blue">Threads[0]</font></i>;
+
+} SYSTEM_PROCESS_INFORMATION, *PSYSTEM_PROCESS_INFORMATION;
+</pre>
+<br>
+<br>
+<br>
+<br>
+Structure <b><u>SYSTEM_PROCESS_INFORMATION</u></b> contains list of
+processes and threads and it's avaiable via <a href="../../../../usermode/undocumented%20functions/system%20information/ntquerysysteminformation.html">
+NtQuerySystemInformation</a> function with <a href="systemprocessinformation.html">SystemProcessInformation</a>
+information class.<br>
+<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>NextEntryOffset &#160;&#160;&#160;&#160;Offset from begining of
+output buffer to next process entry. On last entry contains
+zero.</li>
+</ul>
+
+<ul>
+<li>NumberOfThreads &#160;&#160;&#160;&#160;Number of process'es
+threads. Also number of members in <font class="ParamNameDesc">Threads</font> array descripted below.</li>
+</ul>
+
+<ul>
+<li>Reserved[3] &#160;&#160;&#160;&#160;Reserved.</li>
+</ul>
+
+<ul>
+<li>CreateTime &#160;&#160;&#160;&#160;Process creation time, in
+<i>100-ns</i> units.</li>
+</ul>
+
+<ul>
+<li>UserTime &#160;&#160;&#160;&#160;Effective time in <i>User
+Mode</i>.</li>
+</ul>
+
+<ul>
+<li>KernelTime &#160;&#160;&#160;&#160;Effective time in <i>Kernel
+Mode</i>.</li>
+</ul>
+
+<ul>
+<li>ImageName &#160;&#160;&#160;&#160;Process name, based on
+executable file name.</li>
+</ul>
+
+<ul>
+<li>BasePriority &#160;&#160;&#160;&#160;Process base
+priority.</li>
+</ul>
+
+<ul>
+<li>ProcessId &#160;&#160;&#160;&#160;Unique identifier of
+process.</li>
+</ul>
+
+<ul>
+<li>InheritedFromProcessId &#160;&#160;&#160;&#160;Creator's
+identifier.</li>
+</ul>
+
+<ul>
+<li>HandleCount &#160;&#160;&#160;&#160;Nr of open
+<b>HANDLE</b>s.</li>
+</ul>
+
+<ul>
+<li>Reserved2[2] &#160;&#160;&#160;&#160;Reserved.</li>
+</ul>
+
+<ul>
+<li>PrivatePageCount &#160;&#160;&#160;&#160;Number of memory pages
+assigned to process.</li>
+</ul>
+
+<ul>
+<li>VirtualMemoryCounters &#160;&#160;&#160;&#160;Memory
+performance counters.</li>
+</ul>
+
+<ul>
+<li>IoCounters &#160;&#160;&#160;&#160;IO performance
+counters.</li>
+</ul>
+
+<ul>
+<li>Threads[0] &#160;&#160;&#160;&#160;Array of <a href="../../../../usermode/undocumented%20functions/system%20information/structures/system_thread.html">
+SYSTEM_THREAD</a> structures descripting process's threads.<br>
+<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../../usermode/undocumented%20functions/system%20information/ntquerysysteminformation.html">
+NtQuerySystemInformation</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/system%20information/system_information_class.html">
+SYSTEM_INFORMATION_CLASS</a><br>
+</dd>
+
+<dd><a href="../../../../usermode/undocumented%20functions/system%20information/structures/system_thread.html">
+SYSTEM_THREAD</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

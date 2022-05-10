@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="ntinternals undocumented functions windows nt ntapi ntdll">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script type="text/JavaScript"> if (window.name != "content") window.location = "../../../../index.html?page=UserMode%2FUndocumented%20Functions%2FNT%20Objects%2FIoCompletion%2FNtOpenIoCompletion.html"; </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)">
+<title>NtOpenIoCompletion</title>
+<link href="../../../../tomek.css" rel="stylesheet" type="text/css" title="Style">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type="text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "UserMode/Undocumented Functions/NT Objects/IoCompletion/NtOpenIoCompletion.html";
+</script>
+
+</head>
+<body>
+<!-- !chm2web! -->
+
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br>
+
+<div class="text">NtOpenIoCompletion</div>
+
+<div class="highlight">NtOpenIoCompletion</div>
+<br>
+
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br>
+NtOpenIoCompletion(
+<br>
+
+  OUT PHANDLE             <i><font color="blue">IoCompletionHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> );
+
+</pre>
+<br>
+<br>
+<br>
+Function <b><u>NtOpenIoCompletion</u></b> opens existing IO
+Completion Object. IO Completion must be created as named
+object.<br>
+<br>
+
+<hr width="40%">
+<br>
+
+<ul>
+<li>IoCompletionHandle &#160;&#160;&#160;&#160;Result of call -
+pointer to <b>HANDLE</b> value.</li>
+</ul>
+
+<ul>
+<li>DesiredAccess &#160;&#160;&#160;&#160;Can be one or combination
+of:</li>
+</ul>
+
+<ul>
+<li><b>IO_COMPLETION_QUERY_STATE</b>
+</li>
+
+<li><b>IO_COMPLETION_MODIFY_STATE</b>
+</li>
+
+<li><b>IO_COMPLETION_ALL_ACCESS</b>
+</li>
+</ul>
+
+<ul>
+<li>ObjectAttributes &#160;&#160;&#160;&#160;Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure containing valid IO Completion
+name.<br>
+<br>
+<br>
+
+<dl>
+<dt class="Require">Documented by:</dt>
+
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+
+<dd><strong>Reactos</strong>
+</dd>
+
+<dd><br>
+<br>
+<br>
+</dd>
+</dl></li>
+</ul>
+
+<div class="Require">Requirements:</div>
+
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br>
+<br>
+<br></dd>
+</dl>
+
+<div class="Require">See also:</div>
+
+<dl>
+<dd><a href="../../../Undocumented%20Functions/NT%20Objects/IoCompletion/NtCreateIoCompletion.html">
+NtCreateIoCompletion</a><br>
+</dd>
+</dl>
+
+<hr width="0" size="0" noshade class="page">
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>
